@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aptitude Assessment Report — Mixed Profile Candidate</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    color: #1e293b;
+    background: #ffffff;
+    line-height: 1.6;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ─── Page ────────────────────────────────────────────────── */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 16mm 18mm;
+    background: #ffffff;
+    page-break-after: always;
+    position: relative;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* ─── Cover ────────────────────────────────────────────────── */
+  .cover {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1d4ed8 100%);
+    color: #fff;
+    padding: 20mm 18mm;
+    min-height: 297mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .cover-logo {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #93c5fd;
+    margin-bottom: 48px;
+  }
+  .cover-title {
+    font-size: 38px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .cover-sub {
+    font-size: 16px;
+    font-weight: 400;
+    color: #94a3b8;
+    margin-bottom: 48px;
+  }
+  .cover-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #bfdbfe;
+    margin-bottom: 8px;
+    margin-right: 6px;
+  }
+  .cover-footer {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 20px;
+    font-size: 10px;
+    color: #64748b;
+  }
+  .cover-name { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .cover-date { font-size: 11px; color: #94a3b8; }
+
+  /* ─── Section Header ───────────────────────────────────────── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e2e8f0;
+  }
+  .section-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.01em;
+  }
+  .section-subtitle {
+    font-size: 10px;
+    font-weight: 500;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-left: auto;
+  }
+
+  /* ─── Cards ────────────────────────────────────────────────── */
+  .card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  .card-highlight {
+    background: linear-gradient(135deg, #1e3a5f 0%, #1d4ed8 100%);
+    border-radius: 12px;
+    padding: 20px 22px;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+  .card-highlight p {
+    font-size: 13px;
+    font-weight: 400;
+    color: #dbeafe;
+    line-height: 1.7;
+  }
+  .card-green {
+    background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+    border-radius: 12px;
+    padding: 20px 22px;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  /* ─── Bar Charts ───────────────────────────────────────────── */
+  .bar-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 10px;
+  }
+  .bar-label {
+    width: 150px;
+    font-size: 10.5px;
+    font-weight: 600;
+    color: #374151;
+    flex-shrink: 0;
+  }
+  .bar-track {
+    flex: 1;
+    height: 10px;
+    background: #f1f5f9;
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 99px;
+  }
+  .bar-value {
+    width: 36px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #374151;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .bar-band {
+    width: 110px;
+    font-size: 9px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 99px;
+    padding: 2px 6px;
+    flex-shrink: 0;
+  }
+
+  /* ─── Fit Badges ───────────────────────────────────────────── */
+  .fit-strong  { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
+  .fit-good    { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
+  .fit-possible{ background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+  .fit-low     { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+
+  /* ─── Domain Cards ─────────────────────────────────────────── */
+  .domain-card {
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .domain-name { font-size: 12px; font-weight: 700; margin-bottom: 3px; }
+  .domain-expl { font-size: 10px; line-height: 1.5; opacity: 0.85; }
+  .domain-score { font-size: 22px; font-weight: 900; opacity: 0.9; }
+  .domain-fit {
+    font-size: 9px; font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 99px;
+    padding: 2px 8px;
+    margin-top: 4px;
+    display: inline-block;
+    border: 1px solid currentColor;
+  }
+
+  /* ─── Grid ─────────────────────────────────────────────────── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .stat-box {
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+  }
+  .stat-label { font-size: 9px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+  .stat-value { font-size: 20px; font-weight: 900; color: #0f172a; }
+  .stat-desc   { font-size: 10px; color: #64748b; margin-top: 2px; }
+
+  /* ─── Insight Box ──────────────────────────────────────────── */
+  .insight-box {
+    background: #fff7ed;
+    border: 2px solid #f59e0b;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .insight-label {
+    font-size: 9px; font-weight: 800; color: #b45309;
+    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;
+  }
+  .insight-text { font-size: 12px; font-weight: 600; color: #78350f; line-height: 1.6; }
+
+  /* ─── Page Header/Footer ───────────────────────────────────── */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .page-org { font-size: 9px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.12em; }
+  .page-type { font-size: 10px; font-weight: 600; color: #2563eb; }
+  .page-footer {
+    position: absolute;
+    bottom: 12mm;
+    left: 18mm;
+    right: 18mm;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    color: #94a3b8;
+  }
+
+  /* ─── Tags / Pills ─────────────────────────────────────────── */
+  .pill { display: inline-block; border-radius: 99px; padding: 3px 10px; font-size: 10px; font-weight: 600; margin: 2px; }
+  .pill-blue   { background: #dbeafe; color: #1e40af; }
+  .pill-green  { background: #d1fae5; color: #065f46; }
+  .pill-orange { background: #fef3c7; color: #92400e; }
+  .pill-grey   { background: #f1f5f9; color: #475569; }
+
+  /* ─── Contradiction / Conflict ─────────────────────────────── */
+  .conflict-box {
+    background: #f5f3ff;
+    border: 1px solid #ddd6fe;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+  }
+  .conflict-label { font-size: 9px; font-weight: 800; color: #6d28d9; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+
+  /* ─── Disclaimer ───────────────────────────────────────────── */
+  .disclaimer {
+    font-size: 8.5px;
+    color: #94a3b8;
+    line-height: 1.6;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 10px;
+    margin-top: 16px;
+  }
+
+  /* ─── Chart Image ──────────────────────────────────────────── */
+  .chart-img { max-width: 100%; height: auto; margin: 8px 0; }
+
+  /* ─── Key Findings at a Glance ─────────────────────────────── */
+  .glance-box { border-radius: 12px; overflow: hidden; margin-bottom: 16px; border: 1px solid #0f766e; }
+  .glance-header { background: #0f172a; padding: 10px 16px; display: flex; align-items: center; gap: 8px; }
+  .glance-header-dot { width: 6px; height: 6px; background: #2dd4bf; border-radius: 50%; }
+  .glance-header-title { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: #2dd4bf; }
+  .glance-body { background: #f0fdfa; padding: 14px 18px; }
+  .glance-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; font-size: 11.5px; color: #134e4a; line-height: 1.5; }
+  .glance-item:last-child { margin-bottom: 0; }
+  .glance-bullet { width: 16px; height: 16px; background: #0f766e; color: #fff; border-radius: 50%; font-size: 8px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+
+  /* ─── Counsellor Discussion Box ─────────────────────────────── */
+  .discussion-box { background: #faf5ff; border: 1px solid #d8b4fe; border-radius: 12px; padding: 14px 18px; margin-top: 14px; }
+  .discussion-label { font-size: 8.5px; font-weight: 800; color: #7c3aed; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 8px; }
+  .discussion-item { font-size: 11px; color: #4c1d95; line-height: 1.6; margin-bottom: 6px; }
+  .discussion-item:last-child { margin-bottom: 0; }
+
+  /* ─── Score Legend ───────────────────────────────────────────── */
+  .score-legend { display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 5px; font-size: 9.5px; color: #374151; font-weight: 500; }
+  .legend-swatch { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+
+  /* ─── Plain Intro ────────────────────────────────────────────── */
+  .plain-intro { font-size: 11px; font-style: italic; color: #64748b; line-height: 1.6; margin-bottom: 12px; }
+
+  /* ─── Phase Block ────────────────────────────────────────────── */
+  .phase-block { border-left: 3px solid #3b82f6; padding: 12px 16px; background: #f8fafc; border-radius: 0 8px 8px 0; margin-bottom: 18px; }
+  .phase-block.mid { border-left-color: #8b5cf6; }
+  .phase-block.long { border-left-color: #10b981; }
+  .phase-heading { font-size: 12px; font-weight: 800; color: #1e293b; margin-bottom: 6px; }
+  .phase-content { font-size: 11.5px; color: #475569; line-height: 1.65; white-space: pre-line; }
+</style>
+</head>
+<body>
+
+<!-- 📄 PAGE 1 — COVER PAGE -->
+<div class="page cover" style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 50%,#0f172a 100%);justify-content:center;align-items:center;text-align:center;">
+  <div style="margin-bottom:60px;">
+    <div class="cover-logo" style="margin-bottom:24px;">Omkar Career Counseling</div>
+    <div class="cover-title" style="font-size:42px;margin-bottom:16px;">Aptitude<br/>Assessment Report</div>
+    <div class="cover-sub" style="font-size:18px;">Cognitive Ability &amp; Reasoning Analysis</div>
+  </div>
+  
+  <div style="margin-bottom:60px;">
+    <span class="cover-badge">Logical</span>
+    <span class="cover-badge">Analytical</span>
+    <span class="cover-badge">Numerical</span>
+    <span class="cover-badge">Spatial</span>
+  </div>
+  
+  <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;width:100%;max-width:300px;">
+    <div class="cover-name">Mixed Profile Candidate</div>
+    <div class="cover-date">Generated: 4/16/2026</div>
+  </div>
+</div>
+
+<!-- 📄 PAGE 2 — EXECUTIVE SUMMARY -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-org">Omkar Career Counseling</span>
+    <span class="page-type">Aptitude Report — Page 2</span>
+  </div>
+
+  <div class="section-header">
+    <div class="section-dot" style="background:#2563eb;"></div>
+    <span class="section-title">Executive Summary</span>
+  </div>
+
+  <!-- Key Findings at a Glance -->
+  <div class="glance-box">
+    <div class="glance-header">
+      <div class="glance-header-dot"></div>
+      <span class="glance-header-title">Key Findings at a Glance</span>
+    </div>
+    <div class="glance-body">
+      
+      <div class="glance-item"><span class="glance-bullet">1</span><span><strong>Strongest ability:</strong> Numerical Reasoning — 80% (Very Strong)</span></div>
+      <div class="glance-item"><span class="glance-bullet">2</span><span><strong>Weakest ability:</strong> Analytical Reasoning — 55% (Strong)</span></div>
+      <div class="glance-item"><span class="glance-bullet">3</span><span><strong>Top aptitude-aligned domain:</strong> Business & Management (CONDITIONAL_FIT)</span></div>
+      <div class="glance-item"><span class="glance-bullet">4</span><span><strong>Overall aptitude tier:</strong> Strong — ready for domain-specific application</span></div>
+      
+    </div>
+  </div>
+
+  <div style="margin-bottom:20px;">
+    <h3 style="font-size:14px;font-weight:800;color:#1e293b;margin-bottom:8px;">Cognitive Identity &amp; Archetype</h3>
+    <div style="margin-bottom:12px;background:#f3f4f6;padding:12px;border-left:4px solid #4f46e5;border-radius:4px;">
+      <div style="font-size:15px;font-weight:900;color:#4f46e5;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.05em;"><strong></strong>Q<strong></strong>u<strong></strong>a<strong></strong>n<strong></strong>t<strong></strong>i<strong></strong>t<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>v<strong></strong>e<strong></strong> <strong></strong>O<strong></strong>p<strong></strong>e<strong></strong>r<strong></strong>a<strong></strong>t<strong></strong>o<strong></strong>r<strong></strong></div>
+      <div style="font-size:12.5px;color:#334155;"><strong></strong>Q<strong></strong>u<strong></strong>a<strong></strong>n<strong></strong>t<strong></strong>i<strong></strong>t<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>v<strong></strong>e<strong></strong> <strong></strong>s<strong></strong>t<strong></strong>r<strong></strong>e<strong></strong>n<strong></strong>g<strong></strong>t<strong></strong>h<strong></strong> <strong></strong>w<strong></strong>i<strong></strong>t<strong></strong>h<strong></strong> <strong></strong>s<strong></strong>t<strong></strong>r<strong></strong>u<strong></strong>c<strong></strong>t<strong></strong>u<strong></strong>r<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>l<strong></strong>i<strong></strong>m<strong></strong>i<strong></strong>t<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong>.<strong></strong></div>
+    </div>
+    <h3 style="font-size:14px;font-weight:800;color:#1e293b;margin-bottom:8px;">Cognitive Overview</h3>
+    <p style="font-size:12.5px;color:#475569;line-height:1.75;"><strong></strong>M<strong></strong>i<strong></strong>x<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>P<strong></strong>r<strong></strong>o<strong></strong>f<strong></strong>i<strong></strong>l<strong></strong>e<strong></strong> <strong></strong>C<strong></strong>a<strong></strong>n<strong></strong>d<strong></strong>i<strong></strong>d<strong></strong>a<strong></strong>t<strong></strong>e<strong></strong>'<strong></strong>s<strong></strong> <strong></strong>c<strong></strong>o<strong></strong>g<strong></strong>n<strong></strong>i<strong></strong>t<strong></strong>i<strong></strong>v<strong></strong>e<strong></strong> <strong></strong>p<strong></strong>r<strong></strong>o<strong></strong>f<strong></strong>i<strong></strong>l<strong></strong>e<strong></strong> <strong></strong>s<strong></strong>h<strong></strong>o<strong></strong>w<strong></strong>s<strong></strong> <strong></strong>t<strong></strong>h<strong></strong>e<strong></strong> <strong></strong>c<strong></strong>l<strong></strong>e<strong></strong>a<strong></strong>r<strong></strong>e<strong></strong>s<strong></strong>t<strong></strong> <strong></strong>s<strong></strong>t<strong></strong>r<strong></strong>e<strong></strong>n<strong></strong>g<strong></strong>t<strong></strong>h<strong></strong> <strong></strong>i<strong></strong>n<strong></strong> <strong></strong>N<strong></strong>u<strong></strong>m<strong></strong>e<strong></strong>r<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>R<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>(<strong></strong>8<strong></strong>0<strong></strong>%<strong></strong>)<strong></strong>,<strong></strong> <strong></strong>i<strong></strong>n<strong></strong>d<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>a<strong></strong>p<strong></strong>p<strong></strong>l<strong></strong>i<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>q<strong></strong>u<strong></strong>a<strong></strong>n<strong></strong>t<strong></strong>i<strong></strong>t<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>v<strong></strong>e<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>p<strong></strong>r<strong></strong>a<strong></strong>c<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>n<strong></strong>u<strong></strong>m<strong></strong>b<strong></strong>e<strong></strong>r<strong></strong> <strong></strong>h<strong></strong>a<strong></strong>n<strong></strong>d<strong></strong>l<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong>.<strong></strong> <strong></strong>T<strong></strong>h<strong></strong>e<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>l<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>v<strong></strong>e<strong></strong> <strong></strong>w<strong></strong>e<strong></strong>a<strong></strong>k<strong></strong>e<strong></strong>r<strong></strong> <strong></strong>a<strong></strong>r<strong></strong>e<strong></strong>a<strong></strong> <strong></strong>i<strong></strong>s<strong></strong> <strong></strong>A<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong>y<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>R<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>(<strong></strong>5<strong></strong>5<strong></strong>%<strong></strong>)<strong></strong>,<strong></strong> <strong></strong>w<strong></strong>h<strong></strong>i<strong></strong>c<strong></strong>h<strong></strong> <strong></strong>s<strong></strong>c<strong></strong>o<strong></strong>r<strong></strong>e<strong></strong>s<strong></strong> <strong></strong>i<strong></strong>n<strong></strong> <strong></strong>t<strong></strong>h<strong></strong>e<strong></strong> <strong></strong>s<strong></strong>t<strong></strong>r<strong></strong>o<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>r<strong></strong>a<strong></strong>n<strong></strong>g<strong></strong>e<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>p<strong></strong>r<strong></strong>e<strong></strong>s<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong>s<strong></strong> <strong></strong>t<strong></strong>h<strong></strong>e<strong></strong> <strong></strong>p<strong></strong>r<strong></strong>i<strong></strong>m<strong></strong>a<strong></strong>r<strong></strong>y<strong></strong> <strong></strong>o<strong></strong>p<strong></strong>p<strong></strong>o<strong></strong>r<strong></strong>t<strong></strong>u<strong></strong>n<strong></strong>i<strong></strong>t<strong></strong>y<strong></strong> <strong></strong>f<strong></strong>o<strong></strong>r<strong></strong> <strong></strong>f<strong></strong>o<strong></strong>c<strong></strong>u<strong></strong>s<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>p<strong></strong>r<strong></strong>a<strong></strong>c<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>e<strong></strong>.<strong></strong>
+<strong></strong>
+<strong></strong>B<strong></strong>a<strong></strong>s<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>o<strong></strong>n<strong></strong> <strong></strong>t<strong></strong>h<strong></strong>e<strong></strong> <strong></strong>o<strong></strong>v<strong></strong>e<strong></strong>r<strong></strong>a<strong></strong>l<strong></strong>l<strong></strong> <strong></strong>c<strong></strong>o<strong></strong>g<strong></strong>n<strong></strong>i<strong></strong>t<strong></strong>i<strong></strong>v<strong></strong>e<strong></strong> <strong></strong>p<strong></strong>r<strong></strong>o<strong></strong>f<strong></strong>i<strong></strong>l<strong></strong>e<strong></strong>,<strong></strong> <strong></strong>M<strong></strong>i<strong></strong>x<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>P<strong></strong>r<strong></strong>o<strong></strong>f<strong></strong>i<strong></strong>l<strong></strong>e<strong></strong> <strong></strong>C<strong></strong>a<strong></strong>n<strong></strong>d<strong></strong>i<strong></strong>d<strong></strong>a<strong></strong>t<strong></strong>e<strong></strong>'<strong></strong>s<strong></strong> <strong></strong>a<strong></strong>b<strong></strong>i<strong></strong>l<strong></strong>i<strong></strong>t<strong></strong>i<strong></strong>e<strong></strong>s<strong></strong> <strong></strong>s<strong></strong>h<strong></strong>o<strong></strong>w<strong></strong> <strong></strong>m<strong></strong>o<strong></strong>d<strong></strong>e<strong></strong>r<strong></strong>a<strong></strong>t<strong></strong>e<strong></strong> <strong></strong>a<strong></strong>l<strong></strong>i<strong></strong>g<strong></strong>n<strong></strong>m<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong> <strong></strong>t<strong></strong>o<strong></strong>w<strong></strong>a<strong></strong>r<strong></strong>d<strong></strong> <strong></strong>B<strong></strong>u<strong></strong>s<strong></strong>i<strong></strong>n<strong></strong>e<strong></strong>s<strong></strong>s<strong></strong> <strong></strong>&<strong></strong>a<strong></strong>m<strong></strong>p<strong></strong>;<strong></strong> <strong></strong>M<strong></strong>a<strong></strong>n<strong></strong>a<strong></strong>g<strong></strong>e<strong></strong>m<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong>.<strong></strong> <strong></strong>T<strong></strong>h<strong></strong>i<strong></strong>s<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>f<strong></strong>l<strong></strong>e<strong></strong>c<strong></strong>t<strong></strong>s<strong></strong> <strong></strong>t<strong></strong>h<strong></strong>e<strong></strong> <strong></strong>p<strong></strong>a<strong></strong>t<strong></strong>t<strong></strong>e<strong></strong>r<strong></strong>n<strong></strong> <strong></strong>o<strong></strong>f<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>s<strong></strong>t<strong></strong>r<strong></strong>e<strong></strong>n<strong></strong>g<strong></strong>t<strong></strong>h<strong></strong>s<strong></strong> <strong></strong>m<strong></strong>o<strong></strong>s<strong></strong>t<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>l<strong></strong>e<strong></strong>v<strong></strong>a<strong></strong>n<strong></strong>t<strong></strong> <strong></strong>t<strong></strong>o<strong></strong> <strong></strong>t<strong></strong>h<strong></strong>a<strong></strong>t<strong></strong> <strong></strong>d<strong></strong>o<strong></strong>m<strong></strong>a<strong></strong>i<strong></strong>n<strong></strong>'<strong></strong>s<strong></strong> <strong></strong>t<strong></strong>y<strong></strong>p<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>d<strong></strong>e<strong></strong>m<strong></strong>a<strong></strong>n<strong></strong>d<strong></strong>s<strong></strong>.<strong></strong> <strong></strong>T<strong></strong>h<strong></strong>i<strong></strong>s<strong></strong> <strong></strong>p<strong></strong>r<strong></strong>o<strong></strong>v<strong></strong>i<strong></strong>d<strong></strong>e<strong></strong>s<strong></strong> <strong></strong>a<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>a<strong></strong>b<strong></strong>l<strong></strong>e<strong></strong> <strong></strong>f<strong></strong>o<strong></strong>u<strong></strong>n<strong></strong>d<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong> <strong></strong>f<strong></strong>o<strong></strong>r<strong></strong> <strong></strong>e<strong></strong>x<strong></strong>p<strong></strong>l<strong></strong>o<strong></strong>r<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>c<strong></strong>a<strong></strong>r<strong></strong>e<strong></strong>e<strong></strong>r<strong></strong> <strong></strong>p<strong></strong>a<strong></strong>t<strong></strong>h<strong></strong>s<strong></strong> <strong></strong>w<strong></strong>i<strong></strong>t<strong></strong>h<strong></strong>i<strong></strong>n<strong></strong> <strong></strong>t<strong></strong>h<strong></strong>i<strong></strong>s<strong></strong> <strong></strong>f<strong></strong>i<strong></strong>e<strong></strong>l<strong></strong>d<strong></strong>.<strong></strong></p>
+  </div>
+
+  
+  <div class="insight-box" style="margin-bottom:24px;border-color:#ef4444;background:#fef2f2;">
+    <div class="insight-label" style="color:#b91c1c;">🔴 Key Observation</div>
+    <div class="insight-text" style="color:#7f1d1d;font-size:13.5px;"><strong></strong>A<strong></strong> <strong></strong>k<strong></strong>e<strong></strong>y<strong></strong> <strong></strong>o<strong></strong>b<strong></strong>s<strong></strong>e<strong></strong>r<strong></strong>v<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong> <strong></strong>i<strong></strong>s<strong></strong> <strong></strong>t<strong></strong>h<strong></strong>a<strong></strong>t<strong></strong> <strong></strong>w<strong></strong>h<strong></strong>i<strong></strong>l<strong></strong>e<strong></strong> <strong></strong>s<strong></strong>o<strong></strong>m<strong></strong>e<strong></strong> <strong></strong>a<strong></strong>b<strong></strong>i<strong></strong>l<strong></strong>i<strong></strong>t<strong></strong>i<strong></strong>e<strong></strong>s<strong></strong> <strong></strong>a<strong></strong>r<strong></strong>e<strong></strong> <strong></strong>s<strong></strong>t<strong></strong>r<strong></strong>o<strong></strong>n<strong></strong>g<strong></strong>,<strong></strong> <strong></strong>A<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong>y<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>R<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>q<strong></strong>u<strong></strong>i<strong></strong>r<strong></strong>e<strong></strong>s<strong></strong> <strong></strong>f<strong></strong>o<strong></strong>c<strong></strong>u<strong></strong>s<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>d<strong></strong>e<strong></strong>v<strong></strong>e<strong></strong>l<strong></strong>o<strong></strong>p<strong></strong>m<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong> <strong></strong>t<strong></strong>o<strong></strong> <strong></strong>p<strong></strong>r<strong></strong>e<strong></strong>v<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong> <strong></strong>b<strong></strong>o<strong></strong>t<strong></strong>t<strong></strong>l<strong></strong>e<strong></strong>n<strong></strong>e<strong></strong>c<strong></strong>k<strong></strong>s<strong></strong> <strong></strong>i<strong></strong>n<strong></strong> <strong></strong>c<strong></strong>o<strong></strong>m<strong></strong>p<strong></strong>l<strong></strong>e<strong></strong>x<strong></strong> <strong></strong>t<strong></strong>a<strong></strong>s<strong></strong>k<strong></strong>s<strong></strong>.<strong></strong></div>
+  </div>
+
+  <!-- Score Legend -->
+  <div style="margin-bottom:8px;font-size:9px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.1em;">Score Scale</div>
+  <div class="score-legend">
+    <div class="legend-item"><div class="legend-swatch" style="background:#dc2626;"></div> Development Opportunity (<40%)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#f59e0b;"></div> Emerging (40–54%)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#2563eb;"></div> Strong (55–74%)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#16a34a;"></div> Very Strong (75%+)</div>
+  </div>
+
+  <div class="section-header" style="margin-top:20px;">
+    <div class="section-dot" style="background:#64748b;"></div>
+    <span class="section-title">Assessment Reliability</span>
+  </div>
+  
+  <div class="grid-2">
+    <div class="stat-box">
+      <div class="stat-label">Confidence Level</div>
+      <div style="margin-top:6px;">
+        <span class="pill" style="background:#fef3c7;color:#92400e;">Moderate</span>
+      </div>
+      <div class="stat-desc">Statistical variance check</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">Reliability Flag</div>
+      <div style="margin-top:6px;">
+        <span class="pill" style="background:#d1fae5;color:#065f46;">✓ Verified</span>
+      </div>
+      <div class="stat-desc">Response pattern integrity</div>
+    </div>
+  </div>
+</div>
+
+<!-- 📄 PAGE 3 — DETAILED ABILITY PROFILE -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-org">Omkar Career Counseling</span>
+    <span class="page-type">Aptitude Report — Page 3</span>
+  </div>
+
+  <div class="section-header">
+    <div class="section-dot" style="background:#16a34a;"></div>
+    <span class="section-title">Detailed Ability Profile</span>
+    <span class="section-subtitle">Cognitive Dimensions</span>
+  </div>
+
+  <p class="plain-intro">The following profiles show how Mixed Profile Candidate performed across each cognitive dimension. Scores reflect the percentage of questions answered correctly in that area, normalised to a 0–100 range.</p>
+
+  <div style="display:flex;flex-direction:column;gap:18px;">
+    
+    <div class="card" style="padding:20px;border-left:4px solid #16a34a;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+        <h3 style="font-size:16px;font-weight:900;color:#0f172a;">Numerical Reasoning</h3>
+        <div style="text-align:right;">
+          <span style="font-size:24px;font-weight:900;color:#16a34a;">80%</span>
+          <div style="font-size:11px;color:#64748b;margin-top:1px;">8 of 10 correct</div>
+          <div style="margin-top:4px;"><span class="pill" style="background:#d1fae5;color:#065f46;">Very Strong</span></div>
+        </div>
+      </div>
+      <div style="background:#f8fafc;padding:12px;border-radius:8px;">
+        <p style="font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Interpretation</p>
+        <p style="font-size:12.5px;color:#334155;line-height:1.6;"><strong></strong>N<strong></strong>u<strong></strong>m<strong></strong>e<strong></strong>r<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>p<strong></strong>e<strong></strong>r<strong></strong>f<strong></strong>o<strong></strong>r<strong></strong>m<strong></strong>a<strong></strong>n<strong></strong>c<strong></strong>e<strong></strong> <strong></strong>i<strong></strong>s<strong></strong> <strong></strong>s<strong></strong>t<strong></strong>r<strong></strong>o<strong></strong>n<strong></strong>g<strong></strong>,<strong></strong> <strong></strong>i<strong></strong>n<strong></strong>d<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>f<strong></strong>l<strong></strong>u<strong></strong>e<strong></strong>n<strong></strong>c<strong></strong>y<strong></strong> <strong></strong>w<strong></strong>i<strong></strong>t<strong></strong>h<strong></strong> <strong></strong>q<strong></strong>u<strong></strong>a<strong></strong>n<strong></strong>t<strong></strong>i<strong></strong>t<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>v<strong></strong>e<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>l<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong>s<strong></strong>h<strong></strong>i<strong></strong>p<strong></strong>s<strong></strong>,<strong></strong> <strong></strong>s<strong></strong>p<strong></strong>e<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>i<strong></strong>n<strong></strong> <strong></strong>m<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>c<strong></strong>a<strong></strong>l<strong></strong>c<strong></strong>u<strong></strong>l<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong>,<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>a<strong></strong>b<strong></strong>i<strong></strong>l<strong></strong>i<strong></strong>t<strong></strong>y<strong></strong> <strong></strong>t<strong></strong>o<strong></strong> <strong></strong>n<strong></strong>a<strong></strong>v<strong></strong>i<strong></strong>g<strong></strong>a<strong></strong>t<strong></strong>e<strong></strong> <strong></strong>a<strong></strong>p<strong></strong>p<strong></strong>l<strong></strong>i<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>n<strong></strong>u<strong></strong>m<strong></strong>b<strong></strong>e<strong></strong>r<strong></strong> <strong></strong>p<strong></strong>r<strong></strong>o<strong></strong>b<strong></strong>l<strong></strong>e<strong></strong>m<strong></strong>s<strong></strong>.<strong></strong> <strong></strong>T<strong></strong>h<strong></strong>i<strong></strong>s<strong></strong> <strong></strong>i<strong></strong>s<strong></strong> <strong></strong>a<strong></strong> <strong></strong>f<strong></strong>o<strong></strong>u<strong></strong>n<strong></strong>d<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>a<strong></strong>s<strong></strong>s<strong></strong>e<strong></strong>t<strong></strong> <strong></strong>f<strong></strong>o<strong></strong>r<strong></strong> <strong></strong>d<strong></strong>o<strong></strong>m<strong></strong>a<strong></strong>i<strong></strong>n<strong></strong>s<strong></strong> <strong></strong>i<strong></strong>n<strong></strong>v<strong></strong>o<strong></strong>l<strong></strong>v<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>f<strong></strong>i<strong></strong>n<strong></strong>a<strong></strong>n<strong></strong>c<strong></strong>e<strong></strong>,<strong></strong> <strong></strong>e<strong></strong>n<strong></strong>g<strong></strong>i<strong></strong>n<strong></strong>e<strong></strong>e<strong></strong>r<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong>,<strong></strong> <strong></strong>d<strong></strong>a<strong></strong>t<strong></strong>a<strong></strong> <strong></strong>s<strong></strong>c<strong></strong>i<strong></strong>e<strong></strong>n<strong></strong>c<strong></strong>e<strong></strong>,<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>c<strong></strong>o<strong></strong>m<strong></strong>m<strong></strong>e<strong></strong>r<strong></strong>c<strong></strong>e<strong></strong>.<strong></strong></p>
+      </div>
+    </div>
+    <div class="card" style="padding:20px;border-left:4px solid #2563eb;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+        <h3 style="font-size:16px;font-weight:900;color:#0f172a;">Logical Reasoning</h3>
+        <div style="text-align:right;">
+          <span style="font-size:24px;font-weight:900;color:#2563eb;">65%</span>
+          <div style="font-size:11px;color:#64748b;margin-top:1px;">6 of 10 correct</div>
+          <div style="margin-top:4px;"><span class="pill" style="background:#dbeafe;color:#1e40af;">Strong</span></div>
+        </div>
+      </div>
+      <div style="background:#f8fafc;padding:12px;border-radius:8px;">
+        <p style="font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Interpretation</p>
+        <p style="font-size:12.5px;color:#334155;line-height:1.6;"><strong></strong>P<strong></strong>e<strong></strong>r<strong></strong>f<strong></strong>o<strong></strong>r<strong></strong>m<strong></strong>a<strong></strong>n<strong></strong>c<strong></strong>e<strong></strong> <strong></strong>i<strong></strong>n<strong></strong> <strong></strong>l<strong></strong>o<strong></strong>g<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>i<strong></strong>s<strong></strong> <strong></strong>s<strong></strong>t<strong></strong>r<strong></strong>o<strong></strong>n<strong></strong>g<strong></strong>,<strong></strong> <strong></strong>s<strong></strong>u<strong></strong>g<strong></strong>g<strong></strong>e<strong></strong>s<strong></strong>t<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>w<strong></strong>e<strong></strong>l<strong></strong>l<strong></strong>-<strong></strong>d<strong></strong>e<strong></strong>v<strong></strong>e<strong></strong>l<strong></strong>o<strong></strong>p<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>c<strong></strong>a<strong></strong>p<strong></strong>a<strong></strong>c<strong></strong>i<strong></strong>t<strong></strong>y<strong></strong> <strong></strong>f<strong></strong>o<strong></strong>r<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>c<strong></strong>o<strong></strong>g<strong></strong>n<strong></strong>i<strong></strong>s<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>p<strong></strong>a<strong></strong>t<strong></strong>t<strong></strong>e<strong></strong>r<strong></strong>n<strong></strong>s<strong></strong>,<strong></strong> <strong></strong>w<strong></strong>o<strong></strong>r<strong></strong>k<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>t<strong></strong>h<strong></strong>r<strong></strong>o<strong></strong>u<strong></strong>g<strong></strong>h<strong></strong> <strong></strong>a<strong></strong>b<strong></strong>s<strong></strong>t<strong></strong>r<strong></strong>a<strong></strong>c<strong></strong>t<strong></strong> <strong></strong>s<strong></strong>e<strong></strong>q<strong></strong>u<strong></strong>e<strong></strong>n<strong></strong>c<strong></strong>e<strong></strong>s<strong></strong>,<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>i<strong></strong>d<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong>i<strong></strong>f<strong></strong>y<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>r<strong></strong>u<strong></strong>l<strong></strong>e<strong></strong>s<strong></strong> <strong></strong>i<strong></strong>n<strong></strong> <strong></strong>n<strong></strong>o<strong></strong>v<strong></strong>e<strong></strong>l<strong></strong> <strong></strong>s<strong></strong>i<strong></strong>t<strong></strong>u<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong>s<strong></strong>.<strong></strong> <strong></strong>T<strong></strong>h<strong></strong>i<strong></strong>s<strong></strong> <strong></strong>i<strong></strong>s<strong></strong> <strong></strong>a<strong></strong> <strong></strong>c<strong></strong>o<strong></strong>r<strong></strong>e<strong></strong> <strong></strong>c<strong></strong>a<strong></strong>p<strong></strong>a<strong></strong>b<strong></strong>i<strong></strong>l<strong></strong>i<strong></strong>t<strong></strong>y<strong></strong> <strong></strong>f<strong></strong>o<strong></strong>r<strong></strong> <strong></strong>f<strong></strong>i<strong></strong>e<strong></strong>l<strong></strong>d<strong></strong>s<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>q<strong></strong>u<strong></strong>i<strong></strong>r<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>s<strong></strong>y<strong></strong>s<strong></strong>t<strong></strong>e<strong></strong>m<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong> <strong></strong>p<strong></strong>r<strong></strong>o<strong></strong>b<strong></strong>l<strong></strong>e<strong></strong>m<strong></strong>-<strong></strong>s<strong></strong>o<strong></strong>l<strong></strong>v<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>s<strong></strong>u<strong></strong>c<strong></strong>h<strong></strong> <strong></strong>a<strong></strong>s<strong></strong> <strong></strong>e<strong></strong>n<strong></strong>g<strong></strong>i<strong></strong>n<strong></strong>e<strong></strong>e<strong></strong>r<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong>,<strong></strong> <strong></strong>t<strong></strong>e<strong></strong>c<strong></strong>h<strong></strong>n<strong></strong>o<strong></strong>l<strong></strong>o<strong></strong>g<strong></strong>y<strong></strong>,<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>l<strong></strong>a<strong></strong>w<strong></strong>.<strong></strong></p>
+      </div>
+    </div>
+    <div class="card" style="padding:20px;border-left:4px solid #2563eb;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+        <h3 style="font-size:16px;font-weight:900;color:#0f172a;">Spatial Visual Reasoning</h3>
+        <div style="text-align:right;">
+          <span style="font-size:24px;font-weight:900;color:#2563eb;">60%</span>
+          <div style="font-size:11px;color:#64748b;margin-top:1px;">6 of 10 correct</div>
+          <div style="margin-top:4px;"><span class="pill" style="background:#dbeafe;color:#1e40af;">Strong</span></div>
+        </div>
+      </div>
+      <div style="background:#f8fafc;padding:12px;border-radius:8px;">
+        <p style="font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Interpretation</p>
+        <p style="font-size:12.5px;color:#334155;line-height:1.6;"><strong></strong>S<strong></strong>p<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>v<strong></strong>i<strong></strong>s<strong></strong>u<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>p<strong></strong>e<strong></strong>r<strong></strong>f<strong></strong>o<strong></strong>r<strong></strong>m<strong></strong>a<strong></strong>n<strong></strong>c<strong></strong>e<strong></strong> <strong></strong>i<strong></strong>s<strong></strong> <strong></strong>s<strong></strong>t<strong></strong>r<strong></strong>o<strong></strong>n<strong></strong>g<strong></strong>,<strong></strong> <strong></strong>i<strong></strong>n<strong></strong>d<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>s<strong></strong>o<strong></strong>l<strong></strong>i<strong></strong>d<strong></strong> <strong></strong>c<strong></strong>a<strong></strong>p<strong></strong>a<strong></strong>c<strong></strong>i<strong></strong>t<strong></strong>y<strong></strong> <strong></strong>f<strong></strong>o<strong></strong>r<strong></strong> <strong></strong>m<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong>a<strong></strong>l<strong></strong>l<strong></strong>y<strong></strong> <strong></strong>r<strong></strong>o<strong></strong>t<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>s<strong></strong>h<strong></strong>a<strong></strong>p<strong></strong>e<strong></strong>s<strong></strong>,<strong></strong> <strong></strong>i<strong></strong>n<strong></strong>t<strong></strong>e<strong></strong>r<strong></strong>p<strong></strong>r<strong></strong>e<strong></strong>t<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>s<strong></strong>t<strong></strong>r<strong></strong>u<strong></strong>c<strong></strong>t<strong></strong>u<strong></strong>r<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>l<strong></strong>a<strong></strong>y<strong></strong>o<strong></strong>u<strong></strong>t<strong></strong>s<strong></strong>,<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>c<strong></strong>o<strong></strong>g<strong></strong>n<strong></strong>i<strong></strong>s<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>p<strong></strong>a<strong></strong>t<strong></strong>t<strong></strong>e<strong></strong>r<strong></strong>n<strong></strong>s<strong></strong> <strong></strong>i<strong></strong>n<strong></strong> <strong></strong>2<strong></strong>D<strong></strong>/<strong></strong>3<strong></strong>D<strong></strong> <strong></strong>e<strong></strong>n<strong></strong>v<strong></strong>i<strong></strong>r<strong></strong>o<strong></strong>n<strong></strong>m<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong>s<strong></strong>.<strong></strong> <strong></strong>T<strong></strong>h<strong></strong>i<strong></strong>s<strong></strong> <strong></strong>c<strong></strong>o<strong></strong>n<strong></strong>s<strong></strong>t<strong></strong>r<strong></strong>u<strong></strong>c<strong></strong>t<strong></strong> <strong></strong>i<strong></strong>s<strong></strong> <strong></strong>p<strong></strong>a<strong></strong>r<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>u<strong></strong>l<strong></strong>a<strong></strong>r<strong></strong>l<strong></strong>y<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>l<strong></strong>e<strong></strong>v<strong></strong>a<strong></strong>n<strong></strong>t<strong></strong> <strong></strong>f<strong></strong>o<strong></strong>r<strong></strong> <strong></strong>c<strong></strong>a<strong></strong>r<strong></strong>e<strong></strong>e<strong></strong>r<strong></strong>s<strong></strong> <strong></strong>i<strong></strong>n<strong></strong> <strong></strong>d<strong></strong>e<strong></strong>s<strong></strong>i<strong></strong>g<strong></strong>n<strong></strong>,<strong></strong> <strong></strong>a<strong></strong>r<strong></strong>c<strong></strong>h<strong></strong>i<strong></strong>t<strong></strong>e<strong></strong>c<strong></strong>t<strong></strong>u<strong></strong>r<strong></strong>e<strong></strong>,<strong></strong> <strong></strong>e<strong></strong>n<strong></strong>g<strong></strong>i<strong></strong>n<strong></strong>e<strong></strong>e<strong></strong>r<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong>,<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>y<strong></strong> <strong></strong>v<strong></strong>i<strong></strong>s<strong></strong>u<strong></strong>a<strong></strong>l<strong></strong>l<strong></strong>y<strong></strong>-<strong></strong>l<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>t<strong></strong>e<strong></strong>c<strong></strong>h<strong></strong>n<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>f<strong></strong>i<strong></strong>e<strong></strong>l<strong></strong>d<strong></strong>.<strong></strong></p>
+      </div>
+    </div>
+    <div class="card" style="padding:20px;border-left:4px solid #2563eb;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+        <h3 style="font-size:16px;font-weight:900;color:#0f172a;">Analytical Reasoning</h3>
+        <div style="text-align:right;">
+          <span style="font-size:24px;font-weight:900;color:#2563eb;">55%</span>
+          <div style="font-size:11px;color:#64748b;margin-top:1px;">5 of 10 correct</div>
+          <div style="margin-top:4px;"><span class="pill" style="background:#dbeafe;color:#1e40af;">Strong</span></div>
+        </div>
+      </div>
+      <div style="background:#f8fafc;padding:12px;border-radius:8px;">
+        <p style="font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Interpretation</p>
+        <p style="font-size:12.5px;color:#334155;line-height:1.6;"><strong></strong>A<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong>y<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>i<strong></strong>s<strong></strong> <strong></strong>a<strong></strong>t<strong></strong> <strong></strong>a<strong></strong>n<strong></strong> <strong></strong>e<strong></strong>m<strong></strong>e<strong></strong>r<strong></strong>g<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>l<strong></strong>e<strong></strong>v<strong></strong>e<strong></strong>l<strong></strong>.<strong></strong> <strong></strong>T<strong></strong>h<strong></strong>e<strong></strong> <strong></strong>c<strong></strong>a<strong></strong>n<strong></strong>d<strong></strong>i<strong></strong>d<strong></strong>a<strong></strong>t<strong></strong>e<strong></strong> <strong></strong>s<strong></strong>h<strong></strong>o<strong></strong>w<strong></strong>s<strong></strong> <strong></strong>s<strong></strong>o<strong></strong>m<strong></strong>e<strong></strong> <strong></strong>c<strong></strong>a<strong></strong>p<strong></strong>a<strong></strong>c<strong></strong>i<strong></strong>t<strong></strong>y<strong></strong> <strong></strong>t<strong></strong>o<strong></strong> <strong></strong>i<strong></strong>n<strong></strong>t<strong></strong>e<strong></strong>r<strong></strong>p<strong></strong>r<strong></strong>e<strong></strong>t<strong></strong> <strong></strong>d<strong></strong>a<strong></strong>t<strong></strong>a<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>f<strong></strong>o<strong></strong>l<strong></strong>l<strong></strong>o<strong></strong>w<strong></strong> <strong></strong>s<strong></strong>t<strong></strong>r<strong></strong>u<strong></strong>c<strong></strong>t<strong></strong>u<strong></strong>r<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>l<strong></strong>o<strong></strong>g<strong></strong>i<strong></strong>c<strong></strong>,<strong></strong> <strong></strong>b<strong></strong>u<strong></strong>t<strong></strong> <strong></strong>m<strong></strong>a<strong></strong>y<strong></strong> <strong></strong>f<strong></strong>i<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>c<strong></strong>o<strong></strong>m<strong></strong>p<strong></strong>l<strong></strong>e<strong></strong>x<strong></strong> <strong></strong>m<strong></strong>u<strong></strong>l<strong></strong>t<strong></strong>i<strong></strong>-<strong></strong>l<strong></strong>a<strong></strong>y<strong></strong>e<strong></strong>r<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>p<strong></strong>r<strong></strong>o<strong></strong>b<strong></strong>l<strong></strong>e<strong></strong>m<strong></strong>s<strong></strong> <strong></strong>c<strong></strong>h<strong></strong>a<strong></strong>l<strong></strong>l<strong></strong>e<strong></strong>n<strong></strong>g<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong>.<strong></strong> <strong></strong>P<strong></strong>r<strong></strong>a<strong></strong>c<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>e<strong></strong> <strong></strong>w<strong></strong>i<strong></strong>t<strong></strong>h<strong></strong> <strong></strong>d<strong></strong>a<strong></strong>t<strong></strong>a<strong></strong> <strong></strong>s<strong></strong>e<strong></strong>t<strong></strong>s<strong></strong>,<strong></strong> <strong></strong>c<strong></strong>o<strong></strong>n<strong></strong>d<strong></strong>i<strong></strong>t<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>l<strong></strong>o<strong></strong>g<strong></strong>i<strong></strong>c<strong></strong> <strong></strong>e<strong></strong>x<strong></strong>e<strong></strong>r<strong></strong>c<strong></strong>i<strong></strong>s<strong></strong>e<strong></strong>s<strong></strong>,<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>a<strong></strong>r<strong></strong>r<strong></strong>a<strong></strong>n<strong></strong>g<strong></strong>e<strong></strong>m<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong> <strong></strong>p<strong></strong>r<strong></strong>o<strong></strong>b<strong></strong>l<strong></strong>e<strong></strong>m<strong></strong>s<strong></strong> <strong></strong>w<strong></strong>o<strong></strong>u<strong></strong>l<strong></strong>d<strong></strong> <strong></strong>b<strong></strong>e<strong></strong> <strong></strong>b<strong></strong>e<strong></strong>n<strong></strong>e<strong></strong>f<strong></strong>i<strong></strong>c<strong></strong>i<strong></strong>a<strong></strong>l<strong></strong>.<strong></strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 📄 PAGE 4 — VISUAL ANALYSIS -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-org">Omkar Career Counseling</span>
+    <span class="page-type">Aptitude Report — Page 4</span>
+  </div>
+
+  <div class="section-header">
+    <div class="section-dot" style="background:#8b5cf6;"></div>
+    <span class="section-title">Visual Analysis</span>
+    <span class="section-subtitle">Score Distribution</span>
+  </div>
+
+  <div style="display:flex;flex-direction:column;align-items:center;margin-top:40px;">
+    <img class="chart-img" style="width:100%;max-width:500px;" src="data:image/png;base64,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" />
+    
+    <div class="card" style="margin-top:40px;width:100%;text-align:center;background:#f8fafc;">
+      <p style="font-size:13px;color:#475569;line-height:1.7;">
+        The chart shows a noticeable variance in abilities, with Numerical Reasoning leading the profile.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- 📄 PAGE 5 — STRENGTHS & DEVELOPMENT OPPORTUNITIES -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-org">Omkar Career Counseling</span>
+    <span class="page-type">Aptitude Report — Page 5</span>
+  </div>
+
+  <div class="section-header">
+    <div class="section-dot" style="background:#22c55e;"></div>
+    <span class="section-title">Cognitive Strengths</span>
+  </div>
+  
+  <div style="margin-bottom:32px;">
+    
+      <div style="margin-bottom:16px;">
+        <h4 style="font-size:14px;font-weight:800;color:#065f46;margin-bottom:4px;"><strong></strong>N<strong></strong>u<strong></strong>m<strong></strong>e<strong></strong>r<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>R<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong></h4>
+        <p style="font-size:12.5px;color:#334155;line-height:1.6;"><strong></strong>T<strong></strong>h<strong></strong>i<strong></strong>s<strong></strong> <strong></strong>i<strong></strong>s<strong></strong> <strong></strong>b<strong></strong>a<strong></strong>s<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>o<strong></strong>n<strong></strong> <strong></strong>y<strong></strong>o<strong></strong>u<strong></strong>r<strong></strong> <strong></strong>s<strong></strong>c<strong></strong>o<strong></strong>r<strong></strong>e<strong></strong> <strong></strong>i<strong></strong>n<strong></strong> <strong></strong>N<strong></strong>u<strong></strong>m<strong></strong>e<strong></strong>r<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>R<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong>,<strong></strong> <strong></strong>w<strong></strong>h<strong></strong>i<strong></strong>c<strong></strong>h<strong></strong> <strong></strong>i<strong></strong>n<strong></strong>d<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>t<strong></strong>e<strong></strong>s<strong></strong> <strong></strong>a<strong></strong>p<strong></strong>p<strong></strong>l<strong></strong>i<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>q<strong></strong>u<strong></strong>a<strong></strong>n<strong></strong>t<strong></strong>i<strong></strong>t<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>v<strong></strong>e<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>p<strong></strong>r<strong></strong>a<strong></strong>c<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>n<strong></strong>u<strong></strong>m<strong></strong>b<strong></strong>e<strong></strong>r<strong></strong> <strong></strong>h<strong></strong>a<strong></strong>n<strong></strong>d<strong></strong>l<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong>.<strong></strong></p>
+      </div>
+      
+  </div>
+
+  <div class="section-header">
+    <div class="section-dot" style="background:#f59e0b;"></div>
+    <span class="section-title">Development Opportunities</span>
+  </div>
+
+  <p class="plain-intro">The following areas scored below the strong threshold. With focused, consistent practice, these represent meaningful opportunities for cognitive growth.</p>
+
+  <div>
+    
+      <div style="margin-bottom:16px;background:#fffbeb;padding:16px;border-left:4px solid #f59e0b;border-radius:0 8px 8px 0;">
+        <h4 style="font-size:14px;font-weight:800;color:#92400e;margin-bottom:6px;"><strong></strong>A<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong>y<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>R<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong></h4>
+        <p style="font-size:12.5px;color:#78350f;line-height:1.6;"><strong></strong>A<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong>y<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>R<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong>:<strong></strong> <strong></strong>W<strong></strong>o<strong></strong>r<strong></strong>k<strong></strong> <strong></strong>o<strong></strong>n<strong></strong> <strong></strong>d<strong></strong>a<strong></strong>t<strong></strong>a<strong></strong> <strong></strong>i<strong></strong>n<strong></strong>t<strong></strong>e<strong></strong>r<strong></strong>p<strong></strong>r<strong></strong>e<strong></strong>t<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong>,<strong></strong> <strong></strong>a<strong></strong>r<strong></strong>r<strong></strong>a<strong></strong>n<strong></strong>g<strong></strong>e<strong></strong>m<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong> <strong></strong>p<strong></strong>u<strong></strong>z<strong></strong>z<strong></strong>l<strong></strong>e<strong></strong>s<strong></strong>,<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>c<strong></strong>o<strong></strong>n<strong></strong>d<strong></strong>i<strong></strong>t<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>l<strong></strong>o<strong></strong>g<strong></strong>i<strong></strong>c<strong></strong> <strong></strong>e<strong></strong>x<strong></strong>e<strong></strong>r<strong></strong>c<strong></strong>i<strong></strong>s<strong></strong>e<strong></strong>s<strong></strong>.<strong></strong></p>
+      </div>
+      
+      <div style="margin-bottom:16px;background:#fffbeb;padding:16px;border-left:4px solid #f59e0b;border-radius:0 8px 8px 0;">
+        <h4 style="font-size:14px;font-weight:800;color:#92400e;margin-bottom:6px;"><strong></strong>S<strong></strong>p<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>V<strong></strong>i<strong></strong>s<strong></strong>u<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>R<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong></h4>
+        <p style="font-size:12.5px;color:#78350f;line-height:1.6;"><strong></strong>S<strong></strong>p<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>V<strong></strong>i<strong></strong>s<strong></strong>u<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>R<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong>:<strong></strong> <strong></strong>P<strong></strong>r<strong></strong>a<strong></strong>c<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>e<strong></strong> <strong></strong>m<strong></strong>i<strong></strong>r<strong></strong>r<strong></strong>o<strong></strong>r<strong></strong> <strong></strong>i<strong></strong>m<strong></strong>a<strong></strong>g<strong></strong>e<strong></strong>s<strong></strong>,<strong></strong> <strong></strong>r<strong></strong>o<strong></strong>t<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong> <strong></strong>p<strong></strong>u<strong></strong>z<strong></strong>z<strong></strong>l<strong></strong>e<strong></strong>s<strong></strong>,<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>c<strong></strong>u<strong></strong>b<strong></strong>e<strong></strong>/<strong></strong>n<strong></strong>e<strong></strong>t<strong></strong>-<strong></strong>b<strong></strong>a<strong></strong>s<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>p<strong></strong>r<strong></strong>o<strong></strong>b<strong></strong>l<strong></strong>e<strong></strong>m<strong></strong>s<strong></strong>.<strong></strong></p>
+      </div>
+      
+  </div>
+</div>
+
+<!-- 📄 PAGE 6 — DOMAIN ANALYSIS -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-org">Omkar Career Counseling</span>
+    <span class="page-type">Aptitude Report — Page 6</span>
+  </div>
+
+  <div class="section-header">
+    <div class="section-dot" style="background:#0ea5e9;"></div>
+    <span class="section-title">Domain Analysis</span>
+    <span class="section-subtitle">Aptitude Applicability</span>
+  </div>
+
+  
+    <div style="display:flex;justify-content:center;margin-bottom:24px;"><img class="chart-img" style="max-height:220px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAFACAYAAABgCwK3AAAABmJLR0QA/wD/AP+gvaeTAAAgAElEQVR4nO3dfZhU5X3/8c/3PrM7wAqr8hQQ1iaKCJhaxdQi/BKtcYGQ5ArKgHmwaSSlu4KpD6nmwTYkaVNTtUF5WLRoYvJLoiyBxEQF8tOgEU0qWGtFUEmiu2rE1QALCwwz53x/fxgUjbCrnp2Zxffruva6mDP3ue/PznXED+ecmZEAAAAAAAAAAAAAAAAAAAAAAKgQ9kYb66c1fNgV9v582aLVkjR5xqxjPIkukymfBLtq9S2LWiVpUu6Cv03czwzy+1YuW3x9KYMDAABUqvD6DRNzDeeZ2ffNkmMkKZfLRXESVljQtxOFZSHWckk2Kdf4UZdP9Ux0eWL2vvrpDeeXPD0AAEAFek3Bmjhj9slyO81NC/dt25YceZIUWu+8telXq5cuvNflbR/KzTlBZtNlmv/zWxY8pyS+2tw+Xvr4AAAAlec1BWvVrQsfWrWsqVHu7fu2RcGGy9T6yiDTs0WPh7knw81f3r43ZJ6RbFjJUgMAAFSwTGcDErc95smrRSyxYObBZHuKwcLLkxQjKYr23699V36qu5YfaN7amuzQ7R35595GdgAAgIrUacEyDy0Kyatnp0zDI0UtRcWtFmu4pI0hhOFKvGX//fr1ya7QAW6i/6MhtTXZgz0PAADQI/3JTe6vt+pHCzeY1K9+WsOHJ+UaPyp57R3NCx41183B9Pn6GQ0nyO3Lbva9UgQGAACodG9YsILrV1Gw/973uJApnGOycZKNUxx/TJKvWtb0S8mvtST8vSV25+qlTTeXLDUAAADe0JByBwAAAOgOnV4iBAAAwJtDwQIAAEgZBQsAACBlFCwAAICUUbAAAABSRsECAABIGQULAAAgZRQsAACAlFGwAAAAUkbBAgAASBkFCwAAIGUULAAAgJRRsAAAAFJGwQIAAEgZBQsAACBlFCwAAICUUbAAAABSRsECAABIGQULAAAgZZmuDPrIR2b1iftUDatJXvhNc3NzvG/7WefOGZrkPX/XioUvdV9EAACAnsU6G1A/ffb7zZNFku51aXRGdu4dzYuen5hr/Kqk90mqkun/rVra9M03ufYQSb9/C5kBAAAqWqeXCM2TfwuJn7equekCyRYknlxWP7VhkKRpq5qbpowbM3iiu3/yzKmz+5cgLwAAQMXryj1YA9Sr6jeSJNdzidnJoUonSVovyefOnZsEC49UZXxUdwYFAADoKTq9B8ulnyR7C9dOmtZws0uNknopCTUekh2vjEl8hxRecwarfVd+qruWH2je2prs0O0deX9b6QEAACpQpwWrVi9+sd0HfEbShES6MUifk+kFc+v7yiBTP5m3779fvz7ZFTr4PV5Damuynd4DBgAA0NN0eolwu/r/Y+LJPSuXNf1LCH6Sm63ZU6h+VNKJuVwuOv30uRlJYzMZf7j74wIAAFS+TgtWcP0qhPD9ibnGZXJNyO4uLlrz43nb3LWkXQPWZAduuUeuxbf/oGlrKQIDAAAcEnK5XPUbvUswl7u49+m5Cw57i9MOeZuxAAAA8DoULAAAcEjiq3IAAABSRsECAABIGQULAAAgZRQsAACAlFGwAAAAUkbBAgAASBkFCwAAIGUULAAAgJRRsAAAAFJGwQIAAEgZBQsAACBlFCwAAICUUbAAAABSRsECAABIGQULAAAgZRQsAACAlFGwAAAAUkbBAgAASBkFCwAAIGWZzgaMnTWrasAfMhfL/ESX7lnd3HSDJE2eMesYT6LLZMonwa5afcui1u6PCwAAUPk6LVgDt0YXKviwpOAXKxMWT5p2wYt9re0n25OwIgqaFXuoDrEvl/SXkrz7IwMAAFS2Ti8RJqYjEvnDq1csfkGe/I8HH7QtOfIkKbTeeWvTr1YvXXivy9s+lJtzQikCAwAAVLpOz2Ap2A0W656JucbPSDoyVGXGuYp/HdyfeWWM6dnYk6Mk/e++Te278lPdtfxA09bWZIdu78hzxgsAABxyOi1YVky+6aarsnuSm/O9oyuSfPFySffJXh3jLpMnr5mrX5/sCmn/UX9iSG1N9mDPAwAA9EidXiI0s1P3Knzvpz+9YZe53STT/zEPLS4Nf2WMrC5jmae7NyoAAEDPEHU24D0nnDIykk47ZtTJrQrhEjOtX7Vs0fIRY97X+J7Rp7wwYsz7jpd01srmRd94k2v3lbTzLaUGAACoYJ2ewXrp8OQiM/3WQma2ebJ23OjBV0pSIVM4x2TjJBunOP6YeAchAABA2Q0pdwAAAIDuwCe5AwAApIyCBQAAkDIKFgAAQMooWAAAACmjYAEAAKSMggUAAJAyChYAAEDKKFgAAAApo2ABAACkjIIFAACQMgoWAABAyihYAAAAKaNgAQAApIyCBQAAkDIKFgAAQMooWAAAACmjYAEAAKSMggUAAJAyChYAAEDKMp0NmPzJC/sFL0b7Hkc788XbbrtphySdde6coUne83etWPhSd4YEAADoSTo9g5XsLd5ULOjnf/x5eG82+2NJmphr/GqI4yWZTHLLxOmNl3d/VAAAgJ7Bujpw7KxZVf23RvdaCLN9b/yMZewXq5qbTpg7d67dv+H5h+NidMabPJM1RNLv33xkAACAytble7AGbIv+0aQ7V9268KFQpZMkrZfkc+fOTYKFR6oyPqr7YgIAAPQcnd6DJUm5XK663fWpvOwvJUlJqPGQ7Nj3vCe+Qwr999+nfVd+qruWH2jO2prs0O0deX+LuQEAACpWlwrWdg38qCz5xZqlTTslSaYXzK3vKwNM/WTevv8+/fpkV+jglyCH1NZku3yJEgAAoKfoUsEK8rPkWrnv8Z5C9aPZqvyJuVwuamsbY9KWsZmMz+m+mAAAAD1Hl+7BcmlUCNGGfY/X/HjeNnctadeANdmBW+6Ra/HtP2ja2n0xAQAA3iFyuYt7n5674LC3uPuQVMMAAACAggUAAA5NfFUOAABAyihYAAAAKaNgAQAApIyCBQAAkDIKFgAAQMooWAAAACmjYAEAAKSMggUAAJAyChYAAEDKKFgAAAApo2ABAACkjIIFAACQMgoWAABAyihYAAAAKaNgAQAApIyCBQAAkDIKFgAAQMoy5Q5Qasf/TXv/YtXeGabkL02hT7nzoNQ8765HPIQfbl7S/5lypwEAHJqsjGsPkfT7Ui547PltnzTTAkmHl3JdVKQ9cv3zkzcNvKrcQQAAh54uFayJucZPuGtykB5rOzK+ev0NNxQmz5h1jCfRZTLlk2BXrb5lUeubXLukBevYmS+eZ/KbVd5SiQrjrrmbbxr41XLnAAAcWjotG/W5C2aYfEqIM1+KM4UvSuF3td72re3q/99RsFmxh+rgfs3K5kV/KcnfxNolK1jHNDw/KBSizZL6lmI99ChxFMcnbfrOu/633EG604jPvnSWK/5UcBvj0hHlzoOSil16waS15sn1T9w0+LflDgS8E3R6D1aQz/I4/lQmGxeqOopfKGRrem1LjjzJQmi989ZFv5KkibnGtg/l5pxwR/OCivyfVFSMznPKFd5YVAzh7yXNKXeQ7vDn5z1fs7s6fFeenG2yN/UvIBw6TBohabxbuOi4mS9e+sSNAxaUOxNwqOv0XYQuG6oofGNvMfrPfDb76yRJBlkUhgX5qzcIm56NlRzVrUnfDrdTyx0BlcuCjSt3hu7htrsqukWys8udBBWj2uXzjz3/hZnlDgIc6rrwLkKvNdfNK5c1rZmYa5yikPyTEt28/8VFd5k8ec1c7bvyU921/ECz1tZkh27vyJfkH9QN8zu07sm4FEuhB3rX4XbyuhIdi6X084c69MXvlDsFKlHf3mFJywt7ltTWcEsq0F268jENLSGKnpOkONhvoyQZYB61uCXD9w0wWV1k0dP779SvT3aFDn6P15DammxJ/us+bmbb3ZLOKMVa6Hme3+qttTXZunLnSNuI819cKdPEcudA5dm5x/XBL+34+yeWDLyh3FmAQ1WnBcvNb4iT5Gv1Mxr+xRK/zDwsX/mjhRsm5Rr71U9r+HAwCy6vvaN5waOlCAygi8xPLncEVC6XTip3hlI49sIns77zyEGRFavKnQWlY8E9m9cLj3zvXR3lytBpwVq9dPFNk6ZdsE2xGjzorlXNi74rSYVM4ZxMoepzkgXFxY/pzb2DEED3qy13AFQu90P73aTH/t1LYyz2udrtUywkvZ0vLnlHcZd2VyseMbPt/kT+jd/cOGhlqTO8Iz5o9LiZbXc7lwhxYK1P3jjw0LtEOLMtL6m63DlQmVy6dfONA88td47uMOKzL54t9+9L6lXuLKgMbvaNzUsGfLmUa1LpAQCHjOPO33Ii5QqvZ+5fGvHZFz5TyjUpWACAQ4Yr/IsoV3gD5vaNsbO8ZPfiUbAAAIeEkee39eWdszgQl961PXlxfKnWo2ABAA4JcRTqJPFuQRxQSDSiZGuVaiEAALpTFCe9y50Blc3N+5RqLQoWAABAyihYAAAAKaNgAQAApIyCBQAAkDIKFgAAQMooWAAAACmjYAEAAKSMggUAAJAyChYAAEDKKFgAAAApo2ABAACkjIIFAACQMgoWAABAyihYAAAAKct0YYxN+UTj4fse9Cn02tPc/K3dknTWuXOGJnnP37Vi4UvdlhAAAKCH6fQMVv05s0YWC3qyWNDPiwX9vN32fFqSJuYavxrieEkmk9wycXrj5d0fFQAAoGfo/AyWhb+QtHBVc9NX9m2qn9owSNK0Vc1NJ8ydO9fu3/D8w2dOnb2EM1kAAABdKFgm+wtJx07MNf5U8v/pp97/usN2n+Su9ZJ87ty5Pmn6BY+EjI+SdF+3JwYAAKhwnRcs00vuetxjv11R+PIO7f5XebjPQ7Jj3xhPfIcU+u+/X/uu/FR3LT/QvLU12aHbO/L+9uJ3TcP8Dq17Mi7FUuiBBh9hw9eV6FgspXGXtKtQLHcKVKr6k6tmrL8uP6PcOdK0sSXWeVd3lDsGKtilZ/ee9/Hr8vNKsVanBWtlc9NV+/78wXMar7VgS01abm59Xxlk6ifz9v3369cnu0KSHWTqIbU12YM9n5rjZrbdLemMUqyFnmfLVm+trcnWlTtH2kbMbMtLqi53DlSm1Q8Vbl00+/Bzy50jTSPPbztFpgfLnQOV65rluy9qmNL32lKs1elN7hNzjXd+KDfnvZIUIv25mW3aU6h+VNKJuVwuOv30uRlJYzMZf7i7wwIAAPQEnRYsc/9mrPjm+umNPzTXpUUvfmnNj+dtc9eSdg1Ykx245R65Ft/+g6atpQgMAABQ6Tq/RLhs8ZpcLve+du9Xu6r5xj/s2756WdP8XO7iJW3KR2uWLdrZvTEBAAB6jq580Kiam5tjSX/40+0vf+AoAAAAXsVX5QAAAKSMggUAAJAyChYAAEDKKFgAAAApo2ABAACkjIIFAACQMgoWAABAyihYAAAAKaNgAQAApIyCBQAAkDIKFgAAQMooWAAAACmjYAEAAKSMggUAAJAyChYAAEDKKFgAAAApo2ABAACkjIIFAACQMgoWAABAyjJdHfjhXMNRBbcLVi1r+rIkTZ4x6xhPostkyifBrlp9y6LW7osJAADQc3T1DJbtVbhBprMkKZfLRXESVljQtxOFZSHWcknWfTEBAAB6ji4VrPrpF1wk6f59j7clR54khdY7b2361eqlC+91eduHcnNO6LaUAAAAPUinBWviObPHmPv7VUz+c9+2KNhwmV69JGh6tujxsG7KCAAA0KMc9B6syZMvzCahcG2k8CnPZDxRUZKUuO0xT14tZ4kFM39NWWvflZ/qruUHmru2Jjt0e0fe3178rmmY36F1T8alWAo90OAjbPi6Eh2LpTTuknYViuVOgUpVf3LVjPXX5WeUO0eaNrbEOu/qjnLHQAW79Oze8z5+XX5eKdY6aMHyw4p/JtnhsfxnUjEj6diJ0xv/U3GYp5C8esbKNDxS1LL/vv36ZFfo4PdlDamtyZbkvq3jZrbdLemMUqyFnmfLVm+trcnWlTtH2kbMbMtLqi53DlSm1Q8Vbl00+/Bzy50jTSPPbztFpgfLnQOV65rluy9qmNL32lKsddCCtbK56XFJp0jS5NyFAxMVb1+1tOnvJGlSrrFf/bSGDwez4PLaO5oXPFqCvAAAABWvy5+DFffK7pL8u/seFzKFc0w2TrJxiuOPSTrkLrEAAAC8FV3+HKzV37u6Q9KCfY/v+uGSLZK+3B2hAAAAejI+yR0AACBlFCwAAICUUbAAAABSRsECAABIGQULAAAgZRQsAACAlFGwAAAAUkbBAgAASBkFCwAAIGUULAAAgJRRsAAAAFJGwQIAAEgZBQsAACBlFCwAAICUUbAAAABSRsECAABIGQULAAAgZRQsAACAlFGwAAAAUtalgvXRj57ftz43592v337WuXOGnjl1dv/0YwEAAPRcnRasSdMaTt+b7XW3rPj5+lzjmimfaDxCkibmGr8a4nhJJpPcMnF64+XdHxUAAKBn6LRgJcHqTfGnVy9dPDvIHoiLmlI/tWGQpGmrmpumjBszeKK7f5IzWQAAAC/rtGCtXtr0pcP0h8cn5S6Y4PLxcj0YqnSSpPWSfO7cuUmw8EhVxkd1f1wAAIDKl+nKoD8UBx1eFcVny8wSt/7BrcZDsmPf8574Dim85gxW+678VHctP9CctTXZods78v7Wo3ddw/wOrXsyLsVS6IEGH2HD15XoWCylcZe0q1AsdwpUqvqTq2asvy4/o9w50rSxJdZ5V3eUOwYq2KVn95738evy80qxVpcK1l0rFr4k6ZL66bPfH5R8RbKvm1vfVwaY+sm8ff99+vXJrpBkB5l2SG1N9mDPp+a4mW13SzqjFGuh59my1Vtra7J15c6RthEz2/KSqsudA5Vp9UOFWxfNPvzccudI08jz206R6cFy50Dlumb57osapvS9thRrdXqJcGKu8e6J58weI0nB4/7u/tKeQvWjkk7M5XLR6afPzUgam8n4w90dFgAAoCfo/GMaXF9RSG6eOK3hBy67PHa7Ys2P521z15J2DViTHbjlHrkW3/6Dpq0lyAsAAFDxOr1EuGpZ0y9zudypO+1dR97ZPL9t3/bVy5rm53IXL2lTPlqzbNHO7o0JAADQc3TpHqzm5uZYUtufbv/W7tQTAQAA9HB8VQ4AAEDKKFgAAAApo2ABAACkjIIFAACQMgoWAABAyihYAAAAKaNgAQAApIyCBQAAkDIKFgAAQMooWAAAACmjYAEAAKSMggUAAJAyChYAAEDKKFgAAAApo2ABAACkjIIFAACQMgoWAABAyihYAAAAKaNgAQAApCzT2YCPfGRWn0I2usTlo81sXdsR8fz1N9xQmDxj1jGeRJfJlE+CXbX6lkWtpQgMAABQ6To9g1XoHV0pKQ5W9Q+J29H9t2Yuy+VyUZyEFRb07URhWYi1XJJ1f1wAAIDK12nBShK/P+ldc92dzfPbguw2k4/elhx5khRa77y16Verly681+VtH8rNOaEUgQEAACpdp5cIVy9bfIsk1Z/3+Rrf0/EVs+RKi8Kw4P7MK4NMz8aeHCXpf7svKgAAQM/QacGSpMmfvLBfsmfnT6Xwo5VLr7+jflrj5P0vCLrL5Mlr5mrflZ/qruUHmrO2Jjt0e0fe32rwN6NhfofWPRmXYin0QIOPsOHrSnQsltK4S9pVKJY7BSpV/clVM9Zfl59R7hxp2tgS67yrO8odAxXs0rN7z/v4dfl5pVir04J15tTZ/ZO9xdvMrGnl0kX/V5LMQ4tbMnzfGJPVRRY9vf9+/fpkV+jg92UNqa3JluS+reNmtt0t6YxSrIWeZ8tWb62tydaVO0faRsxsy0uqLncOVKbVDxVuXTT78HPLnSNNI89vO0WmB8udA5XrmuW7L2qY0vfaUqzVacGqysSLZeF3Sjw/aVpjzqXnVy1b+MtJucZ+9dMaPhzMgstr72he8GgpAgMAAFS6TguWS48r8YyksZLkwZ+Q9MtCpnBOplD1OcmC4uLHXh4KAACATgvWqubFV7zR9rt+uGSLpC+nnggAAKCH45PcAQAAUkbBAgAASBkFCwAAIGUULAAAgJRRsAAAAFJGwQIAAEgZBQsAACBlFCwAAICUUbAAAABSRsECAABIGQULAAAgZRQsAACAlFGwAAAAUkbBAgAASBkFCwAAIGUULAAAgJRRsAAAAFJGwQIAAEgZBQsAACBlXS5Yp+cuOGxy7sKB+28769w5Q8+cOrt/+rEAAAB6ri4VrMmTL8xWS7fGKkzbt21irvGrIY6XZDLJLROnN17efREBAAB6lk4L1odzDUclhxXuN/krZ6rqpzYMkjRtVXPTlHFjBk90909yJgsAAOBlnRas3ZliMYqjs13+41d2qtJJktZL8rlz5ybBwiNVGR/VnUEBAAB6ikxnA+764ZItklSfa3h1YxJqPCQ79j30xHdI4TVnsNp35ae6a/mB5q2tyQ7d3pH3txL6zWqY36F1T8alWAo90OAjbPi6Eh2LpTTuknYViuVOgUpVf3LVjPXX5WeUO0eaNrbEOu/qjnLHQAW79Oze8z5+XX5eKdbqtGC9IdML5tZ3v8f9ZN6+/5B+fbIrJNlBZhlSW5M92POpOW5m292SzijFWuh5tmz11tqabF25c6RtxMy2vKTqcudAZVr9UOHWRbMPP7fcOdI08vy2U2R6sNw5ULmuWb77ooYpfa8txVpvqWDtKVQ/mq3Kn5jL5aK2tjEmbRmbyfictMMBAAD0RG/pc7DW/HjeNnctadeANdmBW+6Ra/HtP2jamnY4AACAnqjLZ7BWNy++8jWPlzXNz+UuXtKmfLRm2aKd6UcDAADomd7aPVh/1Nz8rd1pBQEAADhU8FU5AAAAKaNgAQAApIyCBQAAkDIKFgAAQMooWAAAACmjYAEAAKSMggUAAJAyChYAAEDKKFgAAAApo2ABAACkjIIFAACQMgoWAABAyihYAAAAKaNgAQAApIyCBQAAkDIKFgAAQMreEQXLTXG5M6CS2aF5fHDc4yBMh97xEZsfcr8T0mUWiqVa6x1RsMz1fLkzoHKZ67lyZ+gWHPc4CHf9vtwZ0lYVGcc8DspVuuP+HVGw3PzucmdA5XLTIXl8uHRXuTOgcgX5IXd8bLxh4O8lPVbuHKhYRQt77y3VYm+nYFn99Asurp/W+L1J0xpzqSXqBru352+R1FLuHKhIOwtxsrDcIbqDmf2HpJKdDkeP8vATdQNXlTtEdzDZv5c7AyrWjU/cMPTFUi32lgtW/bTGOeY+otr8C2769MTpjR9MM1ianmkevts9nCupo9xZUFGKbv6Zp74z6JC8rPDkkgEb3exzkrzcWVBR/iCzT2iuJeUO0h2euLH/d938u+XOgYrzcHD9YykXfMsFy0zTkyT51s+aFz9r5vOV2MfTDJa2zTf1f0DBJ5i0vtxZUBGeNNmkzUsGLSt3kO60ecmAJnmSk/RMubOgIqxJ5Kc+uWTAxnIH6T7mm4cN/Iy5f1n8oxpSIrdv+57wgcdvGrijlAtn3sa+ww8PfZ6RJI+jZxSSo1LK1G2e/M9BD0v+vuP+7qVTPE7+ShYGm5K38xqgB0mkxKQtbvY/m7cP+KWaD9F3D77OkzcN/tGYnP80f/gLZygJo4N8cLkzoXTcba8H+32keO3jSwY/Uu48JTHXkiekb/zZ325dlMkUPiiFY4Mnh5c7Fkonke0y95bEo7t+8+3+reXI8HbKxZ49ezpMkkxJ5FK0/5Ptu/JT3bX8QDvX1mRPevw3T5fh3VvcigVJapGufLrcIUqI4x6SvvhOOuYlqb3cAVAJrijPcf92ClZroVc0XNLjipJhSqLX/A3er092hSQ72AQjjzn6oM8DAAD0RG/5Hix3/07iuqJ+RsMJ8nCpW/L9NIMBAAD0VG/rDNKk6Y2fcrdTTf7zlc1Nt6UVCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADKiu8C7CHqRp12mWSnSJJcz5tp5dMb197xZuY4evT4TypJfvf0pgfu75aQQBkcPWrCIpcPkJS4qU3S0tbH1v7yYPsMHzn+lNbH164rTULgtereO+EIFf3612+vLhQ/u3nzr7v8DdVHjx4/2ROLWjbd97M08x098v3vVhSf8/Rja69Oc953mrfzZc8oJbfxkt0uab0rHiCFhX923LjfPvXEA5u6OkWcJI8kmapt3ZgSKLlEPiVy+3TsvlORHxXcFhx9/IRvPr3pvh+80fhjjz21XyHoRkknljgqIEmyovVK5Kea29n7b988rPcube76PLFHm11J6idKvDrZZoWEf4i/TRSsHiRITzy16b71klQ3avw6r7KhQ487/cVMpnBhy2NrvyJJdaPH/1tmz54rk0z1EI/s39xCb0v8Z09vWrsgCuHPo2Lhd8PGjBsSJdH7pGS8ywa46eutj6395buO/T8Dq6v8XyU/Wq41LZuG/vvYsb8NbbuyV8ntvZKeTKLkS4N77d3x+m3PbHjgD+V8bfAO1yvzcOvDa7ZJWvfuMROeihP/vqQfvHvk+JHFSP9srkEmf2JP1WGXFQq7PufS0XXHT/hCsjO+NjosXOGmU0y+S+Zfe/qxB/673L8ODn1B2vP0H/8+f8Umqe748Z82UyaRzjFpRzGKPv/co/e21o2a8EGZPq/EX3TzjVHsP3KL3+1u0bAx4xKL7aMyjTHpaDfNb33s/p+MHDm+7+6gr0kaI9O6sKvqa089tWZP3ZgJExT7P8o8yHxey2MP3FU3+rRPudtAM5vosf+rhXCqpPvrRp12pVy7zXSGK9zZsvG+b44dO7aqbVf265JOcdcdZvaulo1rLyvH61jJQrkDoOti86/UjRq/tO748XdJOuLpDUfd06uq2EeuM14ZlOhMOyybTUL0dTdfkLTHUyU7ue69E45w9/cmZnVREh3l5nOKXrwwSP9sruskqbrKvy3XbS0b104y08C60c999sWO7Eel0Kdl09qzPOhhSzLvf6Nt5XpNgNf73Yb7HvboC74AAAXOSURBVJF0jKRQjPTPkWt+y8a19YnUK1vYdXZVoXCdyZ9u2XTflXZY9DEPKrZsHPqhOITr3e1r5c6PdwaXDa4bfdr1+36OHjXhCkky04mSfbBf2PYxk9Zlisnn3/OesbWSLwiW+du4WPyCyS5MqqIBLh9h0khJR5rZZXGUmeuR/t7cFkrS7mDXyG1jy8a19XLflvQpfPHdJ5w6WIkWRZniLGXC3ygJ/zbsuHFHycN7zXV6sOQLirU7cZ32clK7SMHv2xWqPyz5ee8eOX5k2+5sozz0btl4/1lmlrirvmwvZAWjYPUg5vZDuX1TIfmGS9V1o5/77IEH6zZ5WBL1ja5JLPlOy//et/V1c/3i2U3/9dJTG9f+WlJ/KRdJ/gGF5CN1o09b7K5jJJ0VReFBk3+gbtT45cFVyBYOu/ONtnXzrw502bBh43pJ2ispiYtV/5CYTqwbNX6RKYwz99r9x7ZuGrLU5Q/VjX7u68F1kWSHlyc13mlcvl1JuOGVn6j4o33PJUp+smHDhr0e7AEzDYp7Z8e6dN9TG9Y8/+zmXz8jadUbTPjr5x69t7X10ft/IymRZC6fqODj6kafdr0pnCTXWUlcdZrk1XESfU1xcqVMvUMmjJckC/aTpzbc/3AIIdlv5q0tjz1wV9uGNTtN/kicsYHu9gEL8Xckee9EN3brC9WDcYmwB3nNJcLR4/ub29T83sLtoSpTtW+MmWolyRO/q6qw57a4uvcUC3b90WNOm+37/Sfj8vy+P7rkUnMije/woH+3vcE9SvqYzKuKvrVYbX/lsZ8g1+y9VTtO7V30S1+/TdKs0r0SwIFFfe2v3bRekmWiwholdp1nkqsV+4uyEO0/dvioZ+eabFhwXe8WN7uiBWWKjXeYN7xEuO85t72SZHGcyCIliYom9d33vEt9/+TGK1N+v0fJy5tUSOLwreC+U9XFrMVVvd39KJn+R8XwTUkKkQ/aW6zanImKYxP3jjeI88q87pa4u5lUjJNMP0natV8uvBYFqwdJgk6vGz1hoCs5zBP9g0vfrCr2fjGpKtTVjR53phSOdddQSVLQgmJ175WxtCaT6KkkWMHkB5veJa1UbJ9OQtwcFL4u+d27I3veisnHYw+XR6YHTMlxuyOb/Pptpfj9gQOJ9+z92PDjJ+Rfvv/E/86S5LwxY8ZU7Ug0OInih0Mh8y6F5Fy5bty8ua6jbtRz/euOnzBW8j9z900FD3+IZFdI3rvcvwveGVzqWzd6Qm7/bXv32po/dqPXaB1cfX/dlsI1w0ef9pngFrl0lop2jaI/GfpapqVR8AY3X5jE4RKz5IVMfs+VcbbX1XGVjjP3jsT13YyKZ77J+Esii786bMyEK0OS/E3ifCDBG+ESYc+xXJ70kidjlegIi2xO66b7fvjUU2v2mPs08zDFpJ1yzWmPq3dZxmaaaVAkzVbQda2Prf2lmd2TCWGjmz8ht7v3TWxuTZLUN2ybFWRbLIRZki1veez++S2PrV3qph8F889JblWF2kveaFv5Xha805lbk5mOlyWj3dSeMTvj6U0P3L9hw4a9Lj/HPJxn5n9llkxXlGyWmmMzXW6mv4qi4ufNrCay5HyF6Eq5msXH16Cb9UqSnZJ/V56M3f8nG9lh7nZ3Yv6EJAWzZxPXbVoz0Itx1WS5eiXynTL9ImTiDkt8XRL8vxKr+r2ZfvLKAm6LJanlsbVXJJY86FKDzB5sGVT1T7/97frtUbCzokQTgmuqKZzT8sR9vzXzNZ6EjZIUx8UtJlux/1wv/9F/FiVxa8vgql+Y7AuW+KjE/WYL2lnK16+n4C8SAAAq2HveM7a2mO31a1P4hMuPlHxxdaHfmM2b78x3vnf6ho8af7FM78nEWhCbXWDynU9vWvvlcmSpZJ2dYAQAAGW0devv830HHf1gkH/CXMM845c+tekXbeXKM+LoQes7ClV1SdAUM21oGVz1H3rqqT+9tgkAAAAAAAAAAAAA7xz/H28gH3UeQYKQAAAAAElFTkSuQmCC" /></div>
+    
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      
+      <div class="domain-card fit-good">
+        <div style="flex:1;">
+          <div class="domain-name" style="font-size:14px;">#1 Business & Management</div>
+          <div class="domain-expl" style="font-size:11.5px;margin-top:4px;"><strong></strong>B<strong></strong>u<strong></strong>s<strong></strong>i<strong></strong>n<strong></strong>e<strong></strong>s<strong></strong>s<strong></strong> <strong></strong>&<strong></strong>a<strong></strong>m<strong></strong>p<strong></strong>;<strong></strong> <strong></strong>M<strong></strong>a<strong></strong>n<strong></strong>a<strong></strong>g<strong></strong>e<strong></strong>m<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong> <strong></strong>s<strong></strong>h<strong></strong>o<strong></strong>w<strong></strong>s<strong></strong> <strong></strong>p<strong></strong>a<strong></strong>r<strong></strong>t<strong></strong>i<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>a<strong></strong>l<strong></strong>i<strong></strong>g<strong></strong>n<strong></strong>m<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong> <strong></strong>s<strong></strong>u<strong></strong>p<strong></strong>p<strong></strong>o<strong></strong>r<strong></strong>t<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>b<strong></strong>y<strong></strong> <strong></strong>l<strong></strong>o<strong></strong>g<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong>,<strong></strong> <strong></strong>b<strong></strong>u<strong></strong>t<strong></strong> <strong></strong>k<strong></strong>e<strong></strong>y<strong></strong> <strong></strong>s<strong></strong>k<strong></strong>i<strong></strong>l<strong></strong>l<strong></strong>s<strong></strong> <strong></strong>l<strong></strong>i<strong></strong>k<strong></strong>e<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong>y<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>m<strong></strong>a<strong></strong>y<strong></strong> <strong></strong>l<strong></strong>i<strong></strong>m<strong></strong>i<strong></strong>t<strong></strong> <strong></strong>p<strong></strong>e<strong></strong>r<strong></strong>f<strong></strong>o<strong></strong>r<strong></strong>m<strong></strong>a<strong></strong>n<strong></strong>c<strong></strong>e<strong></strong>.<strong></strong></div>
+          
+          <div style="margin-top: 10px; padding-left: 8px; border-left: 2px solid #ef4444;">
+            <div style="font-size:10px;font-weight:bold;color:#b91c1c;margin-bottom:3px;text-transform:uppercase;">Identified Risks & Gaps</div>
+            <div style="font-size:11px;color:#7f1d1d;"><strong></strong>a<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong>y<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>(<strong></strong>m<strong></strong>i<strong></strong>n<strong></strong>o<strong></strong>r<strong></strong>)<strong></strong></div>
+          </div>
+
+          <div style="margin-top: 8px; padding-left: 8px; border-left: 2px solid #3b82f6;">
+            <div style="font-size:10px;font-weight:bold;color:#1d4ed8;margin-bottom:3px;text-transform:uppercase;">Recommended Action</div>
+            <div style="font-size:11px;color:#1e3a8a;"><strong></strong>a<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong>y<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong>:<strong></strong> <strong></strong>M<strong></strong>i<strong></strong>n<strong></strong>o<strong></strong>r<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>f<strong></strong>i<strong></strong>n<strong></strong>e<strong></strong>m<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong> <strong></strong>n<strong></strong>e<strong></strong>e<strong></strong>d<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>(<strong></strong>i<strong></strong>m<strong></strong>p<strong></strong>r<strong></strong>o<strong></strong>v<strong></strong>e<strong></strong> <strong></strong>s<strong></strong>p<strong></strong>e<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>c<strong></strong>o<strong></strong>n<strong></strong>s<strong></strong>i<strong></strong>s<strong></strong>t<strong></strong>e<strong></strong>n<strong></strong>c<strong></strong>y<strong></strong>)<strong></strong></div>
+          </div>
+
+          <div style="margin-top: 12px; padding: 12px; border-radius: 6px; background: rgba(0,0,0,0.02); border: 1px solid #e2e8f0;">
+            <div style="font-size:11px;font-weight:bold;color:#334155;margin-bottom:6px;">Related Career Paths</div>
+            <ul style="font-size:11px;color:#475569;margin:0;padding-left:16px;">
+              <li style="margin-bottom:3px;">Marketing & Sales</li><li style="margin-bottom:3px;">Financial Operations</li><li style="margin-bottom:3px;">Core Operations</li><li style="margin-bottom:3px;">Entrepreneurship & Consulting</li>
+            </ul>
+          </div>
+
+          <div style="margin-top:12px;"><span class="pill fit-good" style="font-size:10px;">CONDITIONAL FIT</span></div>
+        </div>
+        <div class="domain-score" style="font-size:28px;">62</div>
+      </div>
+      <div class="domain-card fit-good">
+        <div style="flex:1;">
+          <div class="domain-name" style="font-size:14px;">#2 Data Science & Analytics</div>
+          <div class="domain-expl" style="font-size:11.5px;margin-top:4px;"><strong></strong>D<strong></strong>a<strong></strong>t<strong></strong>a<strong></strong> <strong></strong>S<strong></strong>c<strong></strong>i<strong></strong>e<strong></strong>n<strong></strong>c<strong></strong>e<strong></strong> <strong></strong>&<strong></strong>a<strong></strong>m<strong></strong>p<strong></strong>;<strong></strong> <strong></strong>A<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong>y<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>s<strong></strong> <strong></strong>s<strong></strong>h<strong></strong>o<strong></strong>w<strong></strong>s<strong></strong> <strong></strong>p<strong></strong>a<strong></strong>r<strong></strong>t<strong></strong>i<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>a<strong></strong>l<strong></strong>i<strong></strong>g<strong></strong>n<strong></strong>m<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong> <strong></strong>s<strong></strong>u<strong></strong>p<strong></strong>p<strong></strong>o<strong></strong>r<strong></strong>t<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>b<strong></strong>y<strong></strong> <strong></strong>n<strong></strong>u<strong></strong>m<strong></strong>e<strong></strong>r<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>l<strong></strong>o<strong></strong>g<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong>,<strong></strong> <strong></strong>b<strong></strong>u<strong></strong>t<strong></strong> <strong></strong>k<strong></strong>e<strong></strong>y<strong></strong> <strong></strong>s<strong></strong>k<strong></strong>i<strong></strong>l<strong></strong>l<strong></strong>s<strong></strong> <strong></strong>l<strong></strong>i<strong></strong>k<strong></strong>e<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong>y<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>m<strong></strong>a<strong></strong>y<strong></strong> <strong></strong>l<strong></strong>i<strong></strong>m<strong></strong>i<strong></strong>t<strong></strong> <strong></strong>p<strong></strong>e<strong></strong>r<strong></strong>f<strong></strong>o<strong></strong>r<strong></strong>m<strong></strong>a<strong></strong>n<strong></strong>c<strong></strong>e<strong></strong>.<strong></strong></div>
+          
+          <div style="margin-top: 10px; padding-left: 8px; border-left: 2px solid #ef4444;">
+            <div style="font-size:10px;font-weight:bold;color:#b91c1c;margin-bottom:3px;text-transform:uppercase;">Identified Risks & Gaps</div>
+            <div style="font-size:11px;color:#7f1d1d;"><strong></strong>a<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong>y<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>(<strong></strong>m<strong></strong>o<strong></strong>d<strong></strong>e<strong></strong>r<strong></strong>a<strong></strong>t<strong></strong>e<strong></strong>)<strong></strong></div>
+          </div>
+
+          <div style="margin-top: 8px; padding-left: 8px; border-left: 2px solid #3b82f6;">
+            <div style="font-size:10px;font-weight:bold;color:#1d4ed8;margin-bottom:3px;text-transform:uppercase;">Recommended Action</div>
+            <div style="font-size:11px;color:#1e3a8a;"><strong></strong>a<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong>y<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong>:<strong></strong> <strong></strong>F<strong></strong>o<strong></strong>c<strong></strong>u<strong></strong>s<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>p<strong></strong>r<strong></strong>a<strong></strong>c<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>e<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>c<strong></strong>o<strong></strong>m<strong></strong>m<strong></strong>e<strong></strong>n<strong></strong>d<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>(<strong></strong>i<strong></strong>n<strong></strong>t<strong></strong>r<strong></strong>o<strong></strong>d<strong></strong>u<strong></strong>c<strong></strong>e<strong></strong> <strong></strong>m<strong></strong>u<strong></strong>l<strong></strong>t<strong></strong>i<strong></strong>-<strong></strong>s<strong></strong>t<strong></strong>e<strong></strong>p<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>e<strong></strong>x<strong></strong>e<strong></strong>r<strong></strong>c<strong></strong>i<strong></strong>s<strong></strong>e<strong></strong>s<strong></strong>)<strong></strong></div>
+          </div>
+
+          <div style="margin-top: 12px; padding: 12px; border-radius: 6px; background: rgba(0,0,0,0.02); border: 1px solid #e2e8f0;">
+            <div style="font-size:11px;font-weight:bold;color:#334155;margin-bottom:6px;">Related Career Paths</div>
+            <ul style="font-size:11px;color:#475569;margin:0;padding-left:16px;">
+              <li style="margin-bottom:3px;">Data Analyst</li><li style="margin-bottom:3px;">Business Analyst</li><li style="margin-bottom:3px;">AI Engineer</li><li style="margin-bottom:3px;">Finance Analyst</li>
+            </ul>
+          </div>
+
+          <div style="margin-top:12px;"><span class="pill fit-good" style="font-size:10px;">CONDITIONAL FIT</span></div>
+        </div>
+        <div class="domain-score" style="font-size:28px;">61</div>
+      </div>
+      <div class="domain-card fit-low">
+        <div style="flex:1;">
+          <div class="domain-name" style="font-size:14px;">#3 Engineering & Technology</div>
+          <div class="domain-expl" style="font-size:11.5px;margin-top:4px;"><strong></strong>E<strong></strong>n<strong></strong>g<strong></strong>i<strong></strong>n<strong></strong>e<strong></strong>e<strong></strong>r<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>&<strong></strong>a<strong></strong>m<strong></strong>p<strong></strong>;<strong></strong> <strong></strong>T<strong></strong>e<strong></strong>c<strong></strong>h<strong></strong>n<strong></strong>o<strong></strong>l<strong></strong>o<strong></strong>g<strong></strong>y<strong></strong> <strong></strong>c<strong></strong>u<strong></strong>r<strong></strong>r<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong>l<strong></strong>y<strong></strong> <strong></strong>s<strong></strong>h<strong></strong>o<strong></strong>w<strong></strong>s<strong></strong> <strong></strong>l<strong></strong>o<strong></strong>w<strong></strong> <strong></strong>a<strong></strong>l<strong></strong>i<strong></strong>g<strong></strong>n<strong></strong>m<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong> <strong></strong>d<strong></strong>u<strong></strong>e<strong></strong> <strong></strong>t<strong></strong>o<strong></strong> <strong></strong>i<strong></strong>n<strong></strong>s<strong></strong>u<strong></strong>f<strong></strong>f<strong></strong>i<strong></strong>c<strong></strong>i<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong>y<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>c<strong></strong>a<strong></strong>p<strong></strong>a<strong></strong>b<strong></strong>i<strong></strong>l<strong></strong>i<strong></strong>t<strong></strong>y<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>q<strong></strong>u<strong></strong>i<strong></strong>r<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>f<strong></strong>o<strong></strong>r<strong></strong> <strong></strong>c<strong></strong>o<strong></strong>r<strong></strong>e<strong></strong> <strong></strong>t<strong></strong>a<strong></strong>s<strong></strong>k<strong></strong> <strong></strong>e<strong></strong>x<strong></strong>e<strong></strong>c<strong></strong>u<strong></strong>t<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong>.<strong></strong></div>
+          
+          <div style="margin-top: 10px; padding-left: 8px; border-left: 2px solid #ef4444;">
+            <div style="font-size:10px;font-weight:bold;color:#b91c1c;margin-bottom:3px;text-transform:uppercase;">Identified Risks & Gaps</div>
+            <div style="font-size:11px;color:#7f1d1d;"><strong></strong>l<strong></strong>o<strong></strong>g<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>(<strong></strong>m<strong></strong>i<strong></strong>n<strong></strong>o<strong></strong>r<strong></strong>)<strong></strong>,<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong>y<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>(<strong></strong>m<strong></strong>o<strong></strong>d<strong></strong>e<strong></strong>r<strong></strong>a<strong></strong>t<strong></strong>e<strong></strong>)<strong></strong></div>
+          </div>
+
+          <div style="margin-top: 8px; padding-left: 8px; border-left: 2px solid #3b82f6;">
+            <div style="font-size:10px;font-weight:bold;color:#1d4ed8;margin-bottom:3px;text-transform:uppercase;">Recommended Action</div>
+            <div style="font-size:11px;color:#1e3a8a;"><strong></strong>l<strong></strong>o<strong></strong>g<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong>:<strong></strong> <strong></strong>M<strong></strong>i<strong></strong>n<strong></strong>o<strong></strong>r<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>f<strong></strong>i<strong></strong>n<strong></strong>e<strong></strong>m<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong> <strong></strong>n<strong></strong>e<strong></strong>e<strong></strong>d<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>(<strong></strong>i<strong></strong>m<strong></strong>p<strong></strong>r<strong></strong>o<strong></strong>v<strong></strong>e<strong></strong> <strong></strong>s<strong></strong>p<strong></strong>e<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>c<strong></strong>o<strong></strong>n<strong></strong>s<strong></strong>i<strong></strong>s<strong></strong>t<strong></strong>e<strong></strong>n<strong></strong>c<strong></strong>y<strong></strong>)<strong></strong>;<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong>y<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong>:<strong></strong> <strong></strong>F<strong></strong>o<strong></strong>c<strong></strong>u<strong></strong>s<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>p<strong></strong>r<strong></strong>a<strong></strong>c<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>e<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>c<strong></strong>o<strong></strong>m<strong></strong>m<strong></strong>e<strong></strong>n<strong></strong>d<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>(<strong></strong>i<strong></strong>n<strong></strong>t<strong></strong>r<strong></strong>o<strong></strong>d<strong></strong>u<strong></strong>c<strong></strong>e<strong></strong> <strong></strong>m<strong></strong>u<strong></strong>l<strong></strong>t<strong></strong>i<strong></strong>-<strong></strong>s<strong></strong>t<strong></strong>e<strong></strong>p<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>s<strong></strong>o<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>e<strong></strong>x<strong></strong>e<strong></strong>r<strong></strong>c<strong></strong>i<strong></strong>s<strong></strong>e<strong></strong>s<strong></strong>)<strong></strong></div>
+          </div>
+
+          <div style="margin-top: 12px; padding: 12px; border-radius: 6px; background: rgba(0,0,0,0.02); border: 1px solid #e2e8f0;">
+            <div style="font-size:11px;font-weight:bold;color:#334155;margin-bottom:6px;">Related Career Paths</div>
+            <ul style="font-size:11px;color:#475569;margin:0;padding-left:16px;">
+              <li style="margin-bottom:3px;">Software Engineer</li><li style="margin-bottom:3px;">Mechanical Engineer</li><li style="margin-bottom:3px;">Electronics & Systems</li><li style="margin-bottom:3px;">Robotics</li>
+            </ul>
+          </div>
+
+          <div style="margin-top:12px;"><span class="pill fit-low" style="font-size:10px;">EXPLORATORY STAGE</span></div>
+        </div>
+        <div class="domain-score" style="font-size:28px;">59</div>
+      </div>
+    </div>
+  
+</div>
+
+<!-- 📄 PAGE 7 — GAP-READY INTERPRETATION -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-org">Omkar Career Counseling</span>
+    <span class="page-type">Aptitude Report — Page 7</span>
+  </div>
+
+  <div class="section-header">
+    <div class="section-dot" style="background:#f59e0b;"></div>
+    <span class="section-title">Meta-Behavioral Insight</span>
+    <span class="section-subtitle">Real-World Application Context</span>
+  </div>
+
+  <div style="background:#fffbeb;border:1px solid #fcd34d;border-radius:12px;padding:24px;margin-top:20px;">
+    <h3 style="font-size:14px;font-weight:800;color:#92400e;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.05em;">Current vs. Expected Level</h3>
+    <p style="font-size:13.5px;color:#78350f;line-height:1.8;">
+      Performs well in structured, data-driven environments requiring accuracy and consistency.
+    </p>
+  </div>
+</div>
+
+<!-- 📄 PAGE 8 — DEVELOPMENT PLAN -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-org">Omkar Career Counseling</span>
+    <span class="page-type">Aptitude Report — Page 8</span>
+  </div>
+
+  <div class="section-header">
+    <div class="section-dot" style="background:#3b82f6;"></div>
+    <span class="section-title">Development Plan</span>
+    <span class="section-subtitle">Cognitive Growth Roadmap</span>
+  </div>
+
+  <div style="margin-top:20px;">
+    <div class="phase-block">
+      <div class="phase-heading">Short-Term (0–3 Months)</div>
+      <div class="phase-content"><strong></strong>•<strong></strong> <strong></strong>P<strong></strong>r<strong></strong>a<strong></strong>c<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>e<strong></strong> <strong></strong>a<strong></strong>r<strong></strong>r<strong></strong>a<strong></strong>n<strong></strong>g<strong></strong>e<strong></strong>m<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>s<strong></strong>e<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>p<strong></strong>u<strong></strong>z<strong></strong>z<strong></strong>l<strong></strong>e<strong></strong>s<strong></strong>,<strong></strong> <strong></strong>b<strong></strong>l<strong></strong>o<strong></strong>o<strong></strong>d<strong></strong>-<strong></strong>r<strong></strong>e<strong></strong>l<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong>,<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>d<strong></strong>i<strong></strong>r<strong></strong>e<strong></strong>c<strong></strong>t<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong>-<strong></strong>s<strong></strong>e<strong></strong>n<strong></strong>s<strong></strong>e<strong></strong> <strong></strong>p<strong></strong>r<strong></strong>o<strong></strong>b<strong></strong>l<strong></strong>e<strong></strong>m<strong></strong>s<strong></strong>.<strong></strong>
+<strong></strong>•<strong></strong> <strong></strong>S<strong></strong>t<strong></strong>a<strong></strong>r<strong></strong>t<strong></strong> <strong></strong>w<strong></strong>i<strong></strong>t<strong></strong>h<strong></strong> <strong></strong>g<strong></strong>u<strong></strong>i<strong></strong>d<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>s<strong></strong>o<strong></strong>l<strong></strong>u<strong></strong>t<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong>s<strong></strong> <strong></strong>—<strong></strong> <strong></strong>u<strong></strong>n<strong></strong>d<strong></strong>e<strong></strong>r<strong></strong>s<strong></strong>t<strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>t<strong></strong>h<strong></strong>e<strong></strong> <strong></strong>m<strong></strong>e<strong></strong>t<strong></strong>h<strong></strong>o<strong></strong>d<strong></strong> <strong></strong>b<strong></strong>e<strong></strong>f<strong></strong>o<strong></strong>r<strong></strong>e<strong></strong> <strong></strong>a<strong></strong>t<strong></strong>t<strong></strong>e<strong></strong>m<strong></strong>p<strong></strong>t<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>i<strong></strong>n<strong></strong>d<strong></strong>e<strong></strong>p<strong></strong>e<strong></strong>n<strong></strong>d<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong>l<strong></strong>y<strong></strong>.<strong></strong></div>
+    </div>
+
+    <div class="phase-block mid">
+      <div class="phase-heading">Mid-Term (3–6 Months)</div>
+      <div class="phase-content"><strong></strong>•<strong></strong> <strong></strong>A<strong></strong>t<strong></strong>t<strong></strong>e<strong></strong>m<strong></strong>p<strong></strong>t<strong></strong> <strong></strong>d<strong></strong>a<strong></strong>t<strong></strong>a<strong></strong> <strong></strong>i<strong></strong>n<strong></strong>t<strong></strong>e<strong></strong>r<strong></strong>p<strong></strong>r<strong></strong>e<strong></strong>t<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong> <strong></strong>s<strong></strong>e<strong></strong>t<strong></strong>s<strong></strong> <strong></strong>(<strong></strong>b<strong></strong>a<strong></strong>r<strong></strong> <strong></strong>c<strong></strong>h<strong></strong>a<strong></strong>r<strong></strong>t<strong></strong>s<strong></strong>,<strong></strong> <strong></strong>l<strong></strong>i<strong></strong>n<strong></strong>e<strong></strong> <strong></strong>g<strong></strong>r<strong></strong>a<strong></strong>p<strong></strong>h<strong></strong>s<strong></strong>)<strong></strong> <strong></strong>u<strong></strong>n<strong></strong>d<strong></strong>e<strong></strong>r<strong></strong> <strong></strong>t<strong></strong>i<strong></strong>m<strong></strong>e<strong></strong> <strong></strong>p<strong></strong>r<strong></strong>e<strong></strong>s<strong></strong>s<strong></strong>u<strong></strong>r<strong></strong>e<strong></strong>.<strong></strong>
+<strong></strong>•<strong></strong> <strong></strong>W<strong></strong>o<strong></strong>r<strong></strong>k<strong></strong> <strong></strong>t<strong></strong>h<strong></strong>r<strong></strong>o<strong></strong>u<strong></strong>g<strong></strong>h<strong></strong> <strong></strong>c<strong></strong>o<strong></strong>n<strong></strong>d<strong></strong>i<strong></strong>t<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>l<strong></strong>o<strong></strong>g<strong></strong>i<strong></strong>c<strong></strong> <strong></strong>e<strong></strong>x<strong></strong>e<strong></strong>r<strong></strong>c<strong></strong>i<strong></strong>s<strong></strong>e<strong></strong>s<strong></strong>:<strong></strong> <strong></strong>i<strong></strong>f<strong></strong>-<strong></strong>t<strong></strong>h<strong></strong>e<strong></strong>n<strong></strong>,<strong></strong> <strong></strong>s<strong></strong>y<strong></strong>l<strong></strong>l<strong></strong>o<strong></strong>g<strong></strong>i<strong></strong>s<strong></strong>m<strong></strong> <strong></strong>p<strong></strong>r<strong></strong>o<strong></strong>b<strong></strong>l<strong></strong>e<strong></strong>m<strong></strong>s<strong></strong>.<strong></strong></div>
+    </div>
+
+    <div class="phase-block long">
+      <div class="phase-heading">Long-Term (6+ Months)</div>
+      <div class="phase-content"><strong></strong>•<strong></strong> <strong></strong>T<strong></strong>r<strong></strong>a<strong></strong>n<strong></strong>s<strong></strong>f<strong></strong>e<strong></strong>r<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>a<strong></strong>l<strong></strong>y<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>s<strong></strong>k<strong></strong>i<strong></strong>l<strong></strong>l<strong></strong>s<strong></strong> <strong></strong>i<strong></strong>n<strong></strong>t<strong></strong>o<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>l<strong></strong> <strong></strong>d<strong></strong>e<strong></strong>c<strong></strong>i<strong></strong>s<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong>s<strong></strong> <strong></strong>—<strong></strong> <strong></strong>c<strong></strong>o<strong></strong>m<strong></strong>p<strong></strong>a<strong></strong>r<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>o<strong></strong>p<strong></strong>t<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong>s<strong></strong> <strong></strong>s<strong></strong>y<strong></strong>s<strong></strong>t<strong></strong>e<strong></strong>m<strong></strong>a<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>a<strong></strong>l<strong></strong>l<strong></strong>y<strong></strong>.<strong></strong>
+<strong></strong>•<strong></strong> <strong></strong>S<strong></strong>t<strong></strong>r<strong></strong>u<strong></strong>c<strong></strong>t<strong></strong>u<strong></strong>r<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>r<strong></strong>e<strong></strong>a<strong></strong>d<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>(<strong></strong>c<strong></strong>a<strong></strong>s<strong></strong>e<strong></strong> <strong></strong>s<strong></strong>t<strong></strong>u<strong></strong>d<strong></strong>i<strong></strong>e<strong></strong>s<strong></strong>,<strong></strong> <strong></strong>a<strong></strong>r<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>l<strong></strong>e<strong></strong>s<strong></strong> <strong></strong>w<strong></strong>i<strong></strong>t<strong></strong>h<strong></strong> <strong></strong>a<strong></strong>r<strong></strong>g<strong></strong>u<strong></strong>m<strong></strong>e<strong></strong>n<strong></strong>t<strong></strong>s<strong></strong>)<strong></strong> <strong></strong>b<strong></strong>u<strong></strong>i<strong></strong>l<strong></strong>d<strong></strong>s<strong></strong> <strong></strong>t<strong></strong>h<strong></strong>i<strong></strong>s<strong></strong> <strong></strong>n<strong></strong>a<strong></strong>t<strong></strong>u<strong></strong>r<strong></strong>a<strong></strong>l<strong></strong>l<strong></strong>y<strong></strong>.<strong></strong></div>
+    </div>
+  </div>
+
+  <div class="discussion-box">
+    <div class="discussion-label">For Counsellor Reference — Session Discussion Prompts</div>
+    <div class="discussion-item"><strong>1.</strong> What practice habits does this student already have, and how realistic is daily 15-minute dedicated practice for them?</div>
+    <div class="discussion-item"><strong>2.</strong> Are there external constraints (coaching, school load) that would affect the short-term plan? Adjust timelines accordingly.</div>
+    <div class="discussion-item"><strong>3.</strong> Which of the three phases would benefit most from structured accountability — a check-in, a resource list, or a follow-up assessment?</div>
+  </div>
+</div>
+
+<!-- 📄 PAGE 9 — LEARNING STRATEGY -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-org">Omkar Career Counseling</span>
+    <span class="page-type">Aptitude Report — Page 9</span>
+  </div>
+
+  <div class="section-header">
+    <div class="section-dot" style="background:#ec4899;"></div>
+    <span class="section-title">Applied Learning Strategy</span>
+    <span class="section-subtitle">Meta-Cognitive Approach</span>
+  </div>
+
+  <div style="margin-top:20px;">
+    <p style="font-size:14px;color:#334155;line-height:1.8;margin-bottom:24px;">
+      Cognitive ability is not fixed. How you approach learning fundamentally alters how quickly you improve. Based on your profile, we recommend the following strategic approach to acquiring new skills:
+    </p>
+
+    <div class="card" style="background:linear-gradient(135deg,#fdf2f8 0%,#fce7f3 100%);border-color:#fbcfe8;padding:24px;">
+      <h3 style="font-size:16px;font-weight:900;color:#be185d;margin-bottom:12px;">Strategy Directive</h3>
+      <p style="font-size:13.5px;color:#9f1239;line-height:1.7;font-weight:500;">
+        <strong></strong>Y<strong></strong>o<strong></strong>u<strong></strong>r<strong></strong> <strong></strong>c<strong></strong>o<strong></strong>g<strong></strong>n<strong></strong>i<strong></strong>t<strong></strong>i<strong></strong>v<strong></strong>e<strong></strong> <strong></strong>s<strong></strong>c<strong></strong>o<strong></strong>r<strong></strong>e<strong></strong>s<strong></strong> <strong></strong>s<strong></strong>h<strong></strong>o<strong></strong>w<strong></strong> <strong></strong>a<strong></strong> <strong></strong>s<strong></strong>t<strong></strong>r<strong></strong>o<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>b<strong></strong>a<strong></strong>s<strong></strong>e<strong></strong>l<strong></strong>i<strong></strong>n<strong></strong>e<strong></strong>.<strong></strong> <strong></strong>F<strong></strong>o<strong></strong>c<strong></strong>u<strong></strong>s<strong></strong> <strong></strong>o<strong></strong>n<strong></strong> <strong></strong>d<strong></strong>e<strong></strong>e<strong></strong>p<strong></strong>e<strong></strong>n<strong></strong>i<strong></strong>n<strong></strong>g<strong></strong> <strong></strong>s<strong></strong>p<strong></strong>e<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>a<strong></strong>n<strong></strong>d<strong></strong> <strong></strong>a<strong></strong>c<strong></strong>c<strong></strong>u<strong></strong>r<strong></strong>a<strong></strong>c<strong></strong>y<strong></strong> <strong></strong>a<strong></strong>t<strong></strong> <strong></strong>h<strong></strong>i<strong></strong>g<strong></strong>h<strong></strong>e<strong></strong>r<strong></strong> <strong></strong>d<strong></strong>i<strong></strong>f<strong></strong>f<strong></strong>i<strong></strong>c<strong></strong>u<strong></strong>l<strong></strong>t<strong></strong>y<strong></strong> <strong></strong>l<strong></strong>e<strong></strong>v<strong></strong>e<strong></strong>l<strong></strong>s<strong></strong> <strong></strong>—<strong></strong> <strong></strong>t<strong></strong>i<strong></strong>m<strong></strong>e<strong></strong>d<strong></strong> <strong></strong>p<strong></strong>r<strong></strong>a<strong></strong>c<strong></strong>t<strong></strong>i<strong></strong>c<strong></strong>e<strong></strong> <strong></strong>u<strong></strong>n<strong></strong>d<strong></strong>e<strong></strong>r<strong></strong> <strong></strong>e<strong></strong>x<strong></strong>a<strong></strong>m<strong></strong>-<strong></strong>l<strong></strong>i<strong></strong>k<strong></strong>e<strong></strong> <strong></strong>c<strong></strong>o<strong></strong>n<strong></strong>d<strong></strong>i<strong></strong>t<strong></strong>i<strong></strong>o<strong></strong>n<strong></strong>s<strong></strong> <strong></strong>w<strong></strong>i<strong></strong>l<strong></strong>l<strong></strong> <strong></strong>c<strong></strong>o<strong></strong>n<strong></strong>s<strong></strong>o<strong></strong>l<strong></strong>i<strong></strong>d<strong></strong>a<strong></strong>t<strong></strong>e<strong></strong> <strong></strong>y<strong></strong>o<strong></strong>u<strong></strong>r<strong></strong> <strong></strong>a<strong></strong>d<strong></strong>v<strong></strong>a<strong></strong>n<strong></strong>t<strong></strong>a<strong></strong>g<strong></strong>e<strong></strong>.<strong></strong>
+      </p>
+    </div>
+    
+    <div style="margin-top:32px;">
+      <h4 style="font-size:12px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:0.1em;border-bottom:1px solid #e2e8f0;padding-bottom:8px;margin-bottom:16px;">Core Principles</h4>
+      <ul style="padding-left:20px;font-size:13px;color:#475569;line-height:1.8;">
+        <li><strong>Spaced Repetition:</strong> Revisit complex problems across multiple days to reinforce neural pathways.</li>
+        <li><strong>Error Analysis:</strong> Do not just mark answers wrong. Maintain an error log and document <em>why</em> the logic failed.</li>
+        <li><strong>Progressive Overload:</strong> Gradually increase difficulty only when current tier accuracy exceeds 80%.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 📄 PAGE 10 — FINAL NOTE + DISCLAIMER -->
+<div class="page" style="display:flex;flex-direction:column;justify-content:center;text-align:center;">
+  <div style="max-width:500px;margin:0 auto;">
+    <div style="width:64px;height:64px;background:#f1f5f9;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
+      <span style="font-size:28px;">🎓</span>
+    </div>
+    
+    <h2 style="font-size:24px;font-weight:900;color:#0f172a;margin-bottom:16px;">End of Report</h2>
+    <p style="font-size:14px;color:#475569;line-height:1.7;margin-bottom:28px;">
+      This concludes Mixed Profile Candidate's Aptitude Assessment. The insights provided here serve as a roadmap for cognitive development and career alignment.
+    </p>
+
+    <div class="discussion-box" style="text-align:left;">
+      <div class="discussion-label">Suggested Session Questions — For Counsellor Use</div>
+      <div class="discussion-item"><strong>1.</strong> &ldquo;Looking at these results, which area surprised you most — positively or negatively?&rdquo;</div>
+      <div class="discussion-item"><strong>2.</strong> &ldquo;Have you had any experience with tasks that require this kind of reasoning — in school, hobbies, or elsewhere?&rdquo;</div>
+      <div class="discussion-item"><strong>3.</strong> &ldquo;Is there a career field you were already considering where these results feel relevant or surprising?&rdquo;</div>
+    </div>
+
+    <div style="border-top:1px solid #e2e8f0;padding-top:24px;margin-top:20px;">
+      <p style="font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;">Counselling Disclaimer</p>
+      <p style="font-size:10.5px;color:#94a3b8;line-height:1.6;text-align:justify;">
+        This aptitude report is produced by an automated reasoning assessment engine. Scores reflect performance on specific question types and should be considered alongside other evaluation criteria. Interpret in consultation with a qualified career counsellor. This document is confidential and intended solely for the use of the individual to whom it is addressed. The scoring and interpretations utilise standardised normative mapping techniques but acknowledge individual variance and contextual circumstances not captured strictly by the test environment.
+      </p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

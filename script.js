@@ -1,0 +1,1 @@
+const fs = require('fs'); let c = fs.readFileSync('src/lib/pdf/aptitudeTemplate.ts', 'utf8'); c = c.replace(/\\\|\\\$/g, function(match){ return match.slice(1); }); fs.writeFileSync('src/lib/pdf/aptitudeTemplate.ts', c);

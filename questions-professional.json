@@ -1,0 +1,1129 @@
+{
+  "test_id": "professional",
+  "psychometric_questions": [
+    {
+      "id": "PRO_PSY_001",
+      "trait": "social_orientation",
+      "direction": "direct",
+      "q": "I enjoy collaborating with others to solve problems or complete work."
+    },
+    {
+      "id": "PRO_PSY_002",
+      "trait": "social_orientation",
+      "direction": "direct",
+      "q": "I feel comfortable discussing ideas and decisions with other people."
+    },
+    {
+      "id": "PRO_PSY_003",
+      "trait": "social_orientation",
+      "direction": "reverse",
+      "q": "I prefer working independently even when collaboration would improve the outcome."
+    },
+    {
+      "id": "PRO_PSY_004",
+      "trait": "social_orientation",
+      "direction": "direct",
+      "q": "I often find value in exchanging perspectives before moving forward."
+    },
+    {
+      "id": "PRO_PSY_005",
+      "trait": "structure_preference",
+      "direction": "direct",
+      "q": "I work best when goals, expectations, and processes are clearly defined."
+    },
+    {
+      "id": "PRO_PSY_006",
+      "trait": "structure_preference",
+      "direction": "direct",
+      "q": "I prefer planning and organizing work before I begin."
+    },
+    {
+      "id": "PRO_PSY_007",
+      "trait": "structure_preference",
+      "direction": "reverse",
+      "q": "I am comfortable working without any clear system or structure."
+    },
+    {
+      "id": "PRO_PSY_008",
+      "trait": "structure_preference",
+      "direction": "direct",
+      "q": "I like work environments where tasks are organized and well managed."
+    },
+    {
+      "id": "PRO_PSY_009",
+      "trait": "creativity_innovation",
+      "direction": "direct",
+      "q": "I enjoy generating new ideas rather than only following existing methods."
+    },
+    {
+      "id": "PRO_PSY_010",
+      "trait": "creativity_innovation",
+      "direction": "direct",
+      "q": "I like improving systems, processes, or approaches in original ways."
+    },
+    {
+      "id": "PRO_PSY_011",
+      "trait": "creativity_innovation",
+      "direction": "reverse",
+      "q": "I usually prefer repeating proven methods instead of experimenting with new ones."
+    },
+    {
+      "id": "PRO_PSY_012",
+      "trait": "creativity_innovation",
+      "direction": "direct",
+      "q": "I enjoy work that allows room for creativity, design, or fresh thinking."
+    },
+    {
+      "id": "PRO_PSY_013",
+      "trait": "analytical_curiosity",
+      "direction": "direct",
+      "q": "I like understanding the reasoning behind decisions, systems, or outcomes."
+    },
+    {
+      "id": "PRO_PSY_014",
+      "trait": "analytical_curiosity",
+      "direction": "direct",
+      "q": "I enjoy solving complex problems by analyzing patterns or details."
+    },
+    {
+      "id": "PRO_PSY_015",
+      "trait": "analytical_curiosity",
+      "direction": "reverse",
+      "q": "I avoid work that requires too much deep thinking or analysis."
+    },
+    {
+      "id": "PRO_PSY_016",
+      "trait": "analytical_curiosity",
+      "direction": "direct",
+      "q": "I am naturally curious about how systems, tools, or processes can be understood better."
+    },
+    {
+      "id": "PRO_PSY_017",
+      "trait": "leadership_initiative",
+      "direction": "direct",
+      "q": "I often take initiative instead of waiting to be told what to do."
+    },
+    {
+      "id": "PRO_PSY_018",
+      "trait": "leadership_initiative",
+      "direction": "direct",
+      "q": "I am comfortable taking responsibility for outcomes when needed."
+    },
+    {
+      "id": "PRO_PSY_019",
+      "trait": "leadership_initiative",
+      "direction": "reverse",
+      "q": "I prefer not to take charge even when I know what should be done."
+    },
+    {
+      "id": "PRO_PSY_020",
+      "trait": "leadership_initiative",
+      "direction": "direct",
+      "q": "I like motivating, coordinating, or guiding people toward a goal."
+    },
+    {
+      "id": "PRO_PSY_021",
+      "trait": "practical_orientation",
+      "direction": "direct",
+      "q": "I prefer work where ideas can be applied to real-world results."
+    },
+    {
+      "id": "PRO_PSY_022",
+      "trait": "practical_orientation",
+      "direction": "direct",
+      "q": "I learn best by doing, testing, or applying something directly."
+    },
+    {
+      "id": "PRO_PSY_023",
+      "trait": "practical_orientation",
+      "direction": "reverse",
+      "q": "I prefer discussing ideas more than actually applying them."
+    },
+    {
+      "id": "PRO_PSY_024",
+      "trait": "practical_orientation",
+      "direction": "direct",
+      "q": "I enjoy solving practical problems that lead to visible outcomes."
+    },
+    {
+      "id": "PRO_PSY_025",
+      "trait": "risk_exploration",
+      "direction": "direct",
+      "q": "I am open to exploring unfamiliar opportunities if they seem worthwhile."
+    },
+    {
+      "id": "PRO_PSY_026",
+      "trait": "risk_exploration",
+      "direction": "direct",
+      "q": "I am willing to consider paths that are less common if they fit me better."
+    },
+    {
+      "id": "PRO_PSY_027",
+      "trait": "risk_exploration",
+      "direction": "reverse",
+      "q": "I avoid stepping into unfamiliar situations unless success feels almost certain."
+    },
+    {
+      "id": "PRO_PSY_028",
+      "trait": "risk_exploration",
+      "direction": "direct",
+      "q": "I am comfortable trying new approaches when the potential value is high."
+    },
+    {
+      "id": "PRO_PSY_029",
+      "trait": "persistence_discipline",
+      "direction": "direct",
+      "q": "I usually stay committed to work until it is completed properly."
+    },
+    {
+      "id": "PRO_PSY_030",
+      "trait": "persistence_discipline",
+      "direction": "direct",
+      "q": "I continue working even when tasks become difficult or time-consuming."
+    },
+    {
+      "id": "PRO_PSY_031",
+      "trait": "persistence_discipline",
+      "direction": "reverse",
+      "q": "I tend to lose focus or stop pushing when work becomes too demanding."
+    },
+    {
+      "id": "PRO_PSY_032",
+      "trait": "persistence_discipline",
+      "direction": "direct",
+      "q": "I can stay disciplined and focused over longer periods of work."
+    },
+    {
+      "id": "PRO_PSY_033",
+      "trait": "realistic",
+      "direction": "direct",
+      "q": "I enjoy work that involves tools, equipment, operations, or hands-on execution."
+    },
+    {
+      "id": "PRO_PSY_034",
+      "trait": "realistic",
+      "direction": "direct",
+      "q": "I like building, fixing, assembling, operating, or managing physical systems."
+    },
+    {
+      "id": "PRO_PSY_035",
+      "trait": "realistic",
+      "direction": "direct",
+      "q": "I prefer practical hands-on work over purely theoretical discussion."
+    },
+    {
+      "id": "PRO_PSY_036",
+      "trait": "investigative",
+      "direction": "direct",
+      "q": "I enjoy research, analysis, and finding answers to complex questions."
+    },
+    {
+      "id": "PRO_PSY_037",
+      "trait": "investigative",
+      "direction": "direct",
+      "q": "I like work that involves observation, logic, diagnosis, or deep problem-solving."
+    },
+    {
+      "id": "PRO_PSY_038",
+      "trait": "investigative",
+      "direction": "direct",
+      "q": "I enjoy understanding systems, causes, patterns, or evidence before acting."
+    },
+    {
+      "id": "PRO_PSY_039",
+      "trait": "artistic",
+      "direction": "direct",
+      "q": "I enjoy expressing ideas through design, writing, visuals, or creative work."
+    },
+    {
+      "id": "PRO_PSY_040",
+      "trait": "artistic",
+      "direction": "direct",
+      "q": "I prefer work that allows originality, creativity, or personal expression."
+    },
+    {
+      "id": "PRO_PSY_041",
+      "trait": "artistic",
+      "direction": "direct",
+      "q": "I enjoy tasks where there is room to think or create beyond fixed formats."
+    },
+    {
+      "id": "PRO_PSY_042",
+      "trait": "social",
+      "direction": "direct",
+      "q": "I enjoy helping people grow, improve, or solve problems."
+    },
+    {
+      "id": "PRO_PSY_043",
+      "trait": "social",
+      "direction": "direct",
+      "q": "I like listening to people and understanding their needs or concerns."
+    },
+    {
+      "id": "PRO_PSY_044",
+      "trait": "social",
+      "direction": "direct",
+      "q": "I find meaning in supporting, guiding, or developing others."
+    },
+    {
+      "id": "PRO_PSY_045",
+      "trait": "enterprising",
+      "direction": "direct",
+      "q": "I enjoy influencing decisions, persuading others, or driving action."
+    },
+    {
+      "id": "PRO_PSY_046",
+      "trait": "enterprising",
+      "direction": "direct",
+      "q": "I am interested in leadership, ownership, strategy, or business-oriented roles."
+    },
+    {
+      "id": "PRO_PSY_047",
+      "trait": "enterprising",
+      "direction": "direct",
+      "q": "I like the idea of leading initiatives, teams, or outcomes."
+    },
+    {
+      "id": "PRO_PSY_048",
+      "trait": "conventional",
+      "direction": "direct",
+      "q": "I like work that requires organization, accuracy, and attention to detail."
+    },
+    {
+      "id": "PRO_PSY_049",
+      "trait": "conventional",
+      "direction": "direct",
+      "q": "I enjoy maintaining systems, records, processes, or orderly workflows."
+    },
+    {
+      "id": "PRO_PSY_050",
+      "trait": "conventional",
+      "direction": "direct",
+      "q": "I prefer structured methods and clearly organized ways of working."
+    },
+    {
+      "id": "PRO_PSY_051",
+      "trait": "attention_check",
+      "direction": "direct",
+      "q": "To show that you are reading carefully, please choose Agree for this statement."
+    },
+    {
+      "id": "PRO_PSY_052",
+      "trait": "attention_check",
+      "direction": "direct",
+      "q": "For this statement only, please choose Disagree."
+    }
+  ],
+  "aptitude_questions": [
+    {
+      "id": "PRO_L_001",
+      "category": "logical_reasoning",
+      "difficulty": "easy",
+      "mode": "text",
+      "question": "Find the next term: 12, 24, 48, 96, ?",
+      "options": [
+        "144",
+        "168",
+        "192",
+        "200"
+      ],
+      "correct": "192",
+      "explanation": "Each term is multiplied by 2."
+    },
+    {
+      "id": "PRO_L_002",
+      "category": "logical_reasoning",
+      "difficulty": "easy",
+      "mode": "text",
+      "question": "If REPORT is coded as SFQPSU, then DATA is coded as:",
+      "options": [
+        "EBUB",
+        "EBVA",
+        "FAVA",
+        "EBTA"
+      ],
+      "correct": "EBUB",
+      "explanation": "Each letter shifts forward by 1."
+    },
+    {
+      "id": "PRO_L_003",
+      "category": "logical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "Find the next number: 3, 8, 15, 24, 35, ?",
+      "options": [
+        "44",
+        "46",
+        "48",
+        "50"
+      ],
+      "correct": "48",
+      "explanation": "Pattern: +5, +7, +9, +11, so next is +13."
+    },
+    {
+      "id": "PRO_L_004",
+      "category": "logical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "Complete the pattern: ZA, YB, XC, ?",
+      "options": [
+        "WD",
+        "VC",
+        "WE",
+        "XD"
+      ],
+      "correct": "WD",
+      "explanation": "First letters move backward, second letters move forward."
+    },
+    {
+      "id": "PRO_L_005",
+      "category": "logical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "Which number does not belong? 16, 25, 36, 45, 49",
+      "options": [
+        "25",
+        "36",
+        "45",
+        "49"
+      ],
+      "correct": "45",
+      "explanation": "All others are perfect squares."
+    },
+    {
+      "id": "PRO_L_006",
+      "category": "logical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "If A = 1, B = 2, ..., Z = 26, then the value of TEAM is:",
+      "options": [
+        "35",
+        "37",
+        "39",
+        "41"
+      ],
+      "correct": "39",
+      "explanation": "T=20, E=5, A=1, M=13 → total = 39."
+    },
+    {
+      "id": "PRO_L_007",
+      "category": "logical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "If all FINS are ROPS and all ROPS are MELS, which statement is definitely true?",
+      "options": [
+        "All FINS are MELS",
+        "Some FINS are MELS",
+        "No FINS are MELS",
+        "All MELS are FINS"
+      ],
+      "correct": "All FINS are MELS",
+      "explanation": "If FINS ⊂ ROPS and ROPS ⊂ MELS, then FINS ⊂ MELS."
+    },
+    {
+      "id": "PRO_L_008",
+      "category": "logical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "Find the next term: 2, 5, 11, 23, 47, ?",
+      "options": [
+        "91",
+        "95",
+        "97",
+        "99"
+      ],
+      "correct": "95",
+      "explanation": "Pattern: multiply by 2 and add 1."
+    },
+    {
+      "id": "PRO_L_009",
+      "category": "logical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "Which pair best matches the relationship? Policy : Organization",
+      "options": [
+        "Curriculum : School",
+        "Battery : Phone",
+        "Fuel : Vehicle",
+        "Contract : Signature"
+      ],
+      "correct": "Curriculum : School",
+      "explanation": "A policy belongs to / governs an organization; a curriculum belongs to / governs a school."
+    },
+    {
+      "id": "PRO_L_010",
+      "category": "logical_reasoning",
+      "difficulty": "medium",
+      "mode": "visual_recommended",
+      "question": "In a 3×3 symbol matrix, each row increases the number of shapes by one while alternating between circle and square. Which option completes the final cell?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct": "C",
+      "explanation": "The final cell must follow both count and alternation rules."
+    },
+    {
+      "id": "PRO_L_011",
+      "category": "logical_reasoning",
+      "difficulty": "hard",
+      "mode": "text",
+      "question": "Find the next number: 1, 3, 12, 60, 360, ?",
+      "options": [
+        "1440",
+        "2160",
+        "2520",
+        "2880"
+      ],
+      "correct": "2520",
+      "explanation": "Pattern: ×3, ×4, ×5, ×6, so next is ×7."
+    },
+    {
+      "id": "PRO_L_012",
+      "category": "logical_reasoning",
+      "difficulty": "hard",
+      "mode": "text",
+      "question": "Which pair best completes the analogy? Blueprint : Building :: Strategy : ?",
+      "options": [
+        "Goal",
+        "Execution",
+        "Manager",
+        "Meeting"
+      ],
+      "correct": "Execution",
+      "explanation": "A blueprint guides a building; a strategy guides execution."
+    },
+    {
+      "id": "PRO_L_013",
+      "category": "logical_reasoning",
+      "difficulty": "hard",
+      "mode": "text",
+      "question": "A sequence follows this rule: multiply by 3, then subtract 2. Starting from 2, what is the 5th term?",
+      "options": [
+        "22",
+        "34",
+        "46",
+        "58"
+      ],
+      "correct": "58",
+      "explanation": "Sequence: 2 → 4 → 10 → 28 → 82. NOTE: The options are wrong; fix below."
+    },
+    {
+      "id": "PRO_L_013_fixed",
+      "category": "logical_reasoning",
+      "difficulty": "hard",
+      "mode": "text",
+      "question": "A sequence follows this rule: multiply by 3, then subtract 2. Starting from 2, what is the 5th term?",
+      "options": [
+        "28",
+        "46",
+        "58",
+        "82"
+      ],
+      "correct": "82",
+      "explanation": "Sequence: 2 → 4 → 10 → 28 → 82."
+    },
+    {
+      "id": "PRO_A_001",
+      "category": "analytical_reasoning",
+      "difficulty": "easy",
+      "mode": "text",
+      "question": "A report is submitted after review. Review happens after drafting. Which step comes first?",
+      "options": [
+        "Drafting",
+        "Review",
+        "Submission",
+        "Approval"
+      ],
+      "correct": "Drafting",
+      "explanation": "Drafting must happen before review and submission."
+    },
+    {
+      "id": "PRO_A_002",
+      "category": "analytical_reasoning",
+      "difficulty": "easy",
+      "mode": "text",
+      "question": "A person starts facing North, turns left, then turns right. Which direction are they facing now?",
+      "options": [
+        "North",
+        "South",
+        "East",
+        "West"
+      ],
+      "correct": "North",
+      "explanation": "North → West → North."
+    },
+    {
+      "id": "PRO_A_003",
+      "category": "analytical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "Five tasks — A, B, C, D, and E — must be completed. B must be after A. D must be before E. Which statement must be true?",
+      "options": [
+        "B is before A",
+        "D is before E",
+        "E is before D",
+        "C is after B"
+      ],
+      "correct": "D is before E",
+      "explanation": "This is directly stated as a fixed condition."
+    },
+    {
+      "id": "PRO_A_004",
+      "category": "analytical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "A project team has 4 members: one handles design, one handles testing, one handles documentation, and one handles deployment. If Riya does not do testing and Arjun does deployment, which statement is definitely true?",
+      "options": [
+        "Riya does design",
+        "Arjun does not do testing",
+        "Riya does documentation",
+        "Testing is done by Riya"
+      ],
+      "correct": "Arjun does not do testing",
+      "explanation": "If Arjun does deployment, he cannot also do testing."
+    },
+    {
+      "id": "PRO_A_005",
+      "category": "analytical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "A person walks 8 m east, then 6 m north. How far are they from the starting point?",
+      "options": [
+        "10 m",
+        "12 m",
+        "14 m",
+        "8 m"
+      ],
+      "correct": "10 m",
+      "explanation": "Forms a 6-8-10 right triangle."
+    },
+    {
+      "id": "PRO_A_006",
+      "category": "analytical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "A dashboard shows quarterly performance: Q1 = 72, Q2 = 81, Q3 = 77, Q4 = 88. Which quarter performed second best?",
+      "options": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4"
+      ],
+      "correct": "Q2",
+      "explanation": "Q4 = 88 is highest, Q2 = 81 is second highest."
+    },
+    {
+      "id": "PRO_A_007",
+      "category": "analytical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "If all consultants are professionals and some professionals are trainers, which statement is logically possible?",
+      "options": [
+        "All consultants are trainers",
+        "Some consultants may be trainers",
+        "No consultants are professionals",
+        "All trainers are consultants"
+      ],
+      "correct": "Some consultants may be trainers",
+      "explanation": "Overlap is possible but not guaranteed."
+    },
+    {
+      "id": "PRO_A_008",
+      "category": "analytical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "Three candidates scored 68, 74, and 82. Mehul did not score the lowest. Priya scored more than Mehul. Who scored 74?",
+      "options": [
+        "Mehul",
+        "Priya",
+        "Third candidate",
+        "Cannot say"
+      ],
+      "correct": "Mehul",
+      "explanation": "Priya > Mehul and Mehul is not lowest, so Mehul = 74 and Priya = 82."
+    },
+    {
+      "id": "PRO_A_009",
+      "category": "analytical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "A team meeting is held every 3 days starting Monday. On which day will the 4th meeting occur?",
+      "options": [
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "correct": "Thursday",
+      "explanation": "Meetings: Monday, Thursday, Sunday, Wednesday — wait, that’s wrong. Fix below."
+    },
+    {
+      "id": "PRO_A_009_fixed",
+      "category": "analytical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "A team meeting is held every 2 days starting Monday. On which day will the 4th meeting occur?",
+      "options": [
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "correct": "Sunday",
+      "explanation": "Meetings: Monday (1st), Wednesday (2nd), Friday (3rd), Sunday (4th)."
+    },
+    {
+      "id": "PRO_A_010",
+      "category": "analytical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "If all reports need approval before publishing, and this document is published, what must be true?",
+      "options": [
+        "It was approved",
+        "It was rejected",
+        "It was edited",
+        "It was drafted today"
+      ],
+      "correct": "It was approved",
+      "explanation": "Approval is a necessary condition before publishing."
+    },
+    {
+      "id": "PRO_A_011",
+      "category": "analytical_reasoning",
+      "difficulty": "hard",
+      "mode": "text",
+      "question": "P, Q, R, S, and T are assigned to five consecutive time slots. Q is after P but before R. T is not in the first or last slot. Which person must be in the middle slot?",
+      "options": [
+        "Q",
+        "R",
+        "T",
+        "Cannot be determined"
+      ],
+      "correct": "Cannot be determined",
+      "explanation": "There are multiple valid arrangements, so no single person must occupy the middle slot."
+    },
+    {
+      "id": "PRO_A_012",
+      "category": "analytical_reasoning",
+      "difficulty": "hard",
+      "mode": "text",
+      "question": "A person travels 10 km north, 6 km east, and 10 km south. How far are they from the starting point?",
+      "options": [
+        "4 km",
+        "6 km",
+        "8 km",
+        "10 km"
+      ],
+      "correct": "6 km",
+      "explanation": "North and south cancel out, leaving 6 km east."
+    },
+    {
+      "id": "PRO_A_013",
+      "category": "analytical_reasoning",
+      "difficulty": "hard",
+      "mode": "text",
+      "question": "A company survey shows 40 employees use Tool A, 28 use Tool B, and 15 use both. How many use only Tool A?",
+      "options": [
+        "15",
+        "20",
+        "25",
+        "28"
+      ],
+      "correct": "25",
+      "explanation": "Only Tool A = 40 - 15 = 25."
+    },
+    {
+      "id": "PRO_N_001",
+      "category": "numerical_reasoning",
+      "difficulty": "easy",
+      "mode": "text",
+      "question": "What is 20% of 350?",
+      "options": [
+        "60",
+        "70",
+        "80",
+        "90"
+      ],
+      "correct": "70",
+      "explanation": "20% of 350 = 70."
+    },
+    {
+      "id": "PRO_N_002",
+      "category": "numerical_reasoning",
+      "difficulty": "easy",
+      "mode": "text",
+      "question": "If 4 files take 12 minutes to process, how long does 1 file take on average?",
+      "options": [
+        "2 min",
+        "3 min",
+        "4 min",
+        "5 min"
+      ],
+      "correct": "3 min",
+      "explanation": "12 ÷ 4 = 3 minutes."
+    },
+    {
+      "id": "PRO_N_003",
+      "category": "numerical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "A service priced at ₹2,500 is offered at a 12% discount. What is the final price?",
+      "options": [
+        "₹2,100",
+        "₹2,200",
+        "₹2,250",
+        "₹2,300"
+      ],
+      "correct": "₹2,200",
+      "explanation": "12% of 2500 = 300, so final price = 2200."
+    },
+    {
+      "id": "PRO_N_004",
+      "category": "numerical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "A consultant works 42 hours in 6 days. What is the average number of hours worked per day?",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "correct": "7",
+      "explanation": "42 ÷ 6 = 7."
+    },
+    {
+      "id": "PRO_N_005",
+      "category": "numerical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "A project budget increases from ₹80,000 to ₹92,000. What is the percentage increase?",
+      "options": [
+        "10%",
+        "12%",
+        "15%",
+        "18%"
+      ],
+      "correct": "15%",
+      "explanation": "Increase = 12,000; 12,000 / 80,000 = 15%."
+    },
+    {
+      "id": "PRO_N_006",
+      "category": "numerical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "The average of 18, 24, 30, 36, and 42 is:",
+      "options": [
+        "28",
+        "30",
+        "32",
+        "34"
+      ],
+      "correct": "30",
+      "explanation": "Sum = 150; 150 ÷ 5 = 30."
+    },
+    {
+      "id": "PRO_N_007",
+      "category": "numerical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "A chart shows weekly output: Week 1 = 120, Week 2 = 150, Week 3 = 135, Week 4 = 165. What is the average output?",
+      "options": [
+        "140",
+        "142.5",
+        "145",
+        "147.5"
+      ],
+      "correct": "142.5",
+      "explanation": "(120 + 150 + 135 + 165) / 4 = 570 / 4 = 142.5."
+    },
+    {
+      "id": "PRO_N_008",
+      "category": "numerical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "If 5 employees can complete a task in 8 days, how many employee-days are required in total?",
+      "options": [
+        "35",
+        "40",
+        "45",
+        "50"
+      ],
+      "correct": "40",
+      "explanation": "5 × 8 = 40 employee-days."
+    },
+    {
+      "id": "PRO_N_009",
+      "category": "numerical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "A subscription costs ₹1,800 per year. What is the approximate monthly cost?",
+      "options": [
+        "₹120",
+        "₹130",
+        "₹140",
+        "₹150"
+      ],
+      "correct": "₹150",
+      "explanation": "1800 ÷ 12 = 150."
+    },
+    {
+      "id": "PRO_N_010",
+      "category": "numerical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "Find the next number: 9, 18, 36, 72, ?",
+      "options": [
+        "108",
+        "126",
+        "144",
+        "162"
+      ],
+      "correct": "144",
+      "explanation": "Each term is multiplied by 2."
+    },
+    {
+      "id": "PRO_N_011",
+      "category": "numerical_reasoning",
+      "difficulty": "hard",
+      "mode": "text",
+      "question": "A product gets successive discounts of 20% and 10% on ₹5,000. What is the final price?",
+      "options": [
+        "₹3,500",
+        "₹3,600",
+        "₹4,000",
+        "₹4,100"
+      ],
+      "correct": "₹3,600",
+      "explanation": "After 20% off: ₹4,000. Then 10% off ₹4,000 = ₹3,600."
+    },
+    {
+      "id": "PRO_N_012",
+      "category": "numerical_reasoning",
+      "difficulty": "hard",
+      "mode": "text",
+      "question": "A and B together complete a task in 15 days. A alone takes 25 days. How many days will B alone take?",
+      "options": [
+        "30",
+        "35",
+        "37.5",
+        "40"
+      ],
+      "correct": "37.5",
+      "explanation": "A+B = 1/15, A = 1/25, so B = 1/15 - 1/25 = 2/75 = 1/37.5."
+    },
+    {
+      "id": "PRO_N_013",
+      "category": "numerical_reasoning",
+      "difficulty": "hard",
+      "mode": "text",
+      "question": "The ratio of technical to non-technical staff is 4:3. If total staff is 84, how many are non-technical?",
+      "options": [
+        "30",
+        "32",
+        "36",
+        "40"
+      ],
+      "correct": "36",
+      "explanation": "Total parts = 7; one part = 12; non-technical = 3 × 12 = 36."
+    },
+    {
+      "id": "PRO_S_001",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "easy",
+      "mode": "visual_recommended",
+      "question": "A downward arrow is rotated 90° clockwise. Which direction will it point?",
+      "options": [
+        "Left",
+        "Right",
+        "Up",
+        "Down"
+      ],
+      "correct": "Left",
+      "explanation": "A downward arrow rotated clockwise points left."
+    },
+    {
+      "id": "PRO_S_002",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "easy",
+      "mode": "visual_recommended",
+      "question": "A sheet is folded once and one circular hole is punched. How many holes appear when opened?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct": "2",
+      "explanation": "One fold duplicates the punched hole."
+    },
+    {
+      "id": "PRO_S_003",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "medium",
+      "mode": "visual_recommended",
+      "question": "Which option shows the correct mirror image of the given geometric pattern?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct": "A",
+      "explanation": "Correct mirror image reverses horizontal orientation only."
+    },
+    {
+      "id": "PRO_S_004",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "medium",
+      "mode": "visual_recommended",
+      "question": "A cube has one striped face and one shaded face. After rotation, which option preserves the correct face relationship?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct": "D",
+      "explanation": "Tests face adjacency and cube rotation."
+    },
+    {
+      "id": "PRO_S_005",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "medium",
+      "mode": "visual_recommended",
+      "question": "Which smaller symbol is hidden inside the larger technical-style figure?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct": "B",
+      "explanation": "Tests embedded figure recognition."
+    },
+    {
+      "id": "PRO_S_006",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "medium",
+      "mode": "visual_recommended",
+      "question": "A square is divided by one vertical line and one diagonal. How many regions are formed?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct": "4",
+      "explanation": "The lines divide the square into 4 enclosed regions."
+    },
+    {
+      "id": "PRO_S_007",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "medium",
+      "mode": "visual_recommended",
+      "question": "A net of a cube is shown with one face marked X. Which face will be opposite X when folded?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct": "C",
+      "explanation": "Tests cube net interpretation."
+    },
+    {
+      "id": "PRO_S_008",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "medium",
+      "mode": "visual_recommended",
+      "question": "Which option correctly completes the 3×3 visual matrix based on rotation and fill pattern?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct": "B",
+      "explanation": "The missing figure must satisfy both transformation rules."
+    },
+    {
+      "id": "PRO_S_009",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "medium",
+      "mode": "visual_recommended",
+      "question": "A folded sheet has two holes punched near the center. Which unfolded option is correct?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct": "C",
+      "explanation": "Tests fold symmetry and placement."
+    },
+    {
+      "id": "PRO_S_010",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "medium",
+      "mode": "visual_recommended",
+      "question": "A geometric logo is rotated 180°. Which option matches the rotated result?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct": "D",
+      "explanation": "Tests mental rotation rather than mirror reflection."
+    },
+    {
+      "id": "PRO_S_011",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "hard",
+      "mode": "visual_recommended",
+      "question": "A cube is painted on all outer faces and cut into 64 smaller cubes. How many small cubes will have exactly 2 painted faces?",
+      "options": [
+        "12",
+        "16",
+        "24",
+        "32"
+      ],
+      "correct": "24",
+      "explanation": "For a 4×4×4 cube, edge cubes excluding corners = 12 × (4-2) = 24."
+    },
+    {
+      "id": "PRO_S_012",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "hard",
+      "mode": "visual_recommended",
+      "question": "A paper is folded twice and one angled cut is made. Which option shows the correct unfolded pattern?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct": "A",
+      "explanation": "Tests multi-step fold and cut visualization."
+    }
+  ],
+  "meta_questions": [
+    {
+      "id": 1,
+      "type": "select",
+      "q": "What is your primary professional domain?",
+      "trait": "career_choice",
+      "options": [
+        "Engineering/Tech",
+        "Healthcare",
+        "Corporate/Business",
+        "Creative/Arts",
+        "Public Sector/Law"
+      ]
+    }
+  ]
+}

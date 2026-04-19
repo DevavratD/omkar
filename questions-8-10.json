@@ -1,0 +1,1142 @@
+{
+  "test_id": "8-10",
+  "meta_questions": [
+    {
+      "id": 1,
+      "type": "select",
+      "q": "Which career field are you most interested in right now?",
+      "trait": "career_choice",
+      "options": [
+        "Engineering",
+        "Medical",
+        "Arts/Design",
+        "Business",
+        "Government/Law"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "select",
+      "q": "What is your father's and mother's occupation?",
+      "trait": "parent_choice",
+      "options": [
+        "Engineering",
+        "Medical",
+        "Arts/Design",
+        "Business",
+        "Government/Law"
+      ]
+    }
+  ],
+  "psychometric_questions": [
+    {
+      "id": "G810_PSY_001",
+      "trait": "social_orientation",
+      "direction": "direct",
+      "q": "I enjoy working with classmates on tasks or projects."
+    },
+    {
+      "id": "G810_PSY_002",
+      "trait": "social_orientation",
+      "direction": "direct",
+      "q": "I like discussing ideas with other people."
+    },
+    {
+      "id": "G810_PSY_003",
+      "trait": "social_orientation",
+      "direction": "reverse",
+      "q": "I prefer doing everything alone even when group work is possible."
+    },
+    {
+      "id": "G810_PSY_004",
+      "trait": "social_orientation",
+      "direction": "direct",
+      "q": "I feel comfortable sharing my thoughts in a group."
+    },
+    {
+      "id": "G810_PSY_005",
+      "trait": "structure_preference",
+      "direction": "direct",
+      "q": "I like having a clear plan before I start something."
+    },
+    {
+      "id": "G810_PSY_006",
+      "trait": "structure_preference",
+      "direction": "direct",
+      "q": "I prefer tasks where the steps are clearly explained."
+    },
+    {
+      "id": "G810_PSY_007",
+      "trait": "structure_preference",
+      "direction": "reverse",
+      "q": "I enjoy doing things without any rules or plan."
+    },
+    {
+      "id": "G810_PSY_008",
+      "trait": "structure_preference",
+      "direction": "direct",
+      "q": "I like organizing my work before starting."
+    },
+    {
+      "id": "G810_PSY_009",
+      "trait": "creativity_innovation",
+      "direction": "direct",
+      "q": "I enjoy thinking of new ideas."
+    },
+    {
+      "id": "G810_PSY_010",
+      "trait": "creativity_innovation",
+      "direction": "direct",
+      "q": "I like doing things in my own unique way."
+    },
+    {
+      "id": "G810_PSY_011",
+      "trait": "creativity_innovation",
+      "direction": "reverse",
+      "q": "I prefer doing things the same way every time."
+    },
+    {
+      "id": "G810_PSY_012",
+      "trait": "creativity_innovation",
+      "direction": "direct",
+      "q": "I enjoy tasks where I can use imagination and creativity."
+    },
+    {
+      "id": "G810_PSY_013",
+      "trait": "analytical_curiosity",
+      "direction": "direct",
+      "q": "I like finding out how things work."
+    },
+    {
+      "id": "G810_PSY_014",
+      "trait": "analytical_curiosity",
+      "direction": "direct",
+      "q": "I ask questions when I want to understand something better."
+    },
+    {
+      "id": "G810_PSY_015",
+      "trait": "analytical_curiosity",
+      "direction": "reverse",
+      "q": "I do not enjoy thinking deeply about difficult problems."
+    },
+    {
+      "id": "G810_PSY_016",
+      "trait": "analytical_curiosity",
+      "direction": "direct",
+      "q": "I enjoy solving tricky or challenging problems."
+    },
+    {
+      "id": "G810_PSY_017",
+      "trait": "leadership_initiative",
+      "direction": "direct",
+      "q": "I often take the lead when working in a group."
+    },
+    {
+      "id": "G810_PSY_018",
+      "trait": "leadership_initiative",
+      "direction": "direct",
+      "q": "I like taking responsibility for getting things done."
+    },
+    {
+      "id": "G810_PSY_019",
+      "trait": "leadership_initiative",
+      "direction": "reverse",
+      "q": "I avoid taking charge even when it is needed."
+    },
+    {
+      "id": "G810_PSY_020",
+      "trait": "leadership_initiative",
+      "direction": "direct",
+      "q": "I like starting things instead of waiting for others."
+    },
+    {
+      "id": "G810_PSY_021",
+      "trait": "practical_orientation",
+      "direction": "direct",
+      "q": "I enjoy tasks where I can build, make, or fix something."
+    },
+    {
+      "id": "G810_PSY_022",
+      "trait": "practical_orientation",
+      "direction": "direct",
+      "q": "I learn better when I do things myself."
+    },
+    {
+      "id": "G810_PSY_023",
+      "trait": "practical_orientation",
+      "direction": "reverse",
+      "q": "I prefer only reading or thinking, not actually doing the task."
+    },
+    {
+      "id": "G810_PSY_024",
+      "trait": "practical_orientation",
+      "direction": "direct",
+      "q": "I enjoy solving real-life practical problems."
+    },
+    {
+      "id": "G810_PSY_025",
+      "trait": "risk_exploration",
+      "direction": "direct",
+      "q": "I like trying new things even if I am not fully sure they will work."
+    },
+    {
+      "id": "G810_PSY_026",
+      "trait": "risk_exploration",
+      "direction": "direct",
+      "q": "I enjoy exploring ideas that are different from the usual way."
+    },
+    {
+      "id": "G810_PSY_027",
+      "trait": "risk_exploration",
+      "direction": "reverse",
+      "q": "I avoid trying new things unless I know they are completely safe."
+    },
+    {
+      "id": "G810_PSY_028",
+      "trait": "risk_exploration",
+      "direction": "direct",
+      "q": "I am comfortable trying something different from others."
+    },
+    {
+      "id": "G810_PSY_029",
+      "trait": "persistence_discipline",
+      "direction": "direct",
+      "q": "I usually finish what I start."
+    },
+    {
+      "id": "G810_PSY_030",
+      "trait": "persistence_discipline",
+      "direction": "direct",
+      "q": "I keep trying even when something becomes difficult."
+    },
+    {
+      "id": "G810_PSY_031",
+      "trait": "persistence_discipline",
+      "direction": "reverse",
+      "q": "I give up quickly when a task becomes hard."
+    },
+    {
+      "id": "G810_PSY_032",
+      "trait": "persistence_discipline",
+      "direction": "direct",
+      "q": "I can stay focused on a task until it is completed."
+    },
+    {
+      "id": "G810_PSY_033",
+      "trait": "realistic",
+      "direction": "direct",
+      "q": "I enjoy working with tools, machines, or physical objects."
+    },
+    {
+      "id": "G810_PSY_034",
+      "trait": "realistic",
+      "direction": "direct",
+      "q": "I like fixing, building, or assembling things."
+    },
+    {
+      "id": "G810_PSY_035",
+      "trait": "realistic",
+      "direction": "direct",
+      "q": "I enjoy hands-on activities more than only theory."
+    },
+    {
+      "id": "G810_PSY_036",
+      "trait": "investigative",
+      "direction": "direct",
+      "q": "I enjoy finding answers to difficult questions."
+    },
+    {
+      "id": "G810_PSY_037",
+      "trait": "investigative",
+      "direction": "direct",
+      "q": "I like research, experiments, or solving tricky problems."
+    },
+    {
+      "id": "G810_PSY_038",
+      "trait": "investigative",
+      "direction": "direct",
+      "q": "I like understanding why things happen."
+    },
+    {
+      "id": "G810_PSY_039",
+      "trait": "artistic",
+      "direction": "direct",
+      "q": "I enjoy expressing ideas in creative ways."
+    },
+    {
+      "id": "G810_PSY_040",
+      "trait": "artistic",
+      "direction": "direct",
+      "q": "I like designing, drawing, writing, or creating things."
+    },
+    {
+      "id": "G810_PSY_041",
+      "trait": "artistic",
+      "direction": "direct",
+      "q": "I like tasks where there is no single fixed way to do them."
+    },
+    {
+      "id": "G810_PSY_042",
+      "trait": "social",
+      "direction": "direct",
+      "q": "I enjoy helping others understand things."
+    },
+    {
+      "id": "G810_PSY_043",
+      "trait": "social",
+      "direction": "direct",
+      "q": "I like listening to people and understanding their problems."
+    },
+    {
+      "id": "G810_PSY_044",
+      "trait": "social",
+      "direction": "direct",
+      "q": "I enjoy activities where I can guide or encourage others."
+    },
+    {
+      "id": "G810_PSY_045",
+      "trait": "enterprising",
+      "direction": "direct",
+      "q": "I like convincing others about my ideas."
+    },
+    {
+      "id": "G810_PSY_046",
+      "trait": "enterprising",
+      "direction": "direct",
+      "q": "I enjoy taking charge during activities or projects."
+    },
+    {
+      "id": "G810_PSY_047",
+      "trait": "enterprising",
+      "direction": "direct",
+      "q": "I like thinking about leadership, business, or starting something new."
+    },
+    {
+      "id": "G810_PSY_048",
+      "trait": "conventional",
+      "direction": "direct",
+      "q": "I like keeping things neat, organized, and in order."
+    },
+    {
+      "id": "G810_PSY_049",
+      "trait": "conventional",
+      "direction": "direct",
+      "q": "I enjoy tasks where details must be checked carefully."
+    },
+    {
+      "id": "G810_PSY_050",
+      "trait": "conventional",
+      "direction": "direct",
+      "q": "I like following a proper system to complete work."
+    },
+    {
+      "id": "G810_PSY_051",
+      "trait": "attention_check",
+      "direction": "direct",
+      "q": "To show that you are reading carefully, please choose Agree for this statement."
+    },
+    {
+      "id": "G810_PSY_052",
+      "trait": "attention_check",
+      "direction": "direct",
+      "q": "For this statement only, please choose Disagree."
+    }
+  ],
+  "aptitude_questions": [
+    {
+      "id": "G810_L_001",
+      "category": "logical_reasoning",
+      "difficulty": "easy",
+      "mode": "text",
+      "question": "Find the next number: 4, 7, 10, 13, ?",
+      "options": [
+        "15",
+        "16",
+        "17",
+        "18"
+      ],
+      "correct": "16",
+      "explanation": "The pattern increases by +3 each time."
+    },
+    {
+      "id": "G810_L_002",
+      "category": "logical_reasoning",
+      "difficulty": "easy",
+      "mode": "text",
+      "question": "If A = 1, B = 2, C = 3, then CAB = ?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct": "6",
+      "explanation": "C = 3, A = 1, B = 2 → 3 + 1 + 2 = 6."
+    },
+    {
+      "id": "G810_L_003",
+      "category": "logical_reasoning",
+      "difficulty": "easy",
+      "mode": "text",
+      "question": "Which pair is most similar? Book : Read",
+      "options": [
+        "Pen : Write",
+        "Ball : Throw",
+        "Shoe : Walk",
+        "Clock : Time"
+      ],
+      "correct": "Pen : Write",
+      "explanation": "A book is used for reading, just as a pen is used for writing."
+    },
+    {
+      "id": "G810_L_004",
+      "category": "logical_reasoning",
+      "difficulty": "easy",
+      "mode": "text",
+      "question": "Find the next letter pair: AB, DE, GH, ?",
+      "options": [
+        "IJ",
+        "JK",
+        "KL",
+        "MN"
+      ],
+      "correct": "JK",
+      "explanation": "The pairs move ahead by 3 letters each time: AB → DE → GH → JK."
+    },
+    {
+      "id": "G810_L_005",
+      "category": "logical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "Find the next number: 3, 6, 12, 24, ?",
+      "options": [
+        "36",
+        "42",
+        "48",
+        "54"
+      ],
+      "correct": "48",
+      "explanation": "Each number is multiplied by 2."
+    },
+    {
+      "id": "G810_L_006",
+      "category": "logical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "If PEN is coded as 123, and PAPER is coded as 14526, then what is PEAR?",
+      "options": [
+        "1426",
+        "1526",
+        "1456",
+        "1326"
+      ],
+      "correct": "1426",
+      "explanation": "P = 1, E = 2, A = 4, R = 6."
+    },
+    {
+      "id": "G810_L_007",
+      "category": "logical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "Which number does not belong? 11, 22, 33, 47, 55",
+      "options": [
+        "22",
+        "33",
+        "47",
+        "55"
+      ],
+      "correct": "47",
+      "explanation": "All others are multiples of 11."
+    },
+    {
+      "id": "G810_L_008",
+      "category": "logical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "Find the missing term: 2, 5, 10, 17, 26, ?",
+      "options": [
+        "35",
+        "36",
+        "37",
+        "38"
+      ],
+      "correct": "37",
+      "explanation": "Pattern is +3, +5, +7, +9, so next is +11."
+    },
+    {
+      "id": "G810_L_009",
+      "category": "logical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "If all BLOOPS are RAZS and all RAZS are TINS, then all BLOOPS are definitely:",
+      "options": [
+        "TINS",
+        "Not TINS",
+        "Sometimes TINS",
+        "None of these"
+      ],
+      "correct": "TINS",
+      "explanation": "If BLOOPS ⊂ RAZS and RAZS ⊂ TINS, then BLOOPS ⊂ TINS."
+    },
+    {
+      "id": "G810_L_010",
+      "category": "logical_reasoning",
+      "difficulty": "medium",
+      "mode": "visual_recommended",
+      "question": "A 2×2 matrix has these patterns:\nTop-left = 1 dot, Top-right = 2 dots,\nBottom-left = 2 dots, Bottom-right = ?\nWhich option best completes the pattern?",
+      "options": [
+        "1 dot",
+        "2 dots",
+        "3 dots",
+        "4 dots"
+      ],
+      "correct": "3 dots",
+      "explanation": "The pattern increases by 1 across and down."
+    },
+    {
+      "id": "G810_L_011",
+      "category": "logical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "If MONDAY is coded as NPOEBZ, how is FRIDAY coded?",
+      "options": [
+        "GSJEBZ",
+        "GSJEBX",
+        "GRJEBZ",
+        "FSJEBZ"
+      ],
+      "correct": "GSJEBZ",
+      "explanation": "Each letter moves one step forward in the alphabet."
+    },
+    {
+      "id": "G810_L_012",
+      "category": "logical_reasoning",
+      "difficulty": "hard",
+      "mode": "text",
+      "question": "Find the next number: 1, 4, 9, 16, 25, ?",
+      "options": [
+        "30",
+        "35",
+        "36",
+        "49"
+      ],
+      "correct": "36",
+      "explanation": "These are perfect squares: 1², 2², 3², 4², 5², so next is 6² = 36."
+    },
+    {
+      "id": "G810_L_013",
+      "category": "logical_reasoning",
+      "difficulty": "hard",
+      "mode": "text",
+      "question": "A pattern follows this rule: multiply by 2, then add 1. Starting from 3, what is the 4th number?",
+      "options": [
+        "13",
+        "15",
+        "17",
+        "19"
+      ],
+      "correct": "31",
+      "explanation": "Sequence: 3 → 7 → 15 → 31. NOTE: You must replace options to include 31."
+    },
+    {
+      "id": "G810_L_013_fixed",
+      "category": "logical_reasoning",
+      "difficulty": "hard",
+      "mode": "text",
+      "question": "A pattern follows this rule: multiply by 2, then add 1. Starting from 3, what is the 4th number?",
+      "options": [
+        "15",
+        "21",
+        "31",
+        "27"
+      ],
+      "correct": "31",
+      "explanation": "Sequence: 3 → 7 → 15 → 31."
+    },
+    {
+      "id": "G810_A_001",
+      "category": "analytical_reasoning",
+      "difficulty": "easy",
+      "mode": "text",
+      "question": "Riya is taller than Meena. Meena is taller than Pooja. Who is the tallest?",
+      "options": [
+        "Meena",
+        "Pooja",
+        "Riya",
+        "Cannot say"
+      ],
+      "correct": "Riya",
+      "explanation": "Riya > Meena > Pooja."
+    },
+    {
+      "id": "G810_A_002",
+      "category": "analytical_reasoning",
+      "difficulty": "easy",
+      "mode": "text",
+      "question": "A boy walks 5 steps forward and then turns right. Which direction is he now facing if he started facing North?",
+      "options": [
+        "South",
+        "East",
+        "West",
+        "North"
+      ],
+      "correct": "East",
+      "explanation": "Turning right from North means facing East."
+    },
+    {
+      "id": "G810_A_003",
+      "category": "analytical_reasoning",
+      "difficulty": "easy",
+      "mode": "text",
+      "question": "Four students scored 20, 25, 30, and 35. Who scored second highest?",
+      "options": [
+        "20",
+        "25",
+        "30",
+        "35"
+      ],
+      "correct": "30",
+      "explanation": "Scores in order: 35, 30, 25, 20."
+    },
+    {
+      "id": "G810_A_004",
+      "category": "analytical_reasoning",
+      "difficulty": "easy",
+      "mode": "text",
+      "question": "If today is Tuesday, what day will it be 3 days later?",
+      "options": [
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "correct": "Friday",
+      "explanation": "Tuesday → Wednesday → Thursday → Friday."
+    },
+    {
+      "id": "G810_A_005",
+      "category": "analytical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "A is older than B. B is older than C. D is older than A. Who is the youngest?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct": "C",
+      "explanation": "D > A > B > C."
+    },
+    {
+      "id": "G810_A_006",
+      "category": "analytical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "A student walks 4 m north, then 3 m east. How far is the student from the starting point?",
+      "options": [
+        "5 m",
+        "6 m",
+        "7 m",
+        "4 m"
+      ],
+      "correct": "5 m",
+      "explanation": "Forms a 3-4-5 right triangle."
+    },
+    {
+      "id": "G810_A_007",
+      "category": "analytical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "Five books are arranged from left to right as: Red, Blue, Green, Yellow, Black. Which book is in the middle?",
+      "options": [
+        "Blue",
+        "Green",
+        "Yellow",
+        "Black"
+      ],
+      "correct": "Green",
+      "explanation": "The 3rd of 5 items is the middle."
+    },
+    {
+      "id": "G810_A_008",
+      "category": "analytical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "If Ravi is to the left of Aman, and Aman is to the left of Karan, who is in the middle?",
+      "options": [
+        "Ravi",
+        "Aman",
+        "Karan",
+        "Cannot say"
+      ],
+      "correct": "Aman",
+      "explanation": "Order: Ravi, Aman, Karan."
+    },
+    {
+      "id": "G810_A_009",
+      "category": "analytical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "A can finish a task in 6 days, B in 3 days. Who works faster?",
+      "options": [
+        "A",
+        "B",
+        "Both same",
+        "Cannot say"
+      ],
+      "correct": "B",
+      "explanation": "Fewer days means faster work."
+    },
+    {
+      "id": "G810_A_010",
+      "category": "analytical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "A class chart shows: Maths = 20 students, Science = 15 students, English = 25 students. Which subject has the fewest students?",
+      "options": [
+        "Maths",
+        "Science",
+        "English",
+        "All equal"
+      ],
+      "correct": "Science",
+      "explanation": "15 is the smallest number."
+    },
+    {
+      "id": "G810_A_011",
+      "category": "analytical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "If every square is a rectangle, and every rectangle has 4 sides, then every square definitely has:",
+      "options": [
+        "3 sides",
+        "4 sides",
+        "5 sides",
+        "6 sides"
+      ],
+      "correct": "4 sides",
+      "explanation": "Squares are rectangles, and rectangles have 4 sides."
+    },
+    {
+      "id": "G810_A_012",
+      "category": "analytical_reasoning",
+      "difficulty": "hard",
+      "mode": "text",
+      "question": "P, Q, R, and S stand in a line. Q is between P and R. S is not at an end. Who must be in the middle two positions?",
+      "options": [
+        "P and Q",
+        "Q and S",
+        "R and S",
+        "Cannot be determined"
+      ],
+      "correct": "Q and S",
+      "explanation": "Q must be between P and R, and S cannot be at an end, so Q and S occupy middle positions."
+    },
+    {
+      "id": "G810_A_013",
+      "category": "analytical_reasoning",
+      "difficulty": "hard",
+      "mode": "text",
+      "question": "A student starts facing East, turns left, then left again, then right. Which direction is the student facing now?",
+      "options": [
+        "North",
+        "South",
+        "East",
+        "West"
+      ],
+      "correct": "North",
+      "explanation": "East → North → West → North."
+    },
+    {
+      "id": "G810_N_001",
+      "category": "numerical_reasoning",
+      "difficulty": "easy",
+      "mode": "text",
+      "question": "What is 25% of 80?",
+      "options": [
+        "10",
+        "15",
+        "20",
+        "25"
+      ],
+      "correct": "20",
+      "explanation": "25% means one-fourth. One-fourth of 80 is 20."
+    },
+    {
+      "id": "G810_N_002",
+      "category": "numerical_reasoning",
+      "difficulty": "easy",
+      "mode": "text",
+      "question": "The ratio of boys to girls in a class is 2:3. If there are 10 boys, how many girls are there?",
+      "options": [
+        "12",
+        "15",
+        "18",
+        "20"
+      ],
+      "correct": "15",
+      "explanation": "If 2 parts = 10, then 1 part = 5, so 3 parts = 15."
+    },
+    {
+      "id": "G810_N_003",
+      "category": "numerical_reasoning",
+      "difficulty": "easy",
+      "mode": "text",
+      "question": "Find the average of 6, 8, and 10.",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "correct": "8",
+      "explanation": "(6 + 8 + 10) / 3 = 24 / 3 = 8."
+    },
+    {
+      "id": "G810_N_004",
+      "category": "numerical_reasoning",
+      "difficulty": "easy",
+      "mode": "text",
+      "question": "A pencil costs ₹12. What is the cost of 5 pencils?",
+      "options": [
+        "₹50",
+        "₹55",
+        "₹60",
+        "₹65"
+      ],
+      "correct": "₹60",
+      "explanation": "12 × 5 = 60."
+    },
+    {
+      "id": "G810_N_005",
+      "category": "numerical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "A shirt marked at ₹800 is sold at 10% discount. What is the selling price?",
+      "options": [
+        "₹700",
+        "₹720",
+        "₹740",
+        "₹760"
+      ],
+      "correct": "₹720",
+      "explanation": "10% of 800 = 80, so selling price = 800 - 80 = 720."
+    },
+    {
+      "id": "G810_N_006",
+      "category": "numerical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "A train travels 120 km in 3 hours. What is its speed per hour?",
+      "options": [
+        "30 km/h",
+        "35 km/h",
+        "40 km/h",
+        "45 km/h"
+      ],
+      "correct": "40 km/h",
+      "explanation": "Speed = Distance / Time = 120 / 3 = 40 km/h."
+    },
+    {
+      "id": "G810_N_007",
+      "category": "numerical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "A student scored 45 out of 60 in a test. What percentage is this?",
+      "options": [
+        "70%",
+        "75%",
+        "80%",
+        "85%"
+      ],
+      "correct": "75%",
+      "explanation": "45/60 = 0.75 = 75%."
+    },
+    {
+      "id": "G810_N_008",
+      "category": "numerical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "A shopkeeper buys an item for ₹200 and sells it for ₹240. What is the profit?",
+      "options": [
+        "₹20",
+        "₹30",
+        "₹40",
+        "₹50"
+      ],
+      "correct": "₹40",
+      "explanation": "Profit = Selling Price - Cost Price = 240 - 200 = 40."
+    },
+    {
+      "id": "G810_N_009",
+      "category": "numerical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "If 4 notebooks cost ₹96, what is the cost of 1 notebook?",
+      "options": [
+        "₹20",
+        "₹22",
+        "₹24",
+        "₹26"
+      ],
+      "correct": "₹24",
+      "explanation": "96 ÷ 4 = 24."
+    },
+    {
+      "id": "G810_N_010",
+      "category": "numerical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "A bar graph shows sales on four days: Monday = 20, Tuesday = 30, Wednesday = 25, Thursday = 35. On which day were sales highest?",
+      "options": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "correct": "Thursday",
+      "explanation": "35 is the highest value."
+    },
+    {
+      "id": "G810_N_011",
+      "category": "numerical_reasoning",
+      "difficulty": "medium",
+      "mode": "text",
+      "question": "Find the next number: 5, 10, 20, 40, ?",
+      "options": [
+        "60",
+        "70",
+        "80",
+        "90"
+      ],
+      "correct": "80",
+      "explanation": "Each number is multiplied by 2."
+    },
+    {
+      "id": "G810_N_012",
+      "category": "numerical_reasoning",
+      "difficulty": "hard",
+      "mode": "text",
+      "question": "A water tank is 3/5 full. If the tank holds 100 litres, how much water is inside?",
+      "options": [
+        "50 L",
+        "60 L",
+        "70 L",
+        "80 L"
+      ],
+      "correct": "60 L",
+      "explanation": "3/5 of 100 = 60."
+    },
+    {
+      "id": "G810_N_013",
+      "category": "numerical_reasoning",
+      "difficulty": "hard",
+      "mode": "text",
+      "question": "A student spends 1/4 of pocket money on books and 1/2 on snacks. What fraction is left?",
+      "options": [
+        "1/4",
+        "1/3",
+        "1/2",
+        "3/4"
+      ],
+      "correct": "1/4",
+      "explanation": "1/4 + 1/2 = 3/4 spent, so 1/4 remains."
+    },
+    {
+      "id": "G810_S_001",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "easy",
+      "mode": "visual_recommended",
+      "question": "A right-pointing arrow is shown in a mirror. Which direction will the mirrored arrow point?",
+      "options": [
+        "Left",
+        "Right",
+        "Up",
+        "Down"
+      ],
+      "correct": "Left",
+      "explanation": "A mirror flips left and right."
+    },
+    {
+      "id": "G810_S_002",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "easy",
+      "mode": "visual_recommended",
+      "question": "A square is rotated 90° clockwise. How many sides does it still have?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct": "4",
+      "explanation": "Rotation does not change the number of sides."
+    },
+    {
+      "id": "G810_S_003",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "easy",
+      "mode": "visual_recommended",
+      "question": "A paper is folded once in half. If one hole is punched through the folded paper, how many holes will appear when opened?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct": "2",
+      "explanation": "One fold doubles the punched hole."
+    },
+    {
+      "id": "G810_S_004",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "easy",
+      "mode": "visual_recommended",
+      "question": "How many triangles are there in a simple large triangle divided into 4 equal smaller triangles?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct": "4",
+      "explanation": "The figure contains 4 smallest triangles."
+    },
+    {
+      "id": "G810_S_005",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "medium",
+      "mode": "visual_recommended",
+      "question": "A cube has one face shaded. If the cube is rotated, which option shows the shaded face in the correct new position?",
+      "options": [
+        "Option A (correct rotation)",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct": "Option A (correct rotation)",
+      "explanation": "This tests mental cube rotation and face tracking."
+    },
+    {
+      "id": "G810_S_006",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "medium",
+      "mode": "visual_recommended",
+      "question": "Which figure is the mirror image of the shape shown?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct": "A",
+      "explanation": "Correct answer must reverse left-right orientation without changing top-bottom."
+    },
+    {
+      "id": "G810_S_007",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "medium",
+      "mode": "visual_recommended",
+      "question": "A shape is folded along a line. Which option shows the correct folded result?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct": "B",
+      "explanation": "Tests fold symmetry and spatial prediction."
+    },
+    {
+      "id": "G810_S_008",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "medium",
+      "mode": "visual_recommended",
+      "question": "Which smaller shape is hidden inside the larger figure?",
+      "options": [
+        "Triangle",
+        "Square",
+        "Arrow",
+        "Diamond"
+      ],
+      "correct": "Diamond",
+      "explanation": "Tests embedded figure recognition."
+    },
+    {
+      "id": "G810_S_009",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "medium",
+      "mode": "visual_recommended",
+      "question": "A pattern of dots forms a square. One extra line is added diagonally. How many regions are formed?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct": "2",
+      "explanation": "A single diagonal splits a square into 2 regions."
+    },
+    {
+      "id": "G810_S_010",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "medium",
+      "mode": "visual_recommended",
+      "question": "Which option completes the visual pattern in a 2×2 figure matrix?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct": "C",
+      "explanation": "The missing figure must follow the visual transformation pattern."
+    },
+    {
+      "id": "G810_S_011",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "medium",
+      "mode": "visual_recommended",
+      "question": "A net of a cube is shown. Which face will be opposite the shaded face when folded?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct": "D",
+      "explanation": "Tests cube-net folding logic."
+    },
+    {
+      "id": "G810_S_012",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "hard",
+      "mode": "visual_recommended",
+      "question": "A paper is folded twice and one corner is cut. Which option shows the correct unfolded pattern?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct": "B",
+      "explanation": "Tests multi-fold spatial prediction."
+    },
+    {
+      "id": "G810_S_013",
+      "category": "spatial_visual_reasoning",
+      "difficulty": "hard",
+      "mode": "visual_recommended",
+      "question": "A complex figure contains overlapping triangles. How many triangles are present in total?",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "correct": "9",
+      "explanation": "Requires layered region counting, not just visible small triangles."
+    }
+  ]
+}
