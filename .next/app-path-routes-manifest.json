@@ -1,0 +1,15 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/admin/page": "/admin",
+  "/api/generate-pdf/route": "/api/generate-pdf",
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/",
+  "/report/[id]/page": "/report/[id]",
+  "/results/[id]/page": "/results/[id]",
+  "/success/page": "/success",
+  "/tests/aptitude/[id]/page": "/tests/aptitude/[id]",
+  "/tests/aptitude/page": "/tests/aptitude",
+  "/tests/psychometric/[id]/page": "/tests/psychometric/[id]",
+  "/tests/psychometric/page": "/tests/psychometric"
+}

@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/tests/layout,_N_T_/tests/psychometric/layout,_N_T_/tests/psychometric/page,_N_T_/tests/psychometric"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/tests/psychometric/__PAGE__",
+    "/tests/psychometric",
+    "/tests",
+    "/_index",
+    "/_head"
+  ]
+}

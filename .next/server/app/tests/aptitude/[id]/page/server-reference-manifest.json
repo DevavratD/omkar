@@ -1,0 +1,17 @@
+{
+  "node": {
+    "70d85ff1ba22cd3b87133941050c5cf5e3e0d04639": {
+      "workers": {
+        "app/tests/aptitude/[id]/page": {
+          "moduleId": 91039,
+          "async": false,
+          "exportedName": "submitAptitude",
+          "filename": "src/app/tests/aptitude/actions.ts"
+        }
+      },
+      "exportedName": "submitAptitude",
+      "filename": "src/app/tests/aptitude/actions.ts"
+    }
+  },
+  "edge": {}
+}

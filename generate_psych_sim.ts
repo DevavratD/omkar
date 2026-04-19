@@ -1,17 +1,17 @@
 import { computePsychDomains } from './src/lib/scoring/domainMapping';
 import { generatePsychometricReport } from './src/lib/scoring/reportGenerator';
-import { PsychometricResult, PsychConstructScore, PsychBand } from './src/lib/scoring/types';
+import { PsychometricResult, PsychConstructScore, PsychBand, PsychConstruct } from './src/lib/scoring/types';
 
 async function main() {
   const getBand = (score: number): PsychBand => {
-    if(score >= 75) return 'Very High';
-    if(score >= 55) return 'High';
-    if(score >= 40) return 'Moderate';
-    return 'Low';
+    if(score >= 75) return 'Strong Preference';
+    if(score >= 55) return 'Clear Preference';
+    if(score >= 40) return 'Balanced';
+    return 'Lower Preference';
   };
 
-  const createScore = (construct: string, score: number): PsychConstructScore => ({
-    construct, correct: Math.floor(score/10), total: 10, normalized: score, band: getBand(score)
+  const createScore = (construct: PsychConstruct, score: number): PsychConstructScore => ({
+    construct, raw: Math.floor(score/3.33), count: 6, normalized: score, band: getBand(score)
   });
 
   const construct_scores: Record<string, PsychConstructScore> = {
@@ -26,13 +26,13 @@ async function main() {
   const top_domains = computePsychDomains(construct_scores);
 
   const mockResult: PsychometricResult = {
-    cohort: 'grade_11_12',
-    total_score: 65,
     construct_scores,
+    domain_scores: top_domains,
     top_domains,
-    raw_responses: [4,5,4,5,4,5,4,5], // varies enough to avoid straight-lining penalty
-    has_midpoint_bias: false,
-    gaps: []
+    reliability_flag: 'OK',
+    riasec_top3: ['Investigative', 'Realistic', 'Artistic'],
+    work_style_summary: ['Analytical', 'Persistent'],
+    midpoint_bias: false,
   };
 
   const candidateInfo = { name: "Investigative Thinker" };

@@ -1,0 +1,17 @@
+{
+  "node": {
+    "40a727170092e20ce7773e2cc9024b6716e06cf4aa": {
+      "workers": {
+        "app/report/[id]/page": {
+          "moduleId": 92961,
+          "async": false,
+          "exportedName": "getResultData",
+          "filename": "src/app/actions/submit-assessment.ts"
+        }
+      },
+      "exportedName": "getResultData",
+      "filename": "src/app/actions/submit-assessment.ts"
+    }
+  },
+  "edge": {}
+}

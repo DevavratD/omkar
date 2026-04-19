@@ -5,7 +5,7 @@ import { UserAnswer, TestResult } from '../src/types';
 const testId = '5-7';
 
 async function run() {
-  const liveQuestions = getQuestionsForTest(testId);
+  const liveQuestions = await getQuestionsForTest(testId);
   if (!liveQuestions || liveQuestions.length === 0) {
     throw new Error('Could not fetch test schema for mapping.');
   }
@@ -87,7 +87,7 @@ async function run() {
     report,
   };
 
-  insertResult(newResult);
+  await insertResult(newResult);
 
   console.log(`\n✅ DEMO REPORT GENERATED SUCCESSFULLY!`);
   console.log(`REPORT ID: ${resultId}`);

@@ -1,0 +1,146 @@
+[
+  {
+    "route": "/report/[id]",
+    "firstLoadUncompressedJsBytes": 557762,
+    "firstLoadChunkPaths": [
+      ".next\\static\\chunks\\0dw2a_5hcm.f4.js",
+      ".next\\static\\chunks\\00-csyj9a6t-x.js",
+      ".next\\static\\chunks\\0uki~zu~.tqp..js",
+      ".next\\static\\chunks\\115dplafwys-z.js",
+      ".next\\static\\chunks\\08kfoyi3fmtk4.js",
+      ".next\\static\\chunks\\0pqt~8bl3ukh4.js",
+      ".next\\static\\chunks\\0vkgb7xyv-nko.js",
+      ".next\\static\\chunks\\145vixdm8_8jr.js",
+      ".next\\static\\chunks\\turbopack-0d71u57z.woks.js"
+    ]
+  },
+  {
+    "route": "/tests/aptitude/[id]",
+    "firstLoadUncompressedJsBytes": 553838,
+    "firstLoadChunkPaths": [
+      ".next\\static\\chunks\\0dw2a_5hcm.f4.js",
+      ".next\\static\\chunks\\00-csyj9a6t-x.js",
+      ".next\\static\\chunks\\16n79dnuawam~.js",
+      ".next\\static\\chunks\\115dplafwys-z.js",
+      ".next\\static\\chunks\\08kfoyi3fmtk4.js",
+      ".next\\static\\chunks\\0pqt~8bl3ukh4.js",
+      ".next\\static\\chunks\\0vkgb7xyv-nko.js",
+      ".next\\static\\chunks\\145vixdm8_8jr.js",
+      ".next\\static\\chunks\\turbopack-0d71u57z.woks.js"
+    ]
+  },
+  {
+    "route": "/tests/psychometric/[id]",
+    "firstLoadUncompressedJsBytes": 551745,
+    "firstLoadChunkPaths": [
+      ".next\\static\\chunks\\0dw2a_5hcm.f4.js",
+      ".next\\static\\chunks\\00-csyj9a6t-x.js",
+      ".next\\static\\chunks\\0ckel.i~booik.js",
+      ".next\\static\\chunks\\115dplafwys-z.js",
+      ".next\\static\\chunks\\08kfoyi3fmtk4.js",
+      ".next\\static\\chunks\\0pqt~8bl3ukh4.js",
+      ".next\\static\\chunks\\0vkgb7xyv-nko.js",
+      ".next\\static\\chunks\\145vixdm8_8jr.js",
+      ".next\\static\\chunks\\turbopack-0d71u57z.woks.js"
+    ]
+  },
+  {
+    "route": "/admin",
+    "firstLoadUncompressedJsBytes": 542682,
+    "firstLoadChunkPaths": [
+      ".next\\static\\chunks\\0dw2a_5hcm.f4.js",
+      ".next\\static\\chunks\\00-csyj9a6t-x.js",
+      ".next\\static\\chunks\\1095pcxm6ih5d.js",
+      ".next\\static\\chunks\\115dplafwys-z.js",
+      ".next\\static\\chunks\\08kfoyi3fmtk4.js",
+      ".next\\static\\chunks\\0pqt~8bl3ukh4.js",
+      ".next\\static\\chunks\\0vkgb7xyv-nko.js",
+      ".next\\static\\chunks\\145vixdm8_8jr.js",
+      ".next\\static\\chunks\\turbopack-0d71u57z.woks.js"
+    ]
+  },
+  {
+    "route": "/",
+    "firstLoadUncompressedJsBytes": 533998,
+    "firstLoadChunkPaths": [
+      ".next\\static\\chunks\\0dw2a_5hcm.f4.js",
+      ".next\\static\\chunks\\00-csyj9a6t-x.js",
+      ".next\\static\\chunks\\115dplafwys-z.js",
+      ".next\\static\\chunks\\08kfoyi3fmtk4.js",
+      ".next\\static\\chunks\\0pqt~8bl3ukh4.js",
+      ".next\\static\\chunks\\0vkgb7xyv-nko.js",
+      ".next\\static\\chunks\\145vixdm8_8jr.js",
+      ".next\\static\\chunks\\turbopack-0d71u57z.woks.js"
+    ]
+  },
+  {
+    "route": "/_not-found",
+    "firstLoadUncompressedJsBytes": 533998,
+    "firstLoadChunkPaths": [
+      ".next\\static\\chunks\\0dw2a_5hcm.f4.js",
+      ".next\\static\\chunks\\00-csyj9a6t-x.js",
+      ".next\\static\\chunks\\115dplafwys-z.js",
+      ".next\\static\\chunks\\08kfoyi3fmtk4.js",
+      ".next\\static\\chunks\\0pqt~8bl3ukh4.js",
+      ".next\\static\\chunks\\0vkgb7xyv-nko.js",
+      ".next\\static\\chunks\\145vixdm8_8jr.js",
+      ".next\\static\\chunks\\turbopack-0d71u57z.woks.js"
+    ]
+  },
+  {
+    "route": "/results/[id]",
+    "firstLoadUncompressedJsBytes": 533998,
+    "firstLoadChunkPaths": [
+      ".next\\static\\chunks\\0dw2a_5hcm.f4.js",
+      ".next\\static\\chunks\\00-csyj9a6t-x.js",
+      ".next\\static\\chunks\\115dplafwys-z.js",
+      ".next\\static\\chunks\\08kfoyi3fmtk4.js",
+      ".next\\static\\chunks\\0pqt~8bl3ukh4.js",
+      ".next\\static\\chunks\\0vkgb7xyv-nko.js",
+      ".next\\static\\chunks\\145vixdm8_8jr.js",
+      ".next\\static\\chunks\\turbopack-0d71u57z.woks.js"
+    ]
+  },
+  {
+    "route": "/success",
+    "firstLoadUncompressedJsBytes": 533998,
+    "firstLoadChunkPaths": [
+      ".next\\static\\chunks\\0dw2a_5hcm.f4.js",
+      ".next\\static\\chunks\\00-csyj9a6t-x.js",
+      ".next\\static\\chunks\\115dplafwys-z.js",
+      ".next\\static\\chunks\\08kfoyi3fmtk4.js",
+      ".next\\static\\chunks\\0pqt~8bl3ukh4.js",
+      ".next\\static\\chunks\\0vkgb7xyv-nko.js",
+      ".next\\static\\chunks\\145vixdm8_8jr.js",
+      ".next\\static\\chunks\\turbopack-0d71u57z.woks.js"
+    ]
+  },
+  {
+    "route": "/tests/aptitude",
+    "firstLoadUncompressedJsBytes": 533998,
+    "firstLoadChunkPaths": [
+      ".next\\static\\chunks\\0dw2a_5hcm.f4.js",
+      ".next\\static\\chunks\\00-csyj9a6t-x.js",
+      ".next\\static\\chunks\\115dplafwys-z.js",
+      ".next\\static\\chunks\\08kfoyi3fmtk4.js",
+      ".next\\static\\chunks\\0pqt~8bl3ukh4.js",
+      ".next\\static\\chunks\\0vkgb7xyv-nko.js",
+      ".next\\static\\chunks\\145vixdm8_8jr.js",
+      ".next\\static\\chunks\\turbopack-0d71u57z.woks.js"
+    ]
+  },
+  {
+    "route": "/tests/psychometric",
+    "firstLoadUncompressedJsBytes": 533998,
+    "firstLoadChunkPaths": [
+      ".next\\static\\chunks\\0dw2a_5hcm.f4.js",
+      ".next\\static\\chunks\\00-csyj9a6t-x.js",
+      ".next\\static\\chunks\\115dplafwys-z.js",
+      ".next\\static\\chunks\\08kfoyi3fmtk4.js",
+      ".next\\static\\chunks\\0pqt~8bl3ukh4.js",
+      ".next\\static\\chunks\\0vkgb7xyv-nko.js",
+      ".next\\static\\chunks\\145vixdm8_8jr.js",
+      ".next\\static\\chunks\\turbopack-0d71u57z.woks.js"
+    ]
+  }
+]

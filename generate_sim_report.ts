@@ -24,10 +24,8 @@ async function main() {
   const top_domains = computeAptDomains(construct_scores);
 
   const mockResult: AptitudeResult = {
-    candidate_id: 'test-123',
-    cohort: 'grade_11_12',
-    total_score: 65,
     construct_scores,
+    domain_scores: top_domains,
     top_domains,
     strengths: ['numerical_reasoning'],
     improvement_areas: ['analytical_reasoning', 'spatial_visual_reasoning']
