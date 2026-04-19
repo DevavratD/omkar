@@ -9,6 +9,21 @@ export function cohortFromTestId(testId: string): Cohort {
   return 'professional';
 }
 
+// ─── Shared Types ─────────────────────────────────────────────────────────────
+
+export type GapStatus = 'aligned' | 'interest_high_ability_low' | 'ability_high_interest_low' | 'low_fit';
+export type GapPriority = 'High' | 'Medium' | 'Low';
+
+export interface GapEntry {
+  domain: string;
+  psychometric: number;
+  aptitude: number;
+  type: GapStatus;
+  message: string;
+  gap_magnitude: number;
+  gap_priority: GapPriority;
+}
+
 // ─── Psychometric ─────────────────────────────────────────────────────────────
 
 export type PsychConstruct =
