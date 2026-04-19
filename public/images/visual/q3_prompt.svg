@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 350" width="100%" height="100%" style="background:#f8fafc; border-radius: 8px; border: 2px solid #cbd5e1;">
+        <defs>
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+            </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+        
+    <g transform="translate(75, 25)">
+        <rect x="0" y="0" width="300" height="300" fill="none" stroke="#94a3b8" stroke-width="4" />
+        <line x1="100" y1="0" x2="100" y2="300" stroke="#94a3b8" stroke-width="3" />
+        <line x1="200" y1="0" x2="200" y2="300" stroke="#94a3b8" stroke-width="3" />
+        <line x1="0" y1="100" x2="300" y2="100" stroke="#94a3b8" stroke-width="3" />
+        <line x1="0" y1="200" x2="300" y2="200" stroke="#94a3b8" stroke-width="3" />
+        
+        <!-- Row 1: Diamonds. Inner logic: Top Dot + Bottom Dot = Two Dots -->
+        <polygon points="50,15 85,50 50,85 15,50" fill="none" stroke="#0f172a" stroke-width="4"/>
+        <circle cx="50" cy="35" r="5" fill="#0f172a" />
+        
+        <polygon points="150,15 185,50 150,85 115,50" fill="none" stroke="#0f172a" stroke-width="4"/>
+        <circle cx="150" cy="65" r="5" fill="#0f172a" />
+        
+        <polygon points="250,15 285,50 250,85 215,50" fill="none" stroke="#0f172a" stroke-width="4"/>
+        <circle cx="250" cy="35" r="5" fill="#0f172a" />
+        <circle cx="250" cy="65" r="5" fill="#0f172a" />
+        
+        <!-- Row 2: Circles. Inner logic: Left Dash + Right Dash = Minus -->
+        <circle cx="50" cy="150" r="35" fill="none" stroke="#0f172a" stroke-width="4"/>
+        <line x1="30" y1="150" x2="50" y2="150" stroke="#0f172a" stroke-width="4" />
+        
+        <circle cx="150" cy="150" r="35" fill="none" stroke="#0f172a" stroke-width="4"/>
+        <line x1="150" y1="150" x2="170" y2="150" stroke="#0f172a" stroke-width="4" />
+        
+        <circle cx="250" cy="150" r="35" fill="none" stroke="#0f172a" stroke-width="4"/>
+        <line x1="230" y1="150" x2="270" y2="150" stroke="#0f172a" stroke-width="4" />
+        
+        <!-- Row 3: Squares. Inner logic: TL dot + BR dot = Diagonal Dots -->
+        <rect x="15" y="215" width="70" height="70" fill="none" stroke="#0f172a" stroke-width="4"/>
+        <circle cx="35" cy="235" r="6" fill="#0f172a" />
+        
+        <rect x="115" y="215" width="70" height="70" fill="none" stroke="#0f172a" stroke-width="4"/>
+        <circle cx="165" cy="265" r="6" fill="#0f172a" />
+        
+        <text x="235" y="265" font-family="sans-serif" font-size="40" font-weight="bold" fill="#64748b">?</text>
+    </g>
+
+    </svg>
