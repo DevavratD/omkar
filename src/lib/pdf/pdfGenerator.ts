@@ -4,22 +4,36 @@
 // Uses puppeteer in server-only context (Next.js API route).
 
 import puppeteer, { Browser } from 'puppeteer';
+import puppeteerCore from 'puppeteer-core';
 
-let _browser: Browser | null = null;
+let _browser: any = null;
 
-async function getBrowser(): Promise<Browser> {
+async function getBrowser(): Promise<any> {
   if (_browser && _browser.connected) return _browser;
 
-  _browser = await puppeteer.launch({
-    headless: true,
-    args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      '--disable-dev-shm-usage',
-      '--disable-gpu',
-      '--font-render-hinting=none',
-    ],
-  });
+  const isServerless = process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME || process.env.NETLIFY;
+
+  if (isServerless) {
+    // Dynamic import to avoid loading it locally where it might not be needed/supported
+    const chromium = require('@sparticuz/chromium');
+    _browser = await puppeteerCore.launch({
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath(),
+      headless: chromium.headless,
+    });
+  } else {
+    _browser = await puppeteer.launch({
+      headless: true,
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--disable-gpu',
+        '--font-render-hinting=none',
+      ],
+    });
+  }
 
   return _browser;
 }

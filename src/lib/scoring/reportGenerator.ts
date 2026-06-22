@@ -95,68 +95,68 @@ function buildPsychSummary(
 ): string {
   const s = result.construct_scores;
   const n = (k: string) => s[k]?.normalized ?? 0;
-  const name = candidateName && candidateName !== 'Candidate Profile' ? candidateName : 'This candidate';
+  const name = candidateName && candidateName !== 'Candidate Profile' && candidateName !== 'Candidate' ? candidateName : 'The candidate';
 
-  // Paragraph 1: RIASEC top orientation with actual scores
   const riasecKeys = ['realistic', 'investigative', 'artistic', 'social', 'enterprising', 'conventional'];
   const topRiasec = riasecKeys
     .filter(k => s[k])
     .sort((a, b) => n(b) - n(a))
-    .slice(0, 2);
+    .slice(0, 3);
 
-  let para1: string;
+  const lines = [
+    `**VOCATIONAL INTEREST PROFILE (RIASEC)**`,
+  ];
+
   if (topRiasec.length >= 2) {
     const r1 = topRiasec[0]; const r2 = topRiasec[1];
-    para1 = `${name}'s career interest profile is led by ${label(r1)} (${n(r1)}%) and ${label(r2)} (${n(r2)}%), `
-      + `suggesting ${RIASEC_SUMMARY[r1] ?? r1.replace(/_/g,' ')} `
-      + `alongside ${RIASEC_SUMMARY[r2] ?? r2.replace(/_/g,' ')}. `
-      + `This combination is consistent with career environments that value `
-      + (r1 === 'investigative' || r2 === 'investigative' ? 'applied problem-solving, research, and analytical depth.' :
-         r1 === 'artistic' ? 'originality, expression, and creative latitude.' :
-         r1 === 'social' ? 'human-centred work, mentoring, and collaborative support roles.' :
-         r1 === 'enterprising' ? 'leadership, persuasion, and building outcomes through others.' :
-         'structured analysis and organised execution.');
+    lines.push(`${name}'s interest profile is dominated by **${label(r1)} (${n(r1)}%)** and **${label(r2)} (${n(r2)}%)** traits. This profile suggests:`);
+    lines.push(`* **Primary Focus**: ${RIASEC_SUMMARY[r1] ?? r1.replace(/_/g,' ')}.`);
+    lines.push(`* **Secondary Focus**: ${RIASEC_SUMMARY[r2] ?? r2.replace(/_/g,' ')}.`);
+    lines.push(`This vocational profile thrives in career environments that value ` +
+      (r1 === 'investigative' || r2 === 'investigative' ? `applied research, analytical depth, and data-driven problem solving aligned with ${name}'s interests.` :
+       r1 === 'artistic' ? `creative expression, original designs, and low-structure independence suited to ${name}'s style.` :
+       r1 === 'social' ? `people-oriented settings, mentoring, and collaborative team environments that fit ${name}'s collaborative nature.` :
+       r1 === 'enterprising' ? `leadership, strategic influence, and result-oriented business execution matching ${name}'s drive.` :
+       `structured systems, organized task execution, and analytical precision preferred by ${name}.`));
   } else {
-    para1 = `${name}'s career interest profile does not show a strong directional preference in any single RIASEC dimension, suggesting a broadly exploratory phase that warrants further discussion in the counselling session.`;
+    lines.push(`${name}'s vocational interest profile is exploratory, showing a broad distribution of interest categories without a dominant theme. Focus the discussion on helping them identify concrete work experiences that resonate with their interest.`);
   }
 
-  // Paragraph 2: top 2 work-style traits with scores
+  lines.push(
+    ``,
+    `**WORK STYLE & PREFERENCE INVENTORY**`
+  );
+
   const workStyleKeys = ['social_orientation','structure_preference','creativity_innovation','analytical_curiosity','leadership_initiative','practical_orientation','risk_exploration','persistence_discipline'];
   const topWS = workStyleKeys
     .filter(k => s[k])
     .sort((a, b) => n(b) - n(a))
     .slice(0, 2);
 
-  let para2: string;
   if (topWS.length >= 2) {
     const w1 = topWS[0]; const w2 = topWS[1];
-    const w1Phrase =
-      w1 === 'analytical_curiosity' ? 'investigating systems and asking deeper questions' :
-      w1 === 'leadership_initiative' ? 'stepping forward and directing outcomes' :
-      w1 === 'creativity_innovation' ? 'generating original ideas and non-routine approaches' :
-      w1 === 'structure_preference' ? 'organised, planned, and process-driven work' :
-      w1 === 'social_orientation' ? 'collaborative and communicative environments' :
-      w1 === 'practical_orientation' ? 'concrete, applied, and hands-on tasks' :
-      w1 === 'risk_exploration' ? 'trying new approaches and tolerating uncertainty' :
-      'sustained effort and follow-through';
-    const w2Phrase =
-      w2 === 'persistence_discipline' ? 'strong follow-through and consistency' :
-      w2 === 'social_orientation' ? 'engagement with people and collaborative dynamics' :
-      w2 === 'structure_preference' ? 'preference for clear expectations and defined processes' :
-      label(w2).toLowerCase();
-    para2 = `In terms of work style, ${name} shows the strongest tendencies toward ${label(w1)} (${n(w1)}%) and ${label(w2)} (${n(w2)}%). `
-      + `This suggests a working approach that favours ${w1Phrase} alongside ${w2Phrase}.`;
+    lines.push(`${name}'s work style shows strong preferences for **${label(w1)} (${n(w1)}%)** and **${label(w2)} (${n(w2)}%)**:`);
+    lines.push(`* **Core Approach**: Best suited for roles involving ${w1 === 'analytical_curiosity' ? 'investigating complex systems' : w1 === 'leadership_initiative' ? 'directing teams and initiating projects' : w1 === 'creativity_innovation' ? 'devising original concepts and strategies' : w1 === 'structure_preference' ? 'structured, process-driven execution' : w1 === 'social_orientation' ? 'highly collaborative, client-facing work' : w1 === 'practical_orientation' ? 'applied, hands-on mechanical tasks' : w1 === 'risk_exploration' ? 'trying new directions' : 'sustained effort and thorough follow-through'}.`);
+    lines.push(`* **Operational Preference**: Complemented by a style centered around ${w2 === 'persistence_discipline' ? 'consistent follow-through and goal tracking' : w2 === 'social_orientation' ? 'group collaboration and team dynamics' : w2 === 'structure_preference' ? 'defined processes and clear expectations' : label(w2).toLowerCase()}.`);
   } else {
-    para2 = `${name}'s work-style profile does not show a dominant pattern, indicating a balanced or still-forming set of working preferences.`;
+    lines.push(`${name}'s work style preferences show a balanced baseline across multiple dimensions, allowing them to adapt to varied working environments.`);
   }
 
-  // Paragraph 3: synthesis with gap and reliability note
+  lines.push(
+    ``,
+    `**KEY COUNSELLING SUMMARY**`
+  );
+  
   const topDomainName = result.top_domains[0]?.domain ?? 'the most aligned career domain';
-  let para3 = `Taken together, this profile suggests ${name} may thrive in roles that align with ${topDomainName}. `
-    + (primaryGap ? primaryGap + ' ' : '')
-    + (result.reliability_flag === 'LOW' ? 'Note: response consistency was flagged as low — results should be discussed directly with the candidate before drawing firm conclusions.' : '');
+  lines.push(`* **Top Alignment**: ${name} dynamically aligns with **${topDomainName}** based on their interests and behavioral work styles.`);
+  if (primaryGap) {
+    lines.push(`* **Behavioral Check**: ${primaryGap}`);
+  }
+  if (result.reliability_flag === 'LOW') {
+    lines.push(`* **Counselling Warning**: Response consistency was low. Discuss the consistency details with ${name} during the session to verify these preferences.`);
+  }
 
-  return [para1, para2, para3].join('\n\n');
+  return lines.join('\n');
 }
 
 // ─── Aptitude Summary ─────────────────────────────────────────────────────────
@@ -180,40 +180,53 @@ const APT_IMPROVEMENT_TEXT: Record<string, string> = {
 };
 
 function buildAptSummary(result: AptitudeResult, candidateName?: string): string {
-  const name = candidateName && candidateName !== 'Candidate Profile' ? candidateName : 'The candidate';
+  const name = candidateName && candidateName !== 'Candidate Profile' && candidateName !== 'Candidate' ? candidateName : 'The candidate';
   const entries = Object.entries(result.construct_scores)
     .sort(([, a], [, b]) => b.normalized - a.normalized);
   const strongest = entries[0];
   const weakest = entries[entries.length - 1];
   const topDomain = result.top_domains[0];
+  const averageScore = Object.values(result.construct_scores).reduce((acc, s) => acc + s.normalized, 0) / Math.max(1, Object.keys(result.construct_scores).length);
 
-  // Paragraph 1: overall cognitive picture with specific scores
-  let para1: string;
-  if (strongest && weakest && strongest[0] !== weakest[0]) {
-    para1 = `${name}'s cognitive profile shows the clearest strength in ${label(strongest[0])} (${strongest[1].normalized}%), `
-      + `indicating ${APT_STRENGTH_EXPLANATIONS[strongest[0]] ?? 'well-developed reasoning in this area'}. `
-      + `The relative weaker area is ${label(weakest[0])} (${weakest[1].normalized}%), `
-      + `which scores in the ${weakest[1].band.toLowerCase()} range and represents the primary opportunity for focused practice.`;
-  } else if (strongest) {
-    para1 = `${name}'s cognitive profile shows strongest performance in ${label(strongest[0])} (${strongest[1].normalized}%), `
-      + `indicating ${APT_STRENGTH_EXPLANATIONS[strongest[0]] ?? 'well-developed reasoning in this area'}.`;
-  } else {
-    para1 = `${name}'s cognitive profile has been assessed across four reasoning dimensions. No single area shows strong dominance at this stage.`;
+  const lines = [
+    `**COGNITIVE CAPACITY ASSESSMENT**`,
+    `${name} exhibits an average cognitive reasoning score of **${Math.round(averageScore)}%**, placing them in the **${averageScore >= 65 ? 'Strong' : averageScore >= 40 ? 'Emerging' : 'Developing'}** cognitive readiness tier. This score indicates their general capacity for processing new information, solving unfamiliar challenges, and managing academic or professional workloads.`,
+    ``,
+    `**PRIMARY REASONING VECTORS (STRENGTHS)**`,
+  ];
+
+  if (strongest) {
+    lines.push(`* **${label(strongest[0])} (${strongest[1].normalized}%)**: Demonstrates ${strongest[1].normalized >= 60 ? 'high level proficiency' : 'moderate proficiency'} in ${APT_STRENGTH_EXPLANATIONS[strongest[0]] ?? 'this reasoning domain'}. This represents their strongest cognitive framework for problem solving.`);
+  }
+  
+  const secondStrongest = entries[1];
+  if (secondStrongest && secondStrongest[1].normalized >= 50) {
+    lines.push(`* **${label(secondStrongest[0])} (${secondStrongest[1].normalized}%)**: Shows solid supporting capacity in ${APT_STRENGTH_EXPLANATIONS[secondStrongest[0]] ?? 'this area'}, indicating well-developed secondary reasoning channels.`);
   }
 
-  // Paragraph 2: career readiness for top domain
-  let para2: string;
+  lines.push(
+    ``,
+    `**COGNITIVE GAPS & POTENTIAL WORK BOTTLENECK**`
+  );
+
+  if (weakest && weakest[0] !== strongest[0]) {
+    lines.push(`* **${label(weakest[0])} (${weakest[1].normalized}%)**: Identified as the primary relative area for development. Cognitive demands in this construct may require more processing time, representing a potential bottleneck during complex, time-sensitive tasks.`);
+    lines.push(`  *Actionable Practice Suggestion:* ${name} should focus on: ${APT_IMPROVEMENT_TEXT[weakest[0]] ?? 'Practice targeted exercises in this category.'}`);
+  } else {
+    lines.push(`* No major cognitive bottlenecks or severe gaps identified for ${name}. Reasoning abilities are balanced and meet or exceed all baseline requirements.`);
+  }
+
+  lines.push(
+    ``,
+    `**APPLIED CAREER ALIGNMENT**`
+  );
+
   if (topDomain) {
     const tier = topDomain.score >= 65 ? 'strong' : topDomain.score >= 50 ? 'moderate' : 'developing';
-    para2 = `Based on the overall cognitive profile, ${name}'s abilities show ${tier} alignment toward ${topDomain.domain}. `
-      + `This reflects the pattern of reasoning strengths most relevant to that domain's typical demands. `
-      + (topDomain.score < 50 ? 'Continued cognitive development, particularly in the weaker constructs, would meaningfully improve this alignment.' :
-         'This provides a reasonable foundation for exploring career paths within this field.');
-  } else {
-    para2 = `No single career domain shows strong alignment based on cognitive scores alone. Focused development across the weaker constructs is recommended before career specialisation.`;
+    lines.push(`* **${topDomain.domain}**: Shows **${tier} alignment** based on ${name}'s reasoning profile. This field's core operations leverage their highest performing reasoning vectors, allowing them to solve typical tasks in this domain with natural ease.`);
   }
 
-  return [para1, para2].join('\n\n');
+  return lines.join('\n');
 }
 
 // ─── Dynamic Development Plan ─────────────────────────────────────────────────
